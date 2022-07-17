@@ -1,0 +1,17 @@
+[credential "helperselector"]
+	selected = manager-core
+[core]
+	excludesfile = C:\\Users\\szege\\.gitignore
+	editor = codium --wait
+	autocrlf = true
+	eol = lf
+[user]
+	email = mail@adamszegedi.eu
+	name = adamszegedi
+	signingkey = 418E38EB5CDF9F0E
+[commit]
+	gpgsign = true
+[credential]
+	helper = manager-core
+[gpg]
+	program = /usr/bin/gpg
