@@ -8,10 +8,8 @@
 [user]
 	email = mail@adamszegedi.eu
 	name = adamszegedi
-	signingkey = 418E38EB5CDF9F0E
+	signingkey = F5B64437C9203CFF4C44ECFA418E38EB5CDF9F0E
 [commit]
 	gpgsign = true
 [credential]
 	helper = manager-core
-[gpg]
-	program = /usr/bin/gpg
