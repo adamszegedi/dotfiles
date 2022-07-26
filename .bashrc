@@ -19,7 +19,3 @@ neofetch
 
 #Init Starship
 eval "$(starship init bash)"
-
-
-#Aliases
-alias code='codium'

@@ -1,5 +1,5 @@
 [core]
-	excludesfile = C:\\Users\\szege\\.gitignore
+	excludesfile = /home/aszegedi/.gitignore
 	editor = codium --wait
 	autocrlf = false
 	eol = lf
