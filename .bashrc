@@ -14,8 +14,9 @@ PS1='[\u@\h \W]\$ '
 #Export gpg tty
 export GPG_TTY=$(tty)
 
+#Init Starship
+eval "$(starship init bash)"
+
 #Run neofetch
 neofetch
 
-#Init Starship
-eval "$(starship init bash)"
