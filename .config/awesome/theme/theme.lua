@@ -71,7 +71,7 @@ theme.border_normal = theme.blue
 theme.border_focus = theme.yellow
 theme.border_marked = theme.purple
 theme.border_radius = dpi(12)
-theme.border_width = dpi(1)
+theme.border_width = dpi(3)
 
 --- Edge snap
 theme.snap_bg = theme.xcolor8
