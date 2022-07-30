@@ -53,7 +53,7 @@ beautiful.init(theme_dir .. "theme.lua")
 require("config")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "wezterm"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
