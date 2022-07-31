@@ -42,10 +42,8 @@ beautiful.init(theme_dir .. "theme.lua")
 -- ###########################################
 -- GLOBAL
 TERMINAL = "kitty"
-EDITOR = os.getenv("EDITOR") or "vim"
-EDITOR_CMD = TERMINAL .. " -e " .. EDITOR
-
-
+EDITOR = "code"
+BROWSER = "firefox"
 -- ###########################################
 -- Initialize layout
 -- ###########################################

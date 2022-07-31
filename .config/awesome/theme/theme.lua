@@ -9,6 +9,12 @@ local dpi = xresources.apply_dpi
 local helpers = require("helpers")
 local icons = require("icons")
 
+
+-- ################################
+-- GENERAL CONFIGS
+-- ################################
+local border_width = dpi(2)
+
 --- Ui Fonts
 theme.font_name = "JetBrainsMono Nerd Font"
 theme.font = theme.font_name .. " 12"
@@ -34,7 +40,7 @@ theme.purple = "#F2CDCD"
 theme.grey = "#6E6C7E"
 
 theme.bg_normal = theme.black
-theme.bg_focus = theme.deep_black
+theme.bg_focus = theme.black
 theme.bg_urgent = theme.white
 theme.bg_minimize = theme.grey
 theme.bg_systray = theme.black
@@ -64,7 +70,9 @@ theme.layout_machi = icons.machi
 theme.icon_theme = "WhiteSur-dark"
 
 theme.tasklist_plain_task_name = true
-theme.tasklist_disable_task_name = false
+theme.tasklist_shape_border_width = 0
+theme.tasklist_shape_border_color = theme.blue
+theme.tasklist_shape_border_color_focus = theme.yellow
 
 --- Corner Radius and Border
 
@@ -72,7 +80,7 @@ theme.border_normal = theme.blue
 theme.border_focus = theme.yellow
 theme.border_marked = theme.purple
 theme.border_radius = dpi(12)
-theme.border_width = dpi(3)
+theme.border_width = border_width
 
 --- Edge snap
 theme.snap_bg = theme.xcolor8
@@ -93,10 +101,9 @@ theme.hotkeys_shape = helpers.ui.rrect(theme.border_radius)
 theme.hotkeys_group_margin = dpi(50)
 
 --- Tag list
-local taglist_square_size = dpi(3)
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
+local taglist_square_size = dpi(0)
+theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.yellow)
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
-
 
 --- Gaps
 theme.useless_gap = dpi(2)
