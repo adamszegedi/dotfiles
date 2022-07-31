@@ -3,7 +3,6 @@ local wibox = require("wibox")
 local gshape = require("gears.shape")
 local gmatrix = require("gears.matrix")
 local ipairs = ipairs
-local table = table
 local capi = { mouse = mouse }
 
 local _ui = {}

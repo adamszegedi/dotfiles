@@ -1,5 +1,4 @@
 local awful = require("awful")
-local naughty = require("naughty")
 local filesystem = require("gears.filesystem")
 local config_dir = filesystem.get_configuration_dir()
 local helpers = require("helpers")

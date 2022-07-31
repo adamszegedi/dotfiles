@@ -1,5 +1,4 @@
 
-local naughty = require("naughty")
 local gears = require("gears")
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
@@ -46,7 +45,7 @@ theme.fg_urgent = theme.red
 theme.fg_minimize = theme.light_white
 
 --- Wallpapers
-theme.wallpaper = gears.surface.load_uncached("/home/aszegedi/Pictures/wallpaper/wall_style1_nologo.png")
+theme.wallpaper = gears.surface.load_uncached("/home/aszegedi/Pictures/wallpaper/black5_unicat.png")
 
 --- Layout
 --- You can use your own layout icons like this:
@@ -64,6 +63,8 @@ theme.layout_machi = icons.machi
 --- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = "WhiteSur-dark"
 
+theme.tasklist_plain_task_name = true
+theme.tasklist_disable_task_name = false
 
 --- Corner Radius and Border
 
@@ -109,5 +110,4 @@ theme.dont_swallow_classname_list = {
 	"Thunar",
 }
 
-naughty.notify({text = "Theme Inicialized"})
 return theme

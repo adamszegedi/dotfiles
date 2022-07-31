@@ -12,6 +12,9 @@ then
   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"  
 fi
 
+#import aliases
+. ~/.aliases
+
 #NVM startup for nodejs
 source /usr/share/nvm/init-nvm.sh
 
