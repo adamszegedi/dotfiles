@@ -76,13 +76,13 @@ function _layout.setup()
     helpers.wallpaper.set(s)
     local tag1 = "  "
     local tag2 = "  "
-    local tag3 = "  "
+    local tag3 = "  "
     local tag4 = "  "
     local tag5 = "  "
     local tag6 = "  "
     local tag7 = "  "
     local tag8 = " ﴬ "
-    local tag9 = "  "
+    local tag9 = "  "
 
 
     -- Each screen has its own tag table.

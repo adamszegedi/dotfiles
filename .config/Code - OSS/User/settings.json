@@ -34,7 +34,7 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "terminal.integrated.fontFamily": "'FiraCode Nerd Font',monospace",
-    "editor.fontFamily": "'MonoLisa', Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font','MonoLisa', Consolas, 'Courier New', monospace",
     "[jsonc]": {
         "editor.quickSuggestions": {
             "strings": true

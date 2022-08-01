@@ -13,11 +13,13 @@ local icons = require("icons")
 -- ################################
 -- GENERAL CONFIGS
 -- ################################
-local border_width = dpi(2)
+--- Gaps
+theme.useless_gap = dpi(3)
+theme.border_width = dpi(3)
 
 --- Ui Fonts
 theme.font_name = "JetBrainsMono Nerd Font"
-theme.font = theme.font_name .. " 12"
+theme.font = theme.font_name .. " 13"
 
 --- Icon Fonts
 theme.icon_font = "Material Icons "
@@ -28,8 +30,8 @@ theme.icon_font = "Material Icons "
 
 theme.black = "#161320"
 theme.deep_black = "#575268"
-theme.white = "#575268"
-theme.light_white = "#C3BAC6"
+theme.white = "#C3BAC6"
+theme.light_white = "#575268"
 theme.pink = "#F5E0DC"
 theme.red = "#F28FAD"
 theme.orange = "#F8BD96"
@@ -70,9 +72,11 @@ theme.layout_machi = icons.machi
 theme.icon_theme = "WhiteSur-dark"
 
 theme.tasklist_plain_task_name = true
-theme.tasklist_shape_border_width = 0
+theme.tasklist_shape_border_width = theme.border_width
 theme.tasklist_shape_border_color = theme.blue
 theme.tasklist_shape_border_color_focus = theme.yellow
+theme.separator_color = theme.yellow
+
 
 --- Corner Radius and Border
 
@@ -80,7 +84,7 @@ theme.border_normal = theme.blue
 theme.border_focus = theme.yellow
 theme.border_marked = theme.purple
 theme.border_radius = dpi(12)
-theme.border_width = border_width
+theme.border_width = theme.border_width
 
 --- Edge snap
 theme.snap_bg = theme.xcolor8
@@ -102,12 +106,12 @@ theme.hotkeys_group_margin = dpi(50)
 
 --- Tag list
 local taglist_square_size = dpi(0)
+theme.taglist_fg_focus = theme.yellow
+theme.taglist_fg_empty = theme.light_white
+theme.taglist_fg_urgent = theme.red
+theme.taglist_fg_occupied = theme.blue
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.yellow)
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
-
---- Gaps
-theme.useless_gap = dpi(2)
-
 
 --- Swallowing
 theme.dont_swallow_classname_list = {
