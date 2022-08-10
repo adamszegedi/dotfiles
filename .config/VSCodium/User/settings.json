@@ -83,4 +83,13 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorTheme": "Catppuccin",
     "explorer.confirmDelete": false,
+    "colorize.include": [
+
+        "**/*.css",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.less",
+        "**/*.styl",
+        "**/*.lua"
+    ],
 }

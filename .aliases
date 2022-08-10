@@ -56,3 +56,15 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 ## this one saved by butt so many times ##
 alias wget='wget -c'
 
+#eye-saver
+alias nightlight='xsct 3700'
+alias daylight='xsct 0'
+
+#capture part of screen
+alias screencap='maim -s | xclip -selection clipboard -t image/png'
+
+#freeRDP
+alias rdpgrepton='xfreerdp /u:grepton\\aszegedi /f /smart-sizing:1920x1080 /v:192.168.50.11'
+
+#FEH
+alias fehb="feh -Tbooth"

@@ -1,4 +1,3 @@
-
 local gears = require("gears")
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
@@ -9,13 +8,12 @@ local dpi = xresources.apply_dpi
 local helpers = require("helpers")
 local icons = require("icons")
 
-
 -- ################################
 -- GENERAL CONFIGS
 -- ################################
 --- Gaps
 theme.useless_gap = dpi(3)
-theme.border_width = dpi(3)
+theme.border_width = dpi(2)
 
 --- Ui Fonts
 theme.font_name = "JetBrainsMono Nerd Font"
@@ -28,32 +26,43 @@ theme.icon_font = "Material Icons "
 --- ░█░░░█░█░█░░░█░█░█▀▄░▀▀█
 --- ░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀
 
-theme.black = "#161320"
-theme.deep_black = "#575268"
-theme.white = "#C3BAC6"
-theme.light_white = "#575268"
-theme.pink = "#F5E0DC"
-theme.red = "#F28FAD"
-theme.orange = "#F8BD96"
-theme.yellow = "#FAE3B0"
-theme.green = "#ABE9B3w"
-theme.blue = "#96CDFB"
-theme.purple = "#F2CDCD"
+
+theme.rosewater = "#F4DBD6"
+theme.flamingo = "#F0C6C6"
+theme.pink = "#F5BDE6"
+theme.mauve = "#C6A0F6"
+theme.red = "#ED8796"
+theme.maroon = "#EE99A0"
+theme.peach = "#F5A97F"
+theme.yellow = "#EED49F"
+theme.green = "#A6DA95"
+theme.eal = "#8BD5CA"
+theme.sky = "#91D7E3"
+theme.sapphire = "#7DC4E4"
+theme.blue = "#8AADF4"
+theme.lavender = "#B7BDF8"
+theme.base = "#24273A"
+theme.mantle = "#1E2030"
+theme.crust = "#181926"
 theme.grey = "#6E6C7E"
 
-theme.bg_normal = theme.black
-theme.bg_focus = theme.black
-theme.bg_urgent = theme.white
-theme.bg_minimize = theme.grey
-theme.bg_systray = theme.black
 
-theme.fg_normal = theme.white
-theme.fg_focus = theme.orange
+theme.xbackground = theme.crust
+theme.xforeground = theme.lavender
+
+theme.bg_normal = theme.xbackground
+theme.bg_focus = theme.xbackground
+theme.bg_urgent = theme.red
+theme.bg_minimize = theme.sapphire
+theme.bg_systray = theme.xbackground
+
+theme.fg_normal = theme.xforeground
+theme.fg_focus = theme.yellow
 theme.fg_urgent = theme.red
-theme.fg_minimize = theme.light_white
+theme.fg_minimize = theme.xbackground
 
 --- Wallpapers
-theme.wallpaper = gears.surface.load_uncached("/home/aszegedi/Pictures/wallpaper/black5_unicat.png")
+theme.wallpaper = gears.surface.load_uncached("/home/aszegedi/Pictures/wallpaper/Rainnight.jpg")
 
 --- Layout
 --- You can use your own layout icons like this:
@@ -69,31 +78,31 @@ theme.layout_machi = icons.machi
 --- Icon Theme
 --- Define the icon theme for application icons. If not set then the icons
 --- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = "WhiteSur-dark"
+theme.icon_theme = "candy-icons"
 
 theme.tasklist_plain_task_name = true
-theme.tasklist_shape_border_width = theme.border_width
-theme.tasklist_shape_border_color = theme.blue
-theme.tasklist_shape_border_color_focus = theme.yellow
+-- theme.tasklist_shape_border_width = theme.border_width
+-- theme.tasklist_shape_border_color = theme.blue
+-- theme.tasklist_shape_border_color_focus = theme.yellow
+theme.tasklist_shape_border_color_minimized = theme.maroon
 theme.separator_color = theme.yellow
 
 
 --- Corner Radius and Border
-
-theme.border_normal = theme.blue
-theme.border_focus = theme.yellow
-theme.border_marked = theme.purple
-theme.border_radius = dpi(12)
-theme.border_width = theme.border_width
+-- theme.border_normal = theme.mauve
+-- theme.border_focus = theme.yellow
+-- theme.border_marked = theme.mauve
+-- theme.border_radius = dpi(12)
+-- theme.border_width = theme.border_width
 
 --- Edge snap
-theme.snap_bg = theme.xcolor8
-theme.snap_shape = helpers.ui.rrect(0)
+-- theme.snap_bg = theme.xcolor8
+-- theme.snap_shape = helpers.ui.rrect(0)
 
 --- Tooltip
-theme.tooltip_bg = theme.lighter_xbackground
-theme.tooltip_fg = theme.xforeground
-theme.tooltip_font = theme.font_name .. "Regular 10"
+-- theme.tooltip_bg = theme.lighter_xbackground
+-- theme.tooltip_fg = theme.xforeground
+-- theme.tooltip_font = theme.font_name .. "Regular 10"
 
 --- Hotkeys Pop Up
 theme.hotkeys_bg = theme.xbackground
@@ -106,10 +115,7 @@ theme.hotkeys_group_margin = dpi(50)
 
 --- Tag list
 local taglist_square_size = dpi(0)
-theme.taglist_fg_focus = theme.yellow
-theme.taglist_fg_empty = theme.light_white
-theme.taglist_fg_urgent = theme.red
-theme.taglist_fg_occupied = theme.blue
+theme.taglist_fg_empty = theme.grey
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.yellow)
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
 
