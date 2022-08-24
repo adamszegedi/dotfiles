@@ -81,7 +81,7 @@
     ],
     "window.zoomLevel": 2,
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Catppuccin",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "explorer.confirmDelete": false,
     "colorize.include": [
 

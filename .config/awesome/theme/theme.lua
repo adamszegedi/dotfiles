@@ -62,7 +62,7 @@ theme.fg_urgent = theme.red
 theme.fg_minimize = theme.xbackground
 
 --- Wallpapers
-theme.wallpaper = gears.surface.load_uncached("/home/aszegedi/Pictures/wallpaper/Rainnight.jpg")
+theme.wallpaper = gears.surface.load_uncached("/home/aszegedi/Pictures/wallpaper/Gesha.jpg")
 
 --- Layout
 --- You can use your own layout icons like this:

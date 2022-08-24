@@ -68,3 +68,6 @@ alias rdpgrepton='xfreerdp /u:grepton\\aszegedi /f /smart-sizing:1920x1080 /v:19
 
 #FEH
 alias fehb="feh -Tbooth"
+
+#VScodium
+alias code="vscodium"
