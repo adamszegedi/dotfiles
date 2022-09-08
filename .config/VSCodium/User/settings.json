@@ -76,9 +76,6 @@
     "[scss]": {
         "editor.defaultFormatter": "vscode.css-language-features"
     },
-    "timeline.excludeSources": [
-        "timeline.localHistory"
-    ],
     "window.zoomLevel": 2,
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorTheme": "Catppuccin Mocha",

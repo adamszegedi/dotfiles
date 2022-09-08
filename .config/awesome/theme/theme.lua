@@ -52,13 +52,13 @@ theme.xforeground = theme.lavender
 
 theme.bg_normal = theme.xbackground
 theme.bg_focus = theme.xbackground
-theme.bg_urgent = theme.red
-theme.bg_minimize = theme.sapphire
+theme.bg_urgent = theme.xforeground
+theme.bg_minimize = theme.xbackground
 theme.bg_systray = theme.xbackground
 
 theme.fg_normal = theme.xforeground
 theme.fg_focus = theme.yellow
-theme.fg_urgent = theme.red
+theme.fg_urgent = theme.xbackground
 theme.fg_minimize = theme.xbackground
 
 --- Wallpapers
