@@ -42,7 +42,7 @@ beautiful.init(theme_dir .. "theme.lua")
 -- ###########################################
 -- GLOBAL
 TERMINAL = "kitty"
-EDITOR = "code"
+EDITOR = "vscodium"
 BROWSER = "firefox"
 -- ###########################################
 -- Initialize layout
@@ -68,5 +68,5 @@ awful.rules.rules = layout.rules.get(beautiful.border_width, beautiful.border_no
 -- ###########################################
 layout.signals.setup(beautiful.border_focus, beautiful.border_normal)
 
-
+awful.util.spawn("nm-applet")
 naughty.notify({text = "config loaded for awesome"})

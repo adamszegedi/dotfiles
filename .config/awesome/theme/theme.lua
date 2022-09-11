@@ -14,6 +14,7 @@ local icons = require("icons")
 --- Gaps
 theme.useless_gap = dpi(3)
 theme.border_width = dpi(2)
+awesome.set_preferred_icon_size(64)
 
 --- Ui Fonts
 theme.font_name = "JetBrainsMono Nerd Font"
@@ -62,7 +63,7 @@ theme.fg_urgent = theme.xbackground
 theme.fg_minimize = theme.xbackground
 
 --- Wallpapers
-theme.wallpaper = gears.surface.load_uncached("/home/aszegedi/Pictures/wallpaper/Gesha.jpg")
+theme.wallpaper = gears.surface.load_uncached("/home/aszegedi/Pictures/wallpaper/waves-dark.jpg")
 
 --- Layout
 --- You can use your own layout icons like this:
