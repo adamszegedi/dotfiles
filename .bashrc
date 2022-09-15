@@ -12,10 +12,6 @@ then
   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"  
 fi
 
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
 #import aliases
 . ~/.aliases
 

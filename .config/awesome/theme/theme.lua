@@ -13,7 +13,7 @@ local icons = require("icons")
 -- ################################
 --- Gaps
 theme.useless_gap = dpi(3)
-theme.border_width = dpi(2)
+theme.border_width = dpi(3)
 awesome.set_preferred_icon_size(64)
 
 --- Ui Fonts
@@ -63,7 +63,7 @@ theme.fg_urgent = theme.xbackground
 theme.fg_minimize = theme.xbackground
 
 --- Wallpapers
-theme.wallpaper = gears.surface.load_uncached("/home/aszegedi/Pictures/wallpaper/waves-dark.jpg")
+theme.wallpaper = gears.surface.load_uncached("/home/aszegedi/Pictures/wallpaper/dark-waves-japan.png")
 
 --- Layout
 --- You can use your own layout icons like this:
@@ -119,13 +119,5 @@ local taglist_square_size = dpi(0)
 theme.taglist_fg_empty = theme.grey
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.yellow)
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
-
---- Swallowing
-theme.dont_swallow_classname_list = {
-	"firefox",
-	"gimp",
-	"Google-chrome",
-	"Thunar",
-}
 
 return theme

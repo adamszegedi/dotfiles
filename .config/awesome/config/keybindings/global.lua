@@ -1,6 +1,8 @@
 local awful = require("awful")
 local gears = require("gears")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local filesystem = require("gears.filesystem")
+local config_dir = filesystem.get_configuration_dir()
 
 local folderOfThisFile = (...):match("(.-)[^%.]+$")
 local modkey = require(folderOfThisFile .. "modkey").key
@@ -63,9 +65,11 @@ _global.bindings = gears.table.join(
         {description = "open browser incognito", group = "launcher"}),
     awful.key({ modkey,           }, "e", function () awful.spawn(EDITOR) end,
         {description = "open code editor", group = "launcher"}),
-        awful.key({ "Mod1",           }, "space", function () awful.spawn.with_shell("rofi -show drun &")   end,
-                  {description = "select next", group = "launcher"}),
-
+    awful.key({ "Mod1",           }, "space", function () awful.spawn.with_shell("rofi -show drun &")   end,
+        {description = "Rofi run", group = "launcher"}),
+    awful.key({ modkey,"Shift" }, "F12", function () awful.util.spawn("sh "..config_dir.."/utilites/screensht.sh") end,
+        {description = "create screenshot and copy to clipboard", group = "Utilites"}
+    ),
 
 
 

@@ -60,14 +60,11 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 alias wget='wget -c'
 
 #eye-saver
-alias nightlight='redshift -P -O 3300'
+alias nightlight='redshift -P -O 3700'
 alias daylight='redshift -x'
 
 #capture part of screen
 alias screencap='maim -s | xclip -selection clipboard -t image/png'
-
-#freeRDP
-alias rdpgrepton='xfreerdp /u:grepton\\aszegedi /f /smart-sizing:2560x1440 /v:192.168.50.11 /bpp:32 +fonts +clipboard -wallpaper /rfx /rfx-mode:video /gfx-h264 /audio-mode:1 /gdi:hw /scale:140'
 
 #FEH
 alias fehb="feh -Tbooth"

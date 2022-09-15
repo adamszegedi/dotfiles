@@ -14,7 +14,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
-require("awful.hotkeys_popup.keys")
+-- require("awful.hotkeys_popup.keys")
 
 -- ###########################################
 -- Local Dependencies
@@ -68,5 +68,5 @@ awful.rules.rules = layout.rules.get(beautiful.border_width, beautiful.border_no
 -- ###########################################
 layout.signals.setup(beautiful.border_focus, beautiful.border_normal)
 
-awful.util.spawn("nm-applet")
+naughty.config.defaults['icon_size'] = 100
 naughty.notify({text = "config loaded for awesome"})

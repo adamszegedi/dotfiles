@@ -19,8 +19,9 @@ for i = 1, 9 do
                       if tag then
                          tag:view_only()
                       end
-                end,
-                {description = "view tag #"..i, group = "tag"}),
+                end
+                -- {description = "view tag #"..i, group = "tag"}
+            ),
       -- Toggle tag display.
       awful.key({ modkey, "Control" }, "#" .. i + 9,
                 function ()
@@ -29,8 +30,9 @@ for i = 1, 9 do
                     if tag then
                        awful.tag.viewtoggle(tag)
                     end
-                end,
-                {description = "toggle tag #" .. i, group = "tag"}),
+                end
+                -- {description = "toggle tag #" .. i, group = "tag"}
+            ),
       -- Move client to tag.
       awful.key({ modkey, "Shift" }, "#" .. i + 9,
                 function ()
@@ -40,8 +42,9 @@ for i = 1, 9 do
                             client.focus:move_to_tag(tag)
                         end
                    end
-                end,
-                {description = "move focused client to tag #"..i, group = "tag"})
+                end
+                -- {description = "move focused client to tag #"..i, group = "tag"}
+            )
   )
 end
 
