@@ -41,7 +41,7 @@ beautiful.init(theme_dir .. "theme.lua")
 -- Defaults
 -- ###########################################
 -- GLOBAL
-TERMINAL = "kitty"
+TERMINAL = "alacritty"
 EDITOR = "vscodium"
 BROWSER = "firefox"
 -- ###########################################
