@@ -33,7 +33,7 @@
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "terminal.integrated.fontFamily": "'FiraCode Nerd Font',monospace",
+    "terminal.integrated.fontFamily": "'Source Code Pro Semibold','FiraCode Nerd Font',monospace",
     "editor.fontFamily": "'JetBrainsMono Nerd Font','MonoLisa', Consolas, 'Courier New', monospace",
     "[jsonc]": {
         "editor.quickSuggestions": {
@@ -77,8 +77,7 @@
         "editor.defaultFormatter": "vscode.css-language-features"
     },
     "window.zoomLevel": 2,
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
     "explorer.confirmDelete": false,
     "colorize.include": [
 

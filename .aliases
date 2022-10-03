@@ -71,3 +71,8 @@ alias fehb="feh -Tbooth"
 
 #VScodium
 alias code="vscodium"
+
+#liquidctl
+alias light-off='sudo liquidctl --match V2 set sync color off'
+alias light-ring='sudo liquidctl --match Kraken set ring color fading 8c878e'
+alias light-logo='sudo liquidctl --match Kraken set logo color fading 8c878e'

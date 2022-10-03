@@ -18,7 +18,7 @@ awesome.set_preferred_icon_size(64)
 
 --- Ui Fonts
 theme.font_name = "JetBrainsMono Nerd Font"
-theme.font = theme.font_name .. " 13"
+theme.font = theme.font_name .. " 14"
 
 --- Icon Fonts
 theme.icon_font = "Material Icons "
@@ -27,43 +27,21 @@ theme.icon_font = "Material Icons "
 --- ░█░░░█░█░█░░░█░█░█▀▄░▀▀█
 --- ░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀
 
+theme.fg_normal  = "#d79921"
+theme.fg_focus   = "#b8bb26"
+theme.fg_urgent  = "#cc241d"
+theme.fg_minimize = "#928374"
 
-theme.rosewater = "#F4DBD6"
-theme.flamingo = "#F0C6C6"
-theme.pink = "#F5BDE6"
-theme.mauve = "#C6A0F6"
-theme.red = "#ED8796"
-theme.maroon = "#EE99A0"
-theme.peach = "#F5A97F"
-theme.yellow = "#EED49F"
-theme.green = "#A6DA95"
-theme.eal = "#8BD5CA"
-theme.sky = "#91D7E3"
-theme.sapphire = "#7DC4E4"
-theme.blue = "#8AADF4"
-theme.lavender = "#B7BDF8"
-theme.base = "#24273A"
-theme.mantle = "#1E2030"
-theme.crust = "#181926"
-theme.grey = "#6E6C7E"
+theme.bg_normal  = "#1d2021"
+theme.bg_focus   = "#1d2021"
+theme.bg_urgent  = "#1d2021"
+theme.bg_systray = "#1d2021"
+theme.bg_minimize = "#1d2021"
+theme.bg_underline = "#1d2021"
 
-
-theme.xbackground = theme.crust
-theme.xforeground = theme.lavender
-
-theme.bg_normal = theme.xbackground
-theme.bg_focus = theme.xbackground
-theme.bg_urgent = theme.xforeground
-theme.bg_minimize = theme.xbackground
-theme.bg_systray = theme.xbackground
-
-theme.fg_normal = theme.xforeground
-theme.fg_focus = theme.yellow
-theme.fg_urgent = theme.xbackground
-theme.fg_minimize = theme.xbackground
 
 --- Wallpapers
-theme.wallpaper = gears.surface.load_uncached("/home/aszegedi/Pictures/wallpaper/dark-waves-japan.png")
+theme.wallpaper = gears.surface.load_uncached("/home/aszegedi/Pictures/wallpaper/traffic-light-fog.jpg")
 
 --- Layout
 --- You can use your own layout icons like this:
@@ -82,11 +60,6 @@ theme.layout_machi = icons.machi
 theme.icon_theme = "candy-icons"
 
 theme.tasklist_plain_task_name = true
--- theme.tasklist_shape_border_width = theme.border_width
--- theme.tasklist_shape_border_color = theme.blue
--- theme.tasklist_shape_border_color_focus = theme.yellow
-theme.tasklist_shape_border_color_minimized = theme.maroon
-theme.separator_color = theme.yellow
 
 
 --- Corner Radius and Border
@@ -106,9 +79,9 @@ theme.separator_color = theme.yellow
 -- theme.tooltip_font = theme.font_name .. "Regular 10"
 
 --- Hotkeys Pop Up
-theme.hotkeys_bg = theme.xbackground
-theme.hotkeys_fg = theme.xforeground
-theme.hotkeys_modifiers_fg = theme.xforeground
+theme.hotkeys_bg = "#1d2021"
+theme.hotkeys_fg = "#d79921"
+theme.hotkeys_modifiers_fg = "#d79921"
 theme.hotkeys_font = theme.font_name .. "MonoLisa"
 theme.hotkeys_description_font = theme.font_name .. "Regular 10"
 theme.hotkeys_shape = helpers.ui.rrect(theme.border_radius)
@@ -116,8 +89,9 @@ theme.hotkeys_group_margin = dpi(50)
 
 --- Tag list
 local taglist_square_size = dpi(0)
-theme.taglist_fg_empty = theme.grey
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.yellow)
-theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
+theme.taglist_fg_empty = "#504945"
+theme.taglist_fg_occupied = "#468588"
+theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, "#a89984")
+theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, "#a89984")
 
 return theme
