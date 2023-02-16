@@ -1,0 +1,6 @@
+font=hack
+font-size=16
+color=#3c3836
+inside-color=282828
+ignore-empty-password
+daemonize

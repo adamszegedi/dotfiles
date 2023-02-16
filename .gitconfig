@@ -1,12 +1,16 @@
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
+
 [core]
 	excludesfile = /home/aszegedi/.gitignore
 	editor = codium --wait
 	autocrlf = false
-	eol = lf
 [user]
 	email = mail@adamszegedi.eu
 	name = adamszegedi
 	signingkey = F5B64437C9203CFF4C44ECFA418E38EB5CDF9F0E
 [commit]
 	gpgsign = true
-

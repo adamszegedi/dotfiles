@@ -70,7 +70,7 @@ alias screencap='maim -s | xclip -selection clipboard -t image/png'
 alias fehb="feh -Tbooth"
 
 #VScodium
-alias code="vscodium"
+alias code="code-oss"
 
 #liquidctl
 alias light-off='sudo liquidctl --match V2 set sync color off'

@@ -1,0 +1,4 @@
+#! /bin/sh
+read -s -p "Enter password: " password
+nohup wlfreerdp /u:grepton\\aszegedi /p:$password /scale:140 /scale-desktop:150 /dynamic-resolution /v:192.168.50.11 /bpp:32 +fonts +clipboard -wallpaper /rfx /rfx-mode:video /gfx-h264 /audio-mode:1 /gdi:hw /audio-mode:0 > ~/.nohupout/xfreerdp.out &
+echo "\n"
