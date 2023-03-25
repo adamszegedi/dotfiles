@@ -1,8 +1,8 @@
 # Read `man 5 sway` for a complete reference.
 
-
-### Variables
-#
+#################################################################
+#   Variables
+#################################################################
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
@@ -18,12 +18,8 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-#set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu bemenu-run -i --fn "font pango:inconsolata 18" "$@" -m "$(swayfocused)" -p ">" -n | xargs swaymsg exec
-
-#################################################################
-# ---------------------- OUTPUT CONFIG ---------------------- #
-#################################################################
+include colors
+include bemenu
 include output
 
 ### Idle configuration
@@ -253,17 +249,6 @@ workspace 5 output HDMI-A-1
 # ---------------------- UI SETTINGS ---------------------- #
 #################################################################
 #wallpaper
-output * bg /home/aszegedi/Pictures/wallpaper/gruvbox_stormtrooper.jpg fill
-# set primary gruvbox colorscheme colors
-set $bg01    #282828
-set $bg02    #1d2021
-set $fg01    #ebdbb2
-set $fg02    #a89984
-set $red     #cc241d
-set $blue    #458588
-set $purple  #d3869b
-set $white   #ffffff
-set $black   #000000
 
 #class                   $border  $bg    $text  $indicator  $child_border
 client.focused           $bg02    $bg02  $fg01  $red        $fg02
@@ -279,4 +264,4 @@ default_border pixel 1
 
 
 include /etc/sway/config.d/*
-
+exec_always gammastep
