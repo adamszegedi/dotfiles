@@ -264,4 +264,4 @@ default_border pixel 1
 
 
 include /etc/sway/config.d/*
-exec_always gammastep
+exec gammastep
