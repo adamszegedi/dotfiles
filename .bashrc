@@ -8,8 +8,10 @@
 #alias ls='ls --color=auto'
 #PS1='[\u@\h \W]\$ '
 
+#Environment variables
 GPG_TTY=$(tty)
 export GPG_TTY
+export MOZ_ENABLE_WAYLAND=1
 
 #import aliases
 . ~/.aliases

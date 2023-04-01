@@ -207,10 +207,6 @@ bar {
 #################################################################
 # ---------------------- WINDOW SETTINGS ---------------------- #
 #################################################################
-
-default_border pixel 2
-gaps inner 4
-gaps outer 2
 # -- FLOATING WINDOW SETTINGS
 
 # Floating windows
@@ -239,14 +235,16 @@ for_window [title="Firefox Developer Edition — Sharing Indicator"] floating en
 for_window [title="Firefox — Sharing Indicator"] floating enable, sticky enable
 for_window [app_id="firefox" title="^Picture-in-Picture$"] floating enable, move position 0 0, sticky enable, border none,
 # -- MOVE APPS TO SPECIFIC WS
-for_window [title="Alacritty"] move to workspace 1
+for_window [app_id="Alacritty"] move to workspace 1
 for_window [class="discord"] move to workspace 5
+for_window [app_id="firefox"] move to workspace 2
+for_window [app_id="wlfreerdp"] move to workspace 9
 
 workspace 5 output HDMI-A-1
+workspace 2 output DP-3
+workspace 6 output DP-3
 
-
-#################################################################
-# ---------------------- UI SETTINGS ---------------------- #
+################################################################# ---------------------- UI SETTINGS ---------------------- #
 #################################################################
 #wallpaper
 
@@ -260,7 +258,7 @@ client.urgent            $bg02    $bg02  $fg01  $red        $red
 gaps inner 10
 gaps outer 0
 smart_borders no_gaps
-default_border pixel 1
+default_border pixel 2 
 
 
 include /etc/sway/config.d/*

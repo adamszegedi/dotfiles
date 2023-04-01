@@ -1,0 +1,33 @@
+#################################################################
+## BEMENU DYNAMIC MENU
+## VARIABLES
+#################################################################
+set $bemenu_height 18 
+set $bemenu_icon  
+set $bemenu_lines 5
+set $bemenu_scrollbar_mode autohide
+
+#################################################################
+## BEMENU COMMAND
+#################################################################
+set $menu j4-dmenu-desktop --no-generic --dmenu='bemenu -i -n \
+-p "$bemenu_icon" \
+-l $bemenu_lines \
+-H $bemenu_height \
+--scrollbar $bemenu_scrollbar_mode \
+--ab "$bg01" \
+--af "$fg02" \
+--ff "$fg02" \
+--scb "$fg02" \
+--scf "$fg01" \
+--tb "$bg01" \
+--nb "$bg01" \
+--nf "$fg02" \
+--fb "$bg01" \
+--tf "$fg02" \
+--hb "$bg01" \
+--hf "$fg01" \
+--sb "$fg02" \
+--sf "$fg01" \
+--fn "Iosevka bold 18"' \
+--term='alacritty'

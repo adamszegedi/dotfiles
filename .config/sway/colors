@@ -1,0 +1,12 @@
+#################################################################
+# SET PRIMARY GRUVBOX COLORSCHEME COLORS
+#################################################################
+set $bg01    #3c3836 
+set $bg02    #1d2021
+set $fg01    #d5c4a1 
+set $fg02    #a89984
+set $red     #cc241d
+set $blue    #458588
+set $purple  #d3869b
+set $white   #ffffff
+set $black   #000000

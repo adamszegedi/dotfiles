@@ -8,12 +8,14 @@ local lsp = require('lsp-zero').preset({
 lsp.ensure_installed({
 	'tsserver',
 	'eslint',
-	'rust_analyzer'
+    'rust_analyzer'
 })
+
 
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
 lsp.setup()
+
 
 vim.diagnostic.config({
     -- Limit length
