@@ -25,4 +25,3 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init bash)"
-neofetch
