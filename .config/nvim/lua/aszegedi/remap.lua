@@ -1,8 +1,10 @@
 local wk = require("which-key")
 
 vim.keymap.set("n", "<F3>", "<cmd>lua vim.lsp.buf.format()<CR>")
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous Diagnostic" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "next diagnostic" })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "previous diagnostic" })
+vim.keymap.set("n", "]b", "<Cmd>bnext<Cr>", { desc = "next buffer" })
+vim.keymap.set("n", "[b", "<Cmd>bprevious<Cr>", { desc = "previous buffer" })
 --Move lines with alt keys
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line up" })       -- move line up(n)
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line down" })     -- move line down(n)
@@ -12,8 +14,8 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line down" }) --
 wk.register({
     b = {
         name = "Buffer",
-        c = { "<Cmd>bd!<Cr>", "Close current buffer" },
-        n = { "<Cmd>bnext<Cr>", "Next Buffer" },
+        x = { "<Cmd>bd!<Cr>", "Close current buffer" },
+        b = { "<Cmd>bnext<Cr>", "Next Buffer" },
         p = { "<Cmd>bprevious<Cr>", "Previous Buffer" },
         D = { "<Cmd>%bd|e#|bd#<Cr>", "Delete all buffers" },
     }

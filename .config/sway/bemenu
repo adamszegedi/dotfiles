@@ -2,7 +2,7 @@
 ## BEMENU DYNAMIC MENU
 ## VARIABLES
 #################################################################
-set $bemenu_height 18 
+set $bemenu_height 24 
 set $bemenu_icon  
 set $bemenu_lines 5
 set $bemenu_scrollbar_mode autohide
@@ -29,5 +29,5 @@ set $menu j4-dmenu-desktop --no-generic --dmenu='bemenu -i -n \
 --hf "$fg01" \
 --sb "$fg02" \
 --sf "$fg01" \
---fn "Iosevka bold 18"' \
+--fn "Iosevka bold 24"' \
 --term='alacritty'
