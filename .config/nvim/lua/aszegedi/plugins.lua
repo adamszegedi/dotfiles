@@ -40,7 +40,6 @@ return {
         end,
     },
     { 'sainnhe/gruvbox-material' },
-    { 'preservim/nerdcommenter' },
     {
         "nvim-tree/nvim-tree.lua",
         version = "*",
