@@ -59,17 +59,10 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 ## this one saved by butt so many times ##
 alias wget='wget -c'
 
-#eye-saver
-alias nightlight='redshift -P -O 3700'
-alias daylight='redshift -x'
-
-#capture part of screen
-alias screencap='maim -s | xclip -selection clipboard -t image/png'
-
-#FEH
-alias fehb="feh -Tbooth"
-
 #liquidctl
 alias light-off='sudo liquidctl --match V2 set sync color off'
 alias light-ring='sudo liquidctl --match Kraken set ring color fading 8c878e'
 alias light-logo='sudo liquidctl --match Kraken set logo color fading 8c878e'
+
+#weather
+alias wttr='curl wttr.in/47.4143259,19.2005805'

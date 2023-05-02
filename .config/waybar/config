@@ -4,13 +4,13 @@
   "position": "top", 
   "height": 37,
   
-  "modules-left":   ["wlr/workspaces", "wlr/taskbar"],
+  "modules-left":   ["wlr/workspaces"],
   "modules-center": [],
-  "modules-right":  ["tray", "pulseaudio", "network", "clock#date", "clock#time"],
+  "modules-right":  ["tray", "pulseaudio", "network", "clock#time"],
 
   "wlr/taskbar": {
 	"format": "{icon} {app_id}",
-	"icon-size": 14,
+	"icon-size": 18,
 	"icon-theme": "Papirus",
 	"tooltip-format": "{title}",
 	"on-click": "activate",
@@ -36,7 +36,7 @@
       "2": "<span color=\"#EBDBB2\"></span>",
       "3": "<span color=\"#EBDBB2\"></span>",
       "4": "<span color=\"#EBDBB2\"></span>",
-      "5": "<span color=\"#EBDBB2\"></span>",
+      "5": "<span color=\"#EBDBB2\"></span>",
       "6": "<span color=\"#EBDBB2\">󰇚</span>",
       "7": "<span color=\"#EBDBB2\"></span>",
       "8": "<span color=\"#EBDBB2\"></span>",
@@ -54,7 +54,7 @@
 
   "clock#time": {
     "interval": 1,
-    "format": "    {:%H:%M} ",
+    "format": "   {:%H:%M} ",
     "tooltip": false
   },
 
@@ -65,8 +65,8 @@
   },
 
   "network": {
-    "format-wifi": " 直 {essid} ",
-    "format-ethernet": "   {ipaddr} ",
+    "format-wifi": "  {essid} ",
+    "format-ethernet": " {ifname}  ",
     "format-linked": "{ifname} (no ip)  ",
     "format-disconnected": " 睊 disconnected ",
     "tooltip-format-wifi": "signal strenght: {signalstrength}% | down speed: {bandwidthdownbits}, up speed: {bandwidthupbits}"

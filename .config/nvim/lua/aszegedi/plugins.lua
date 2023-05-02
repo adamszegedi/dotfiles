@@ -48,4 +48,5 @@ return {
         },
     },
     { "hrsh7th/cmp-buffer" },
+    { "numToStr/Comment.nvim" }
 }
