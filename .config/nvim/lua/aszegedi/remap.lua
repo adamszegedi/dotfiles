@@ -5,7 +5,6 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "next diagnostic" }
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "previous diagnostic" })
 vim.keymap.set("n", "]b", "<Cmd>bnext<Cr>", { desc = "next buffer" })
 vim.keymap.set("n", "[b", "<Cmd>bprevious<Cr>", { desc = "previous buffer" })
-vim.keymap.set("n", "<c-n>", ":NvimTreeFindFile<CR>", { desc = "nvim-tree: Locate File" })
 --Move lines with alt keys
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line up" })       -- move line up(n)
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line down" })     -- move line down(n)
@@ -23,8 +22,6 @@ wk.register({
     }
 }, { prefix = "<leader>" })
 
--- NvimTree
-wk.register({ e = { "<cmd>NvimTreeToggle<cr>", "NvimTreeToggle" } }, { prefix = "<leader>" })
 
 -- Diagnostic keymaps
 wk.register(

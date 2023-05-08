@@ -1,3 +1,4 @@
+local wk = require("which-key")
 require("nvim-tree").setup()
 
 vim.g.loaded_netrw = 1
@@ -20,3 +21,13 @@ end
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
+-- NvimTree
+wk.register({
+    f = {
+        name = "NvimTree",
+        e = { "<cmd>NvimTreeToggle<cr>", "NvimTreeToggle" },
+        f = { "<cmd>NvimTreeFindFile<cr>", "Locate File" },
+    },
+    prefix = "<leader>"
+}
+)
