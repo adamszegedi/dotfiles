@@ -32,18 +32,18 @@
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "format": "{icon}",
     "format-icons": {
-      "1": "<span color=\"#EBDBB2\"></span>",
-      "2": "<span color=\"#EBDBB2\"></span>",
-      "3": "<span color=\"#EBDBB2\"></span>",
-      "4": "<span color=\"#EBDBB2\"></span>",
-      "5": "<span color=\"#EBDBB2\"></span>",
-      "6": "<span color=\"#EBDBB2\">󰇚</span>",
-      "7": "<span color=\"#EBDBB2\"></span>",
-      "8": "<span color=\"#EBDBB2\"></span>",
-      "9": "<span color=\"#EBDBB2\"></span>",
+      "1": "",
+      "2": "󰖟",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
       "urgent": "",
-      "focused": "",
-      "default": ""
+      "focused": "",
+      "default": ""
     }
   },
 
@@ -99,7 +99,7 @@
       "on": " " // Icon shows only when "consume" is on
     },
     "random-icons": {
-      "off": "<span color=\"#fb4934\"> </span>", // Icon grayed out when "random" is off
+      "off": " ", // Icon grayed out when "random" is off
       "on": " "
     },
     "repeat-icons": {
