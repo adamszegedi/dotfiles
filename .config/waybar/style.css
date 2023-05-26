@@ -1,3 +1,5 @@
+@import "./colors/gruvbox.css";
+
 * {
   border: none;
   border-radius: 0px;
@@ -8,26 +10,22 @@
 
 window#waybar {
   background: transparent;
-  color: #ebdbb2;
+  color: @fontColor;
 }
 
 window#waybar > box {
-    background-color: #32302f;
-   /* background-color: #a89984;*/
+    background-color: @backgroundColorDark;
     border-radius: 6px;
 }
 
 tooltip {
-  background: #282828;
-  border-radius: 10px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #1d2021;
+  background: @backgroundColorDark;
+  color: @fontColor;
 }
 
 #workspaces button {
   padding: 0 1em;
-  color: #ebdbb2;
+  color: @fontColor;
   border-radius: 6px;
   margin-right: 3px;
   margin-left: 3px;
@@ -39,8 +37,8 @@ tooltip {
 
 #workspaces button.active,
 #workspaces button:hover {
-  color: #32302f;
-  background-color: #a89984;
+  color: @backgroundColorDark;
+  background-color: @backgroundColorLight;
 }
 
 #workspaces button.urgent{}
@@ -52,10 +50,10 @@ tooltip {
 #network,
 #tray,
 #workspaces{
-  background: #32302f;
-  color: #ebdbb2;
-  padding-left: 0.6em;
-  padding-right: 0.6em;
+  background: @backgroundColorDark;
+  color: @fontColor;
+  padding-left: 3px;
+  padding-right: 3px;
   margin-right: 1px;
   margin-left: 1px;
   border-radius: 6px;

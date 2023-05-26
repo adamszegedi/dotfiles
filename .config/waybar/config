@@ -18,7 +18,8 @@
 	"ignore-list": [
 	    "Alacritty"
 	],
-	"app_ids-mapping": {}
+	"app_ids-mapping": {
+	}
   },
 
   "wlr/workspaces": {
