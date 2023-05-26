@@ -2,8 +2,7 @@
 
   "layer": "top",
   "position": "top", 
-  "height": 37,
-  
+  "margin": "6 6 0 6", 
   "modules-left":   ["wlr/workspaces"],
   "modules-center": [],
   "modules-right":  ["tray", "pulseaudio", "network", "clock#time"],
@@ -15,21 +14,18 @@
 	"tooltip-format": "{title}",
 	"on-click": "activate",
 	"on-click-middle": "close",
-  "on-click-right": "minimize-raise",
+    "on-click-right": "minimize-raise",
 	"ignore-list": [
 	    "Alacritty"
 	],
-	"app_ids-mapping": {
-	}
+	"app_ids-mapping": {}
   },
 
   "wlr/workspaces": {
-    // "disable-scroll": true,
+    "disable-scroll": true,
     "sort-by-number": true,
     //"all-outputs": true,
     "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
     "format": "{icon}",
     "format-icons": {
       "1": "",
@@ -58,12 +54,6 @@
     "tooltip": false
   },
 
-  "clock#date": {
-    "interval": 10,
-    "format": "    {:%e %b %y} ", // icon: calendar-alt
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-  },
-
   "network": {
     "format-wifi": "  {essid} ",
     "format-ethernet": " {ifname}  ",
@@ -89,34 +79,5 @@
       "default": ["   ", "   ", " 墳 ", "   "]
     }
   },
-
-  "mpd": {
-    "format": " {stateIcon}   {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})    ",
-    "format-disconnected": " Disconnected  ",
-    "format-stopped": " Stopped  ",
-    "interval": 2,
-    "consume-icons": {
-      "on": " " // Icon shows only when "consume" is on
-    },
-    "random-icons": {
-      "off": " ", // Icon grayed out when "random" is off
-      "on": " "
-    },
-    "repeat-icons": {
-      "on": " "
-    },
-    "single-icons": {
-      "on": "1 "
-    },
-    "state-icons": {
-      "paused": "",
-      "playing": ""
-    },
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous",
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)"
-  }
 }
 

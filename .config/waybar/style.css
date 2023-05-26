@@ -4,12 +4,17 @@
   font-family: Roboto, RobotoMono Nerd Font;
   font-weight: bold;
   font-size: 18px;
-  min-height: 0;
 }
 
 window#waybar {
-  background: #1d2021;
+  background: transparent;
   color: #ebdbb2;
+}
+
+window#waybar > box {
+    background-color: #32302f;
+   /* background-color: #a89984;*/
+    border-radius: 6px;
 }
 
 tooltip {
@@ -24,57 +29,35 @@ tooltip {
   padding: 0 1em;
   color: #ebdbb2;
   border-radius: 6px;
-  margin-right: 4px;
-  margin-left: 4px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin-right: 3px;
+  margin-left: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  transition: background-color 0.5s ease-in;
+  transition: color 0.5s ease-out;
 }
 
-#workspaces button.active {
-  color: #ebdbb2;
-  background: #4e635b;
-}
-
-#workspaces button.focused {
-  color: #ebdbb2;
-  background: #4e635b;
-}
-
-#workspaces button.urgent {
-  color: #1d2021;
-  background: #fb4934;
-}
-
+#workspaces button.active,
 #workspaces button:hover {
-  background: #4e635b;
-  color: #ebdbb2;
+  color: #32302f;
+  background-color: #a89984;
 }
+
+#workspaces button.urgent{}
+#workspaces button.hidden{}
 
 #date,
 #clock,
 #pulseaudio,
 #network,
+#tray,
 #workspaces{
   background: #32302f;
-  padding: 0 0.6em;
-  margin-right: 4px;
-  margin-left: 4px;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  color: #ebdbb2;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+  margin-right: 1px;
+  margin-left: 1px;
   border-radius: 6px;
 }
 
-#network {
-  color: #ebdbb2;
-  margin-right: 6px;
-}
-
-#pulseaudio {
-  margin-right: 6px;
-  color: #ebdbb2;
-}
-
-#clock {
-  color: #ebdbb2;
-  margin-right: 6px;
-}
