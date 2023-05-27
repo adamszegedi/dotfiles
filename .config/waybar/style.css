@@ -21,6 +21,7 @@ window#waybar > box {
 tooltip {
   background: @backgroundColorDark;
   color: @fontColor;
+  border-radius: 6px;
 }
 
 #workspaces button {
@@ -35,9 +36,8 @@ tooltip {
   transition: color 0.5s ease-out;
 }
 
-#workspaces button.active,
-#workspaces button:hover {
-  color: @backgroundColorDark;
+#workspaces button.active {
+  color: @fontColor;
   background-color: @backgroundColorLight;
 }
 
