@@ -21,8 +21,5 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-eval "$(fnm env --use-on-cd)"
 eval "$(starship init bash)"
 . "$HOME/.cargo/env"

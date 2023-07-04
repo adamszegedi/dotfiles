@@ -7,21 +7,6 @@
   "modules-center": [],
   "modules-right":  ["tray", "pulseaudio", "network", "clock#time"],
 
-  "wlr/taskbar": {
-	"format": "{icon} {app_id}",
-	"icon-size": 18,
-	"icon-theme": "Papirus",
-	"tooltip-format": "{title}",
-	"on-click": "activate",
-	"on-click-middle": "close",
-    "on-click-right": "minimize-raise",
-	"ignore-list": [
-	    "Alacritty"
-	],
-	"app_ids-mapping": {
-	}
-  },
-
   "wlr/workspaces": {
     "disable-scroll": true,
     "sort-by-number": true,
@@ -45,7 +30,7 @@
   },
 
   "tray": {
-    "icon-size": 14,
+    "icon-size": 18,
     "spacing": 10
   },
 

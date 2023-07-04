@@ -5,7 +5,7 @@
   border-radius: 0px;
   font-family: Roboto, RobotoMono Nerd Font;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 21px;
 }
 
 window#waybar {
@@ -37,6 +37,11 @@ tooltip {
 }
 
 #workspaces button.active {
+  color: @fontColor;
+  background-color: @backgroundColorLight;
+}
+
+#workspaces button.focused {
   color: @fontColor;
   background-color: @backgroundColorLight;
 }
