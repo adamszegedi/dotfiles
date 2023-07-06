@@ -2,7 +2,7 @@
 
   "layer": "top",
   "position": "top", 
-  "margin": "6 6 0 6", 
+  "margin": "0 0 0 0", 
   "modules-left":   ["wlr/workspaces"],
   "modules-center": [],
   "modules-right":  ["tray", "pulseaudio", "network", "clock#time"],

@@ -1,66 +1,70 @@
 @import "./colors/gruvbox.css";
 
 * {
-  border: none;
-  border-radius: 0px;
-  font-family: Roboto, RobotoMono Nerd Font;
-  font-weight: bold;
-  font-size: 21px;
+    border: none;
+    border-radius: 0em;
+    font-family: Iosevka, FontAwesome, Noto Sans CJK;
+    font-size: 21px;
+    color: @fg;
+}
+
+button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: inherit;
 }
 
 window#waybar {
-  background: transparent;
-  color: @fontColor;
+    background: @bg;
 }
 
-window#waybar > box {
-    background-color: @backgroundColorDark;
-    border-radius: 6px;
-}
-
-tooltip {
-  background: @backgroundColorDark;
-  color: @fontColor;
-  border-radius: 6px;
+#workspaces {
+	background: @bg2;
+    padding: 0em 1em 0em 0.5em;
+    border-radius: 0em 0em 1em 0em;
 }
 
 #workspaces button {
-  padding: 0 1em;
-  color: @fontColor;
-  border-radius: 6px;
-  margin-right: 3px;
-  margin-left: 3px;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  transition: background-color 0.5s ease-in;
-  transition: color 0.5s ease-out;
+    padding: 0em 1em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
 }
 
 #workspaces button.active {
-  color: @fontColor;
-  background-color: @backgroundColorLight;
+    background-color: @bg;
+    border-radius: 0.33em;
 }
 
-#workspaces button.focused {
-  color: @fontColor;
-  background-color: @backgroundColorLight;
+#tray {
+    background: @bg2;
+    margin: 0em 1em;
+    border-radius: 0.33rem;
+    padding: 0em 0.5em;
 }
 
-#workspaces button.urgent{}
-#workspaces button.hidden{}
+#clock {
+    background-color: @bg2;
+    border-radius: 0em 0em 0em 1em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    margin-left: 1em;
+    font-weight: bold;
+}
 
-#date,
-#clock,
-#pulseaudio,
-#network,
-#tray,
-#workspaces{
-  background: @backgroundColorDark;
-  color: @fontColor;
-  padding-left: 3px;
-  padding-right: 3px;
-  margin-right: 1px;
-  margin-left: 1px;
-  border-radius: 6px;
+#network {
+    border-radius: 0.33em;
+    margin-right: 0.25em;
+}
+
+#pulseaudio {
+    border-radius: 0.33em;
+    margin-left: 0em;
+    padding-right: 0.5em;
+}
+
+#pulseaudio.muted {
+    background: @bg2;
+    color: @fg4;
+    border-radius: 0.33em;
 }
 
