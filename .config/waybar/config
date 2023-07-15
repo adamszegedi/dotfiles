@@ -3,11 +3,11 @@
   "layer": "top",
   "position": "top", 
   "margin": "0 0 0 0", 
-  "modules-left":   ["wlr/workspaces"],
+  "modules-left":   ["sway/workspaces"],
   "modules-center": [],
   "modules-right":  ["tray", "pulseaudio", "network", "clock#time"],
 
-  "wlr/workspaces": {
+  "sway/workspaces": {
     "disable-scroll": true,
     "sort-by-number": true,
     //"all-outputs": true,
@@ -23,8 +23,6 @@
       "7": "",
       "8": "",
       "9": "",
-      "urgent": "",
-      "focused": "",
       "default": ""
     }
   },

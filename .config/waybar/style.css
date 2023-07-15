@@ -3,7 +3,7 @@
 * {
     border: none;
     border-radius: 0em;
-    font-family: Iosevka, FontAwesome, Noto Sans CJK;
+    font-family: FiraCode Nerd Font Ret, FontAwesome, Noto Sans CJK;
     font-size: 21px;
     color: @fg;
 }
@@ -30,7 +30,8 @@ window#waybar {
     margin-bottom: 0.2em;
 }
 
-#workspaces button.active {
+#workspaces button.active,
+#workspaces button.focused {
     background-color: @bg;
     border-radius: 0.33em;
 }

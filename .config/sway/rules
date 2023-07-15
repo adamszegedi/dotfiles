@@ -27,16 +27,26 @@ for_window [title="Save Image" floating] resize set width 50 ppt height 80 ppt
 for_window [title="Firefox Developer Edition — Sharing Indicator"] floating enable, sticky enable
 for_window [title="Firefox — Sharing Indicator"] floating enable, sticky enable
 for_window [app_id="firefox" title="^Picture-in-Picture$"] floating enable, move position 0 0, sticky enable, border none,
-# -- MOVE APPS TO SPECIFIC WS
+
+# -- Move apps to specific workspaces
+# -------------------------------------------------------------------------------------------------
 for_window [app_id="Alacritty"] move to workspace 1, focus
+for_window [app_id="Kitty"] move to workspace 1, focus
 for_window [class="discord"] move to workspace 5
 for_window [app_id="firefox"] move to workspace 2, focus
-for_window [app_id="wlfreerdp"] move to workspace 9
-
+for_window [app_id="org.remmina.Remmina"] move to workspace 9
+# -- Battlenet
+for_window [class="explorer.exe"] move to workspace 7, focus
+for_window [class="battle.net.exe"] move to workspace 7, focus
+# -- Steam
+for_window [class="steam"] move to workspace 7, focus
 #################################################################
 # --------------------- WORKSPACE SETTINGS -------------------- #
 #################################################################
-workspace 5 output HDMI-A-1
+workspace 1 output DP-3
 workspace 2 output DP-3
+workspace 5 output HDMI-A-1
 workspace 6 output DP-3
+workspace 8 output HDMI-A-1
+workspace 9 output DP-3
 

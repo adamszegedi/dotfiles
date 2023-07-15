@@ -13,7 +13,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 set $menu fuzzel
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -87,4 +87,5 @@ include /etc/sway/config.d/*
 # ------------------------ AUTOSTART ------------------------ #
 #################################################################
 exec gammastep
+exec discord
 exec flatpak run org.mozilla.firefox
