@@ -31,8 +31,9 @@ for_window [app_id="firefox" title="^Picture-in-Picture$"] floating enable, move
 # -- Move apps to specific workspaces
 # -------------------------------------------------------------------------------------------------
 for_window [app_id="Alacritty"] move to workspace 1, focus
-for_window [app_id="Kitty"] move to workspace 1, focus
+for_window [app_id="kitty"] move to workspace 1, focus
 for_window [class="discord"] move to workspace 5
+for_window [app_id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default"] move to workspace 5
 for_window [app_id="firefox"] move to workspace 2, focus
 for_window [app_id="org.remmina.Remmina"] move to workspace 9
 # -- Battlenet

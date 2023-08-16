@@ -3,16 +3,14 @@
   "layer": "top",
   "position": "top", 
   "margin": "0 0 0 0", 
-  "modules-left":   ["sway/workspaces"],
+  "output": "DP-3",
+  "modules-left":   ["hyprland/workspaces"],
   "modules-center": [],
   "modules-right":  ["tray", "pulseaudio", "network", "clock#time"],
 
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "sort-by-number": true,
-    //"all-outputs": true,
-    "on-click": "activate",
+  "hyprland/workspaces": {
     "format": "{icon}",
+    "on-click": "activate",
     "format-icons": {
       "1": "",
       "2": "󰖟",
@@ -42,7 +40,7 @@
     "format-wifi": "  {essid} ",
     "format-ethernet": " {ifname}  ",
     "format-linked": "{ifname} (no ip)  ",
-    "format-disconnected": " 睊 disconnected ",
+    "format-disconnected": " 󰈂 disconnected ",
     "tooltip-format-wifi": "signal strenght: {signalstrength}% | down speed: {bandwidthdownbits}, up speed: {bandwidthupbits}"
   },
 
@@ -60,7 +58,7 @@
       "phone": "   ",
       "portable": "   ",
       "car": "    ",
-      "default": ["   ", "   ", " 墳 ", "   "]
+      "default": ["   ", "   ", " 󰕾 ", "   "]
     }
   },
 }

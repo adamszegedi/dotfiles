@@ -20,6 +20,15 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-export PATH="$HOME/.pyenv/bin:$PATH"
+# fnm
+export PATH="/home/aszegedi/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# setup shell
 eval "$(starship init bash)"
-. "$HOME/.cargo/env"
+# PS1='󰣇 \u@\h  \W [$(git branch 2>/dev/null | grep '"'"'*'"'"' | colrm 1 2)] $?\n> '

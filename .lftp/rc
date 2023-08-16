@@ -1,1 +1,2 @@
 set ssl:verify-certificate/C2:B3:2B:B8:6D:30:AE:2D:67:B5:C8:1C:6A:7B:2B:69:5E:76:19:5E no
+set ssl:verify-certificate/E7:9B:A1:38:C9:6D:B2:A5:82:76:D8:62:E4:5E:7D:59:9D:DF:CA:DD no
