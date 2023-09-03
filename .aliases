@@ -63,4 +63,4 @@ alias wget='wget -c'
 alias wttr='curl wttr.in/47.4143259,19.2005805'
 
 #mount nas nfs share
-alias nessy-share='sudo mount.nfs nessy.local:/Multimedia /mnt/share/'
+alias nessy-share='sudo mount.nfs nessy.local:/Multimedia /media/nessy'

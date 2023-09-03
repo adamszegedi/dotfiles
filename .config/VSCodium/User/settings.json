@@ -76,8 +76,8 @@
     "[scss]": {
         "editor.defaultFormatter": "vscode.css-language-features"
     },
-    "window.zoomLevel": 2,
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "window.zoomLevel": 4,
+    "workbench.colorTheme": "Gruvbox Material Dark",
     "explorer.confirmDelete": false,
     "colorize.include": [
 

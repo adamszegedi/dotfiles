@@ -1,0 +1,10 @@
+#################################################################
+# ------------------------ AUTOSTART ------------------------ #
+#################################################################
+exec gammastep
+workspace 1
+exec kitty
+# discord
+exec gtk-launch chrome-magkoliahgffibhgfkmoealggombgknl-Default.desktop
+workspace 2
+exec flatpak run org.mozilla.firefox

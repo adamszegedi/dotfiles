@@ -28,10 +28,11 @@ include rules
 #
 # Example configuration:
 #
-# exec swayidle -w \
-# 	timeout 3 'swaylock' \
-# 	timeout 6 'swaymsg "output * dpms off"' \
-# 		resume 'swaymsg "output * dpms on"' \
+ exec swayidle -w \
+ 	timeout 300 'swaylock -f' \
+ 	timeout 330 'swaymsg "output * dpms off"' \
+	resume 'swaymsg "output * dpms on"' \
+
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -69,7 +70,7 @@ bar {
 # ------------------------ UI SETTINGS ------------------------ #
 #################################################################
 
-gaps outer 6
+# gaps outer 6
 gaps inner 6
 smart_gaps on
 smart_borders on
@@ -84,13 +85,5 @@ client.focused_inactive  $bg01    $bg01  $fg01  $bg02       $bg02
 client.unfocused         $bg01    $bg01  $fg02  $bg01      $bg01
 client.urgent            $bg02    $bg02  $fg01  $red        $red
 
+include autostart
 include /etc/sway/config.d/*
-
-
-#################################################################
-# ------------------------ AUTOSTART ------------------------ #
-#################################################################
-exec gammastep
-exec discord
-exec flatpak run org.mozilla.firefox
-exec kitty
