@@ -6,24 +6,33 @@
   "output": "DP-3",
   "modules-left":   ["sway/workspaces"],
   "modules-center": [],
-  "modules-right":  ["tray", "pulseaudio", "network", "clock#time"],
+  "modules-right":  ["custom/scratchpad-indicator", "tray", "pulseaudio", "network", "clock#time"],
 
   "sway/workspaces": {
     "format": "{icon}",
     "all-outputs": true,
     "on-click": "activate",
     "format-icons": {
-      "1": "",
-      "2": "󰖟",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
-      "7": "",
-      "8": "",
-      "9": "",
+      "1": "  ",
+      "2": " 󰖟 ",
+      "3": "  ",
+      "4": "  ",
+      "5": "  ",
+      "6": "  ",
+      "7": "  ",
+      "8": "  ",
+      "9": "  ",
       "default": ""
     }
+  },
+
+  "custom/scratchpad-indicator": {
+    "interval": 10,
+    "return-type": "json",
+    "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(recurse(.nodes[]) | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | if ($scratch_nodes|length) > 0 then { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") } else empty end'",
+    "format": "{}  ",
+    "on-click": "exec swaymsg 'scratchpad show'",
+    "on-click-right": "exec swaymsg 'move scratchpad'"
   },
 
   "tray": {

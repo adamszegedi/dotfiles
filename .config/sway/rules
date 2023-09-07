@@ -39,6 +39,8 @@ for_window [class="explorer.exe"] move to workspace 7, focus
 for_window [class="battle.net.exe"] move to workspace 7, focus
 # -- Steam
 for_window [class="steam"] move to workspace 7
+# -- Bottles
+for_window [app_id="com.usebottles.bottles"] move to workspace 7
 # -- rtrorrent
 for_window [title="rtorrent" app_id="kitty"] move to workspace 6
 # -- midnight commander
