@@ -11,7 +11,10 @@
     # Start your launcher
     bindsym $mod+d exec $menu
     bindsym $mod+Alt+l exec swaylock
-
+    
+    # Notifications
+    bindsym Alt+space exec makoctl dismiss
+    bindsym Shift+Alt+space exec makoctl dismiss --all
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.

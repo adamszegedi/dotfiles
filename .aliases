@@ -1,9 +1,9 @@
 #File Management
 alias space='sudo btrfs fi show'
-alias ls='exa -al --color=always --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias ls='eza --icons -ahl --color=always --group-directories-first' # my preferred listing
+alias la='eza --icons -ah --color=always --group-directories-first'  # all files and dirs
+alias ll='eza --icons -lh --color=always --group-directories-first'  # long format
+alias lt='eza --icons -ahT --color=always --group-directories-first' # tree listing
 
 #Terminal
 alias c='clear' 
@@ -64,3 +64,6 @@ alias wttr='curl wttr.in/47.4143259,19.2005805'
 
 #mount nas nfs share
 alias nessy-share='sudo mount.nfs nessy.local:/Multimedia /media/nessy'
+
+# open lynx
+alias lynx='lynx -cfg=~/.config/lynx/lynx.cfg --display_charset=utf-8'
