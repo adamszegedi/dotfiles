@@ -3,6 +3,6 @@ Encoding=UTF-8
 Version=1.0
 Type=Application
 Terminal=false
-Exec=kitty rtorrent
+Exec=foot --title=rtorrent rtorrent
 Name=rtorrent
 Icon=torrents

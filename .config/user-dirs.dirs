@@ -1,4 +1,0 @@
-XDG_DOWNLOAD_DIR="$HOME/download"
-XDG_DOCUMENTS_DIR="$HOME/documents"
-XDG_PICTURES_DIR="$HOME/pictures"
-XDG_VIDEOS_DIR="$HOME/movies"

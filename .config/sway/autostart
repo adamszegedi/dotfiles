@@ -3,7 +3,7 @@
 #################################################################
 exec gammastep
 workspace 1
-exec kitty
+exec foot 
 # discord
 exec gtk-launch chrome-magkoliahgffibhgfkmoealggombgknl-Default.desktop
 workspace 2

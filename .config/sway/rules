@@ -13,6 +13,7 @@ for_window [window_type="dialog"]          floating enable
 
 for_window [app_id="gcolor3"] floating enable
 for_window [app_id="imv"] floating enable
+for_window [app_id="nwg-look"] floating enable, resize set width 60 ppt height 50 ppt
 
 for_window [app_id="pavucontrol"] floating enable, sticky enable, move position cursor, move down 35
 
@@ -42,9 +43,9 @@ for_window [class="steam"] move to workspace 7
 # -- Bottles
 for_window [app_id="com.usebottles.bottles"] move to workspace 7
 # -- rtrorrent
-for_window [title="rtorrent" app_id="kitty"] move to workspace 6
+for_window [title="rtorrent" app_id="foot"] move to workspace 6
 # -- midnight commander
-for_window [title="^mc" app_id="kitty"] move to workspace 4, focus
+for_window [title="^mc" app_id="foot"] move to workspace 4, focus
 # -- thunar
 for_window [app_id="thunar"] move to workspace 4, focus
 # -- heroic game launcher
