@@ -8,6 +8,9 @@ alias lt='eza --icons -ahT --color=always --group-directories-first' # tree list
 #Terminal
 alias c='clear' 
 
+#Cat
+alias cat='bat'
+
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
 
