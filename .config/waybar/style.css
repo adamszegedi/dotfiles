@@ -1,0 +1,37 @@
+@import "./colors/onedark.css";
+
+* {
+    all: unset;
+    font-family: DejaVu Sans Mono;
+    background-color: @bg;
+}
+
+window#waybar {
+    font-size: 20px;
+    color: @fg;
+}
+
+#workspaces {
+    margin-left: 1em;
+}
+
+#workspaces button {
+    margin: 0.25em 1em 0.25em 0em;
+    color: @fg;
+}
+
+#workspaces button.active {
+    color: @focused; 
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#custom-scratchpad_indicator, #pulseaudio, #network,
+#clock, #memory, #tray {
+    margin-right: 1em;
+}
+
+#pulseaudio.muted {}
+

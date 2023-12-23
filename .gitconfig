@@ -1,0 +1,20 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[core]
+	excludesfile = /home/aszegedi/.gitignore
+	editor = nvim 
+	autocrlf = false
+[user]
+	email = mail@adamszegedi.eu
+	name = adamszegedi
+	signingkey = F5B64437C9203CFF4C44ECFA418E38EB5CDF9F0E
+[commit]
+	gpgsign = true
+[pull]
+	ff = only
+[push]
+    autoSetupRemote = true

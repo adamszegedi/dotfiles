@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Youtube
+Comment=Open Youtube inside firefox
+Exec=flatpak run org.mozilla.firefox --new-window youtube.com
+Icon=xine
+MimeType=inode/directory
+Terminal=false
+Categories=Utility;
