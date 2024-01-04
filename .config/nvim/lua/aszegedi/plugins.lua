@@ -1,51 +1,12 @@
 return {
     {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
-        lazy = true,
-        config = false,
-    },
-    {
-        'neovim/nvim-lspconfig',
-        dependencies = {
-            { 'hrsh7th/cmp-nvim-lsp' },
-        }
-    },
-    -- Autocompletion
-    {
-        'hrsh7th/nvim-cmp',
-        dependencies = {
-            { 'L3MON4D3/LuaSnip' }
-        },
-    },
-    { 'williamboman/mason.nvim' },
-    { 'williamboman/mason-lspconfig.nvim' },
-    { 'simrat39/rust-tools.nvim' },
-    {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.5',
-        dependencies = { 'nvim-lua/plenary.nvim' }
-    },
-    {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
-    { 'akinsho/bufferline.nvim', version = "*", 
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-    },
     {
-        "folke/which-key.nvim",
-        config = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-            require("which-key").setup {
-                icons = {
-                    breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
-                    separator = "»", -- symbol used between a key and it's label
-                    group = "+", -- symbol prepended to a group
-                },
-            }
-        end,
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
     {
         "nvim-tree/nvim-tree.lua",
@@ -54,11 +15,87 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
     },
-    { 'navarasu/onedark.nvim' },
+    -- NOTE: This is where your plugins related to LSP can be installed.
+    --  The configuration is done below. Search for lspconfig to find it below.
     {
-      "folke/tokyonight.nvim",
-       lazy = false,
-       priority = 1000,
-       opts = {},
+        -- LSP Configuration & Plugins
+        'neovim/nvim-lspconfig',
+        dependencies = {
+            -- Automatically install LSPs to stdpath for neovim
+            { 'williamboman/mason.nvim', config = true },
+            'williamboman/mason-lspconfig.nvim',
+
+            -- Useful status updates for LSP
+            -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+            { 'j-hui/fidget.nvim',       opts = {} },
+
+            -- Additional lua configuration, makes nvim stuff amazing!
+            'folke/neodev.nvim',
+        },
     },
+
+    {
+        -- Autocompletion
+        'hrsh7th/nvim-cmp',
+        dependencies = {
+            -- Snippet Engine & its associated nvim-cmp source
+            'L3MON4D3/LuaSnip',
+            'saadparwaiz1/cmp_luasnip',
+
+            -- Adds LSP completion capabilities
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-path',
+
+            -- Adds a number of user-friendly snippets
+            'rafamadriz/friendly-snippets',
+        },
+    },
+
+    -- Useful plugin to show you pending keybinds.
+    { 'folke/which-key.nvim',  opts = {} },
+
+
+    {
+        -- Add indentation guides even on blank lines
+        'lukas-reineke/indent-blankline.nvim',
+        -- Enable `lukas-reineke/indent-blankline.nvim`
+        -- See `:help ibl`
+        main = 'ibl',
+        opts = {},
+    },
+
+    -- "gc" to comment visual regions/lines
+    { 'numToStr/Comment.nvim', opts = {} },
+
+    -- Fuzzy Finder (files, lsp, etc)
+    {
+        'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            -- Fuzzy Finder Algorithm which requires local dependencies to be built.
+            -- Only load if `make` is available. Make sure you have the system
+            -- requirements installed.
+            {
+                'nvim-telescope/telescope-fzf-native.nvim',
+                -- NOTE: If you are having trouble with this installation,
+                --       refer to the README for telescope-fzf-native for more instructions.
+                build = 'make',
+                cond = function()
+                    return vim.fn.executable 'make' == 1
+                end,
+            },
+        },
+    },
+
+    {
+        -- Highlight, edit, and navigate code
+        'nvim-treesitter/nvim-treesitter',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-textobjects',
+        },
+        build = ':TSUpdate',
+    },
+
+    { 'navarasu/onedark.nvim' },
 }

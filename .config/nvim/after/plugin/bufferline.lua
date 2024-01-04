@@ -17,5 +17,4 @@ require("bufferline").setup({
             }
         }
     },
-    highlights = highlights
 })
