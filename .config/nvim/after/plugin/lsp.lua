@@ -10,15 +10,11 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 require('mason').setup({})
-local rust_tools = require('rust-tools')
 
 require('mason-lspconfig').setup({
     ensure_installed = { 'tsserver', 'rust_analyzer' },
     handlers = {
         lsp_zero.default_setup,
-        rust_analyzer = function()
-            rust_tools.setup()
-        end,
     }
 })
 
