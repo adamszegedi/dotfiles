@@ -7,16 +7,16 @@ telescope.setup {
 }
 
 wk.register({
-        s= {
-            name = "[S]earch",
-            f = { builtin.find_files, "[F]ile" },
-            p = { builtin.git_files, "[P]roject File" },
-            g = { builtin.live_grep, "Live [Grep]" },
+        s = {
             b = { builtin.buffers, "[B]uffers" },
+            c = { builtin.commands, "[C]ommands" },
+            f = { builtin.find_files, "[F]ile" },
+            g = { builtin.live_grep, "Live [G]rep" },
+            k = { builtin.keymaps, "[K]eymaps" },
             h = { builtin.help_tags, "[H]elp" },
-            w = { builtin.grep_string, "Current [W]ord" },
-            d = { builtin.diagnostics, "[D]iagnostics" },
+            p = { builtin.git_files, "[P]roject File" },
             r = { builtin.oldfiles, "[R]ecent files" },
+            w = { builtin.grep_string, "Current [W]ord" },
         }
     },
     { prefix = "<leader>" }

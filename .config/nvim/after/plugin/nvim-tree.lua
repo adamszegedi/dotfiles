@@ -24,9 +24,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 -- NvimTree
 wk.register({
     t = {
-        name = "Nvim[T]ree",
-        t = { "<cmd>NvimTreeToggle<cr>", "[T]oggle" },
-        f = { "<cmd>NvimTreeFindFile<cr>", "Locate [F]ile" },
+        t = { "<cmd>NvimTreeToggle<cr>", "[T]ree" },
     },
     prefix = "<leader>"
 }
