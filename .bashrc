@@ -5,6 +5,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+    exec Hyprland
+fi
+
+set -o vi
+export EDITOR=/usr/bin/nvim
+
 #Environment variables
 GPG_TTY=$(tty)
 export GPG_TTY
