@@ -1,0 +1,9 @@
+#################################################################
+# ------------------------ AUTOSTART ------------------------ #
+#################################################################
+exec gammastep
+exec tmux new -d -s rtorrent rtorrent
+workspace 1
+exec alacritty 
+workspace 2
+exec flatpak run org.mozilla.firefox

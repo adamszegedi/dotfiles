@@ -1,0 +1,70 @@
+################################################################
+# ---------------------- WINDOW SETTINGS ---------------------- #
+#################################################################
+# -- FLOATING WINDOW SETTINGS
+
+# Floating windows
+# -------------------------------------------------------------------------------------------------
+for_window [window_role="app"]             floating enable
+for_window [window_role="pop-up"]          floating enable
+for_window [window_role="task_dialog"]     floating enable
+for_window [window_type="menu"]            floating enable
+for_window [window_type="dialog"]          floating enable
+
+for_window [app_id="imv"] floating enable
+for_window [app_id="nwg-look"] floating enable, resize set width 60 ppt height 50 ppt
+
+for_window [app_id="pavucontrol"] floating enable, sticky enable, move position cursor, move down 35
+
+for_window [app_id="xdg-desktop-portal-gtk" title="Choose Files"] floating enable, resize set width 50 ppt height 80 ppt
+for_window [title="File Upload" floating] resize set width 50 ppt height 80 ppt
+for_window [title="Open File" floating] resize set width 50 ppt height 80 ppt
+for_window [title="Enter name of file to save to…" floating] resize set width 50 ppt height 80 ppt
+for_window [title="Save As" floating] resize set width 50 ppt height 80 ppt
+for_window [title="Save Image" floating] resize set width 50 ppt height 80 ppt
+
+#Firefox
+for_window [title="Firefox Developer Edition — Sharing Indicator"] floating enable, sticky enable
+for_window [title="Firefox — Sharing Indicator"] floating enable, sticky enable
+for_window [app_id="firefox" title="^Picture-in-Picture$"] floating enable, move position 0 0, sticky enable, border none,
+for_window [app_id="firefox"] inhibit_idle fullscreen
+for_window [app_id="^firefox$" title="^Extension: \(Bitwarden - Free Password Manager\) - Bitwarden — Mozilla Firefox$"] floating enable
+
+# -- Move apps to specific workspaces
+# -------------------------------------------------------------------------------------------------
+# Discord
+for_window [class="discord"] move to workspace 5
+# Teams
+for_window [app_id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default"] move to workspace 5
+# Remote desktop app
+for_window [app_id="org.remmina.Remmina"] move to workspace 9, focus
+# -- Battlenet
+for_window [class="explorer.exe"] move to workspace 7, focus
+for_window [class="battle.net.exe"] move to workspace 7, focus
+# -- Steam
+for_window [class="steam"] move to workspace 7
+# -- Lutris
+for_window [app_id="lutris"] move to workspace 7
+# -- Bottles
+for_window [app_id="com.usebottles.bottles"] move to workspace 7
+# -- rtrorrent
+for_window [title="rtorrent" app_id="Alacritty"] move to workspace 6
+# -- midnight commander
+for_window [title="^mc" app_id="Alacritty"] move to workspace 4, focus
+# -- youtube
+for_window [app_id="firefox" title="YouTube"] move to workspace 8, focus
+# -- mpv
+for_window [app_id="mpv"] move to workspace 8, focus
+#################################################################
+# --------------------- WORKSPACE SETTINGS -------------------- #
+#################################################################
+workspace 1 output DP-3
+workspace 2 output DP-3
+workspace 3 output DP-3
+workspace 4 output DP-3
+workspace 5 output HDMI-A-1
+workspace 6 output HDMI-A-1
+workspace 7 output DP-3
+workspace 8 output HDMI-A-1
+workspace 9 output DP-3
+

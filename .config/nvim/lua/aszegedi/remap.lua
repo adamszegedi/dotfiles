@@ -7,3 +7,12 @@ vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line up" })       --
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line down" })     -- move line down(n)
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move line up" })   -- move line up(v)
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line down" }) -- move line down(v)
+
+wk.register({
+    b = {
+        name = "[B]uffer",
+        c = { "<Cmd>bd!|bnext<Cr>", "[C]lose current buffer" },
+        d = { "<Cmd>%bd|e#|bd#<Cr>", "[D]elete all buffers" },
+        n = { "<Cmd>enew<Cr>", "[N]ew buffer" },
+    }
+}, { prefix = "<leader>" })

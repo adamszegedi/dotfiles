@@ -1,0 +1,12 @@
+##############
+#  SWAYLOCK  #
+##############
+image=/home/aszegedi/Pictures/goku-kaioken-kamehameha.jpeg
+ignore-empty-password
+
+# Sets the indicator radius (default: 50)
+indicator-radius=160
+
+# Sets the indicator thickness (default: 10)
+indicator-thickness=30
+
