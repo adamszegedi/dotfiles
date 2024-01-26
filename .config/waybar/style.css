@@ -3,10 +3,10 @@
 * {
     all: unset;
     font-family: DejaVu Sans Mono;
-    background-color: @bg;
 }
 
 window#waybar {
+    background-color: @bg;
     font-size: 20px;
     color: @fg;
 }
@@ -20,7 +20,7 @@ window#waybar {
     color: @fg;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
     color: @focused; 
 }
 
@@ -29,7 +29,7 @@ window#waybar {
 }
 
 #custom-scratchpad_indicator, #pulseaudio, #network,
-#clock, #memory, #tray {
+#clock, #memory, #tray, #idle_inhibitor {
     margin-right: 1em;
 }
 

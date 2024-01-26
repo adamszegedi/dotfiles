@@ -35,7 +35,7 @@ for_window [app_id="^firefox$" title="^Extension: \(Bitwarden - Free Password Ma
 # Discord
 for_window [class="discord"] move to workspace 5
 # Teams
-for_window [app_id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default"] move to workspace 5
+for_window [app_id="msedge-_cifhbcnohmdccbgoicgdjpfamggdegmo-Default"] move to workspace 5
 # Remote desktop app
 for_window [app_id="org.remmina.Remmina"] move to workspace 9, focus
 # -- Battlenet

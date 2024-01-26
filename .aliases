@@ -1,15 +1,15 @@
 #File Management
 alias space='sudo btrfs fi show'
-alias ls='eza --icons -ahl --color=always --group-directories-first' # my preferred listing
-alias la='eza --icons -ah --color=always --group-directories-first'  # all files and dirs
-alias ll='eza --icons -lh --color=always --group-directories-first'  # long format
-alias lt='eza --icons -ahT --color=always --group-directories-first' # tree listing
+alias ls='eza --icons -ahlg --color=always --group-directories-first' # my preferred listing
+alias la='eza --icons -ahg --color=always --group-directories-first'  # all files and dirs
+alias ll='eza --icons -lhg --color=always --group-directories-first'  # long format
+alias lt='eza --icons -ahTg --color=always --group-directories-first' # tree listing
 
 #Terminal
 alias c='clear' 
 
 # Sync to Drive
-alias sync-to-drive='rclone sync -P Documents gdrive:magan/arch/Documents && rclone sync -P ~/Pictures gdrive:magan/arch/Pictures'
+alias sync-to-drive='cd ~ && rclone sync -P Documents gdrive:magan/arch/Documents && rclone sync -P ~/Pictures gdrive:magan/arch/Pictures'
 
 #Cat
 alias cat='bat'
