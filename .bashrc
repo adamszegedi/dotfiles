@@ -24,16 +24,8 @@ if [ -d "$HOME/.local/bin" ]; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [ -d "$HOME/.cargo/bin" ] ; then
-    PATH="$HOME/.cargo/bin:$PATH"
-fi
-
-
 # setup shell
 eval "$(starship init bash)"
 
-# fnm
-export PATH="/home/aszegedi/.local/share/fnm:$PATH"
-eval "$(fnm env --use-on-cd)"
-eval "$(fnm completions --shell bash)"
-. "$HOME/.cargo/env"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

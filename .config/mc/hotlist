@@ -1,2 +1,3 @@
-ENTRY "/media/nessy" URL "/media/nessy"
 ENTRY "/home/aszegedi" URL "/home/aszegedi"
+ENTRY "nessy/media" URL "/media/nessy/media"
+ENTRY "nessy/download" URL "/media/nessy/download"
