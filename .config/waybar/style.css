@@ -1,7 +1,6 @@
 @import "./colors/onedark.css";
 
 * {
-    all: unset;
     font-family: DejaVu Sans Mono;
 }
 
@@ -16,6 +15,7 @@ window#waybar {
 }
 
 #workspaces button {
+    padding: 0px;
     margin: 0.25em 1em 0.25em 0em;
     color: @fg;
 }
@@ -31,6 +31,10 @@ window#waybar {
 #custom-scratchpad_indicator, #pulseaudio, #network,
 #clock, #memory, #tray, #idle_inhibitor {
     margin-right: 1em;
+}
+
+#tray menu {
+   background-color: @bg;
 }
 
 #pulseaudio.muted {}
