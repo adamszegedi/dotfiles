@@ -13,7 +13,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term alacritty 
+set $term foot 
 set $run tofi-run | xargs swaymsg exec --
 set $drun tofi-drun | xargs swaymsg exec --
 # Your preferred application launcher

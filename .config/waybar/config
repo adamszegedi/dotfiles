@@ -5,8 +5,8 @@
   "margin": "0 0 0 0", 
   "output": "DP-3",
   "modules-left":   ["sway/workspaces"],
-  "modules-center": ["sway/window"],
-  "modules-right":  ["tray", "custom/scratchpad_indicator", "pulseaudio", "network", "idle_inhibitor", "clock#time"],
+  "modules-center": ["clock#time"],
+  "modules-right":  ["tray", "custom/scratchpad_indicator", "pulseaudio", "network", "idle_inhibitor"],
 
   "sway/workspaces": {
     "format": "{name}:{icon}",
@@ -18,13 +18,6 @@
     }
   },
 
-  "sway/window": {
-      "format": "> {}",
-      "rewrite": {},
-      "max-length": 120,
-      "all-outputs": true,
-  },
-
   "tray": {
     "icon-size": 18,
     "spacing": 10,
@@ -33,7 +26,7 @@
 
   "clock#time": {
     "interval": 60,
-    "format": " {:%H:%M}",
+    "format": "{:%a, %d %b, %I:%M %p}",
     "tooltip": false
   },
 

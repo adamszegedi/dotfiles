@@ -1,9 +1,9 @@
 anchor = top
 width = 100%
-height = 30
+height = 40
 horizontal = true
-font-size = 16
-prompt-text = " run: "
+font-size = 18
+prompt-text = " run: > "
 outline-width = 0
 border-width = 0
 font=/usr/share/fonts/noto/NotoSans-Regular.ttf

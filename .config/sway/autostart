@@ -2,6 +2,6 @@
 # ------------------------ AUTOSTART ------------------------ #
 #################################################################
 workspace 1
-exec alacritty 
+exec foot 
 workspace 2
 exec flatpak run org.mozilla.firefox
