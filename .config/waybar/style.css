@@ -11,17 +11,20 @@ window#waybar {
 }
 
 #workspaces {
-    margin-left: 1em;
+    margin-left: 0.25em;
+    margin-right: 1em;
 }
 
 #workspaces button {
     padding: 0px;
-    margin: 0.25em 1em 0.25em 0em;
+    margin: 0.25em 0em 0.25em 0em;
     color: @fg;
+    min-width: 2em;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     color: @focused; 
+    box-shadow: rgb(86, 93, 97) 0px 0px 10px 5px inset;
 }
 
 #clock {
@@ -29,7 +32,7 @@ window#waybar {
 }
 
 #custom-scratchpad_indicator, #pulseaudio, #network,
-#clock, #memory, #tray, #idle_inhibitor {
+#clock, #memory, #tray, #idle_inhibitor, #privacy {
     margin-right: 1em;
 }
 
