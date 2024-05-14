@@ -2,7 +2,7 @@
 #
 sort=-priority
 
-font=Noto Sans 16
+font=DroidSansM Nerd Font 16
 
 on-button-left=invoke-default-action
 on-button-right=dismiss-all

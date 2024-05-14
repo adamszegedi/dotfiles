@@ -28,12 +28,8 @@ cyan    = '#56b6c2'
 white   = '#ffffff'
 
 [font]
-size = 16.0
+size = 18.0
 
 [font.normal]
 family = "Monolisa"
 style = "Regular"
-
-[shell]
-program="/usr/bin/tmux"
-args = ["new-session", "-A", "-D", "-s", "main"]

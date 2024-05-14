@@ -1,7 +1,7 @@
-@import "./colors/onedark.css";
+@import "./colors/paper-color-dark.css";
 
 * {
-    font-family: DejaVu Sans Mono;
+    font-family: DroidSansM Nerd Font;
 }
 
 window#waybar {
