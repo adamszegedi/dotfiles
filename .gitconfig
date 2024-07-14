@@ -11,6 +11,9 @@
 [user]
 	email = mail@adamszegedi.eu
 	name = adamszegedi
+    signingkey = F5B64437C9203CFF4C44ECFA418E38EB5CDF9F0E
+[commit]
+	gpgsign = true
 [pull]
 	ff = only
 [push]
