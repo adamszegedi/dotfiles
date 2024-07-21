@@ -34,10 +34,6 @@ end
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 -- NvimTree
-wk.register({
-    t = {
-        t = { "<cmd>NvimTreeToggle<cr>", "[T]ree" },
-    },
-    prefix = "<leader>"
-}
-)
+wk.add({
+    { "<leader>tt", "<cmd>NvimTreeToggle<cr>", desc = "[T]ree" },
+})
