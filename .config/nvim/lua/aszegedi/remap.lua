@@ -15,7 +15,6 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 wk.add({
-    { "<leader>b",  group = "[B]uffer" },
     { "<leader>bc", "<Cmd>bd!|bnext<Cr>",  desc = "[C]lose current buffer" },
     { "<leader>bd", "<Cmd>%bd|e#|bd#<Cr>", desc = "[D]elete all buffers" },
     { "<leader>bn", "<Cmd>enew<Cr>",       desc = "[N]ew buffer" },

@@ -19,7 +19,7 @@ require("lazy").setup(plugins);
 require("aszegedi.remap")
 require("aszegedi.set")
 -- Format on save
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+-- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 -- Add Format command
 
 -- Highlight when yanking (copying) text
