@@ -36,7 +36,7 @@ for_window [app_id="^.*"] inhibit_idle fullscreen
 # -- Move apps to specific workspaces
 # -------------------------------------------------------------------------------------------------
 # Discord
-for_window [app_id="msedge-_magkoliahgffibhgfkmoealggombgknl-Default"] move to workspace 5
+for_window [app_id="vesktop"] move to workspace 5
 # Teams
 for_window [app_id="msedge-_cifhbcnohmdccbgoicgdjpfamggdegmo-Default"] move to workspace 5
 # Remote desktop app
