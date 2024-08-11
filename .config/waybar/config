@@ -4,9 +4,9 @@
   "position": "top", 
   "margin": "0 0 0 0", 
   "output": "DP-3",
-  "modules-left":   ["hyprland/workspaces", "idle_inhibitor"],
+  "modules-left":   ["hyprland/workspaces","group/tray"],
   "modules-center": ["clock#time"],
-  "modules-right":  ["privacy", "pulseaudio", "network", "memory", "tray"],
+  "modules-right":  [ "idle_inhibitor","privacy", "pulseaudio", "network", "memory"],
 
   "hyprland/workspaces": {
     "format": "{name}",
@@ -14,8 +14,24 @@
     "all-outputs": true,
   },
 
+  // Group Hardware
+  "group/tray": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": ["custom/tray", "tray"]
+  },
+
+  "custom/tray": {
+      "format": "󱊖 ",
+      "tooltip": false
+  },
+
   "tray": {
-    "icon-size": 18,
+    "icon-size": 22,
     "spacing": 10,
     "all-outputs": true,
   },
@@ -63,8 +79,8 @@
   "idle_inhibitor": {
 	"format": "{icon}",
 	"format-icons": {
-		"activated": "",
-		"deactivated": ""
+		"activated": " ",
+		"deactivated": " "
 	},
 	"timeout": 30
   },

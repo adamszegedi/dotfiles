@@ -12,7 +12,7 @@ window#waybar {
 
 #workspaces {
     margin-left: 0.25em;
-    margin-right: 1em;
+    margin-right: 0.5em;
 }
 
 #workspaces button {
@@ -34,6 +34,10 @@ window#waybar {
 #custom-scratchpad_indicator, #pulseaudio, #network,
 #clock, #memory, #tray, #idle_inhibitor, #privacy {
     margin-right: 1em;
+}
+
+#custom-tray {
+    font-size: 25px;
 }
 
 #tray menu {
