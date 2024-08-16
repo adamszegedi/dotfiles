@@ -9,6 +9,7 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
     exec Hyprland 
 fi
 
+
 set -o vi
 export EDITOR=/usr/bin/nvim
 
