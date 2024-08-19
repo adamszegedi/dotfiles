@@ -43,12 +43,15 @@
      hyprlock
      hyprcursor
      mako
+     playerctl
      slurp
      tofi
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      waybar
      wl-clipboard
+     xdg-desktop-portal
      xdg-desktop-portal-gtk
+     xdg-utils
   ];
 
   environment.sessionVariables = {

@@ -1,9 +1,9 @@
 [credential "https://github.com"]
 	helper = 
-	helper = !/etc/profiles/per-user/aszegedi/bin/gh auth git-credential
+	helper = !/home/aszegedi/.nix-profile/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
-	helper = !/etc/profiles/per-user/aszegedi/bin/gh auth git-credential
+	helper = !/home/aszegedi/.nix-profile/bin/gh auth git-credential
 [core]
 	excludesfile = /home/aszegedi/.gitignore
 	editor = nvim 

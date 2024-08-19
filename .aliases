@@ -11,6 +11,8 @@ alias c='clear'
 # Sync to Drive
 alias sync-to-drive='cd ~ && rclone sync -P Documents gdrive:magan/arch/Documents && rclone sync -P ~/Pictures gdrive:magan/arch/Pictures'
 
+alias ff='fastfetch'
+
 #Cat
 alias cat='bat'
 
