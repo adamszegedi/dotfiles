@@ -1,7 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ <home-manager/nixos> ];
+  imports = [ 
+        <home-manager/nixos> 
+  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.aszegedi = {
@@ -12,10 +14,9 @@
   home-manager.users.aszegedi = { pkgs, ... }: {
     home.stateVersion = "24.05";
     home.packages = with pkgs; [
-      fastfetch neovim mc yadm gh nvtopPackages.amd htop
-      git eza bat xfce.thunar 
+      bat eza fastfetch fd gh git htop mc neovim nvtopPackages.amd
+      unzip ripgrep wget xfce.thunar yadm
     ];
-    #wayland.windowManager.hyprland.enable = true;
 
     dconf.settings = {
       "org/gnome/desktop/interface" = {
@@ -43,6 +44,11 @@
       style = {
           name = "adwaita-dark";
       };
+    };
+    
+    programs.foot = {
+        enable = true;
+        settings = import ./aszegedi/foot.nix;
     };
   };
 
