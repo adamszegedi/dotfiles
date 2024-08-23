@@ -16,6 +16,10 @@ alias ff='fastfetch'
 #Cat
 alias cat='bat'
 
+#nix
+alias nd='sudo nix-env --delete-generations -p /nix/var/nix/profiles/system 5d'
+alias nl='sudo nix-env --list-generations -p /nix/var/nix/profiles/system'
+
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
 
