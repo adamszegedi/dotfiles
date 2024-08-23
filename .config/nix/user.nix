@@ -1,8 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
+
   imports = [ 
-        <home-manager/nixos> 
+        ./aszegedi/homemanager.nix 
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -11,49 +12,21 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
 
-  home-manager.users.aszegedi = { pkgs, ... }: {
-    home.stateVersion = "24.05";
-    home.packages = with pkgs; [
-      bat eza fastfetch fd gh git htop mc neovim nvtopPackages.amd
-      unzip ripgrep wget xfce.thunar yadm
-    ];
-
-    dconf.settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-        text-scaling-factor = 1.4;
-        cursor-theme = "Bibata-Modern-Ice";
-        cursor-size = 36;
-      };
-    };
-
-    gtk = {
-      enable = true;
-      theme = {
-        name = "Adwaita-dark";
-        package = pkgs.gnome.gnome-themes-extra;
-      };
-      font = {
-          name = "DejaVu Sans";
-          size = 11;
-      };
-    };
-
-    qt = {
-      enable = true;
-      style = {
-          name = "adwaita-dark";
-      };
-    };
-    
-    programs.foot = {
-        enable = true;
-        settings = import ./aszegedi/foot.nix;
-    };
-  };
-
   fileSystems."/home/aszegedi/Games" = { device = "/dev/disk/by-uuid/db2640a7-927d-46b5-b790-9090d5a39c24";
       fsType = "btrfs";
       options = [ "subvol=@Games" "compress=zstd" "noatime" ];
   };
+
+  fileSystems."/home/aszegedi/Nessy/media" = {
+    device = "nessy:/volume3/Media";
+    options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"];
+    fsType = "nfs";
+  };
+  
+  fileSystems."/home/aszegedi/Nessy/downloads" = {
+    device = "nessy:/volume2/Download";
+    options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"];
+    fsType = "nfs";
+  };
+
 }
