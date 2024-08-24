@@ -57,6 +57,11 @@
         settings = import ./programs/fastfetch.nix;
     };
 
+    programs.hyprlock = {
+        enable = true;
+        settings = (import ./programs/hyprland).hyprlock;
+    };
+
     programs.tofi = {
         enable = true;
         settings = import ./programs/tofi.nix;
@@ -66,6 +71,16 @@
         enable = true;
         style = (import ./programs/waybar/style.nix).style;
         settings = import ./programs/waybar/settings.nix;
+    };
+
+    services.hyprpaper = {
+        enable = true;
+        settings = (import ./programs/hyprland).hyprpaper;
+    };
+
+    services.hypridle = {
+        enable = true;
+        settings = (import ./programs/hyprland).hypridle;
     };
 
     wayland.windowManager.hyprland = {

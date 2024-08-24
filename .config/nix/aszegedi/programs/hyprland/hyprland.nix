@@ -1,8 +1,5 @@
+{ monitors }:
 let
-    monitors = {
-        main = "DP-3";
-        side = "HDMI-A-1";
-    };
     cursorSize = "36";
     cursorTheme = "Bibata-Modern-Ice";
 in
