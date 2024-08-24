@@ -10,4 +10,5 @@ in
     hyprpaper = (import ../hyprpaper.nix {monitors = monitors;});
     hyprlock = (import ../hyprlock.nix {monitors = monitors;});
     hypridle = import ../hypridle.nix;
+    waybar = (import ../waybar {windowManager = "hyprland"; monitors = monitors;});
 }

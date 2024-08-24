@@ -69,8 +69,8 @@
 
     programs.waybar = {
         enable = true;
-        style = (import ./programs/waybar/style.nix).style;
-        settings = import ./programs/waybar/settings.nix;
+        style = (import ./programs/hyprland).waybar.style;
+        settings = (import ./programs/hyprland).waybar.settings;
     };
 
     services.hyprpaper = {

@@ -1,14 +1,15 @@
+{ windowManager, monitors }:
 {
   mainBar = {
     layer = "top";
     position = "top";
     margin = "0 0 0 0"; 
-    output = "DP-3";
-    modules-left = ["hyprland/workspaces" "group/tray"];
+    output = monitors.main;
+    modules-left = ["${windowManager}/workspaces" "group/tray"];
     modules-center = ["clock#time"];
     modules-right = [ "idle_inhibitor" "privacy" "pulseaudio" "network" "memory"];
 
-    "hyprland/workspaces" = {
+    "${windowManager}/workspaces" = {
         format = "{name}";
         on-click = "activate";
         all-outputs = true;
