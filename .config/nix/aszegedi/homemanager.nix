@@ -8,7 +8,7 @@
   home-manager.users.aszegedi = { pkgs, ... }: {
     home.stateVersion = "24.05";
     home.packages = with pkgs; [
-      eza fastfetch fd gh git htop mc neovim nvtopPackages.amd
+      eza fastfetch fd gh git htop jq mc neovim nvtopPackages.amd
       unzip ripgrep wget xfce.thunar yadm
     ];
 
@@ -66,6 +66,12 @@
         enable = true;
         style = (import ./programs/waybar/style.nix).style;
         settings = import ./programs/waybar/settings.nix;
-      };
+    };
+
+    wayland.windowManager.hyprland = {
+        enable = true;
+        settings = (import ./programs/hyprland).settings;
+        extraConfig = (import ./programs/hyprland).extraConfig;
+    };
   };
 }
