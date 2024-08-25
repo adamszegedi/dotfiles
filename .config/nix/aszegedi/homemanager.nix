@@ -52,6 +52,8 @@
       };
     };
 
+    programs.bash = (import ./programs/sh.nix).bash;
+
     programs.fastfetch = {
         enable = true;
         settings = import ./programs/fastfetch.nix;
