@@ -1,6 +1,6 @@
 let custom = {
     font = "JetBrainsMono Nerd Font";
-    font_size = "15px";
+    fontSize = "20px";
     bg = "rgba(28, 28, 28, 1)";
     fg = "#d0d0d0";
     focused = "#d0d0d0";
@@ -14,7 +14,7 @@ style = ''
 window#waybar {
     background-color: ${custom.bg};
 
-    font-size: 20px;
+    font-size: ${custom.fontSize};
     color: #d0d0d0;
 }
 
@@ -30,7 +30,7 @@ window#waybar {
     min-width: 2em;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
     color: #d0d0d0; 
     box-shadow: rgb(86, 93, 97) 0px 0px 10px 5px inset;
 }
@@ -45,7 +45,7 @@ window#waybar {
 }
 
 #custom-tray {
-    font-size: 25px;
+    font-size: 1.25em;
 }
 
 #tray menu {

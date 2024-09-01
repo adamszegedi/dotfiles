@@ -1,4 +1,7 @@
-{ windowManager, monitors }:
+let 
+    windowManager = "sway";
+    monitors = import ../../../monitors.nix;
+in
 {
   mainBar = {
     layer = "top";

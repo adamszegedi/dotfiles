@@ -34,22 +34,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-     grim
-     hyprland
-     hyprpaper
-     hypridle
-     hyprlock
-     hyprcursor
-     mako
-     playerctl
-     slurp
-     tofi
      vim 
-     waybar
-     wl-clipboard
-     xdg-desktop-portal
-     xdg-desktop-portal-gtk
-     xdg-utils
   ];
 
   environment.sessionVariables = {
@@ -60,7 +45,24 @@
   fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" "SourceCodePro" "DroidSansMono" "FiraCode" ]; }) ];
 
   programs.gnupg.agent.enable = true;
-  programs.hyprland.enable = true;
+  programs.sway = {
+      enable = true;
+      extraPackages = with pkgs; [
+         foot
+         grim
+         mako
+         playerctl
+         slurp
+         swaylock
+         swayidle
+         tofi
+         waybar
+         wl-clipboard
+         xdg-desktop-portal
+         xdg-desktop-portal-gtk
+         xdg-utils
+      ];
+  };
   programs.dconf.enable = true;
 
 

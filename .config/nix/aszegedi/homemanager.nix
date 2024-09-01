@@ -5,7 +5,12 @@
         <home-manager/nixos> 
   ];
 
+  home-manager.useUserPackages = true;
+
   home-manager.users.aszegedi = { pkgs, ... }: {
+    imports = [
+        ./programs/sway.nix
+    ];
     home.stateVersion = "24.05";
     home.packages = with pkgs; [
       eza fastfetch fd gh git htop jq mc neovim nvtopPackages.amd
@@ -59,11 +64,6 @@
         settings = import ./programs/fastfetch.nix;
     };
 
-    programs.hyprlock = {
-        enable = true;
-        settings = (import ./programs/hyprland).hyprlock;
-    };
-
     programs.tofi = {
         enable = true;
         settings = import ./programs/tofi.nix;
@@ -71,24 +71,10 @@
 
     programs.waybar = {
         enable = true;
-        style = (import ./programs/hyprland).waybar.style;
-        settings = (import ./programs/hyprland).waybar.settings;
+        style = (import ./programs/waybar).style;
+        settings = (import ./programs/waybar).settings;
     };
 
-    services.hyprpaper = {
-        enable = true;
-        settings = (import ./programs/hyprland).hyprpaper;
-    };
 
-    services.hypridle = {
-        enable = true;
-        settings = (import ./programs/hyprland).hypridle;
-    };
-
-    wayland.windowManager.hyprland = {
-        enable = true;
-        settings = (import ./programs/hyprland).settings;
-        extraConfig = (import ./programs/hyprland).extraConfig;
-    };
   };
 }
