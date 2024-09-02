@@ -14,6 +14,8 @@
 
   systemd.tmpfiles.rules = [
     "d /mnt/Nessy 0755 aszegedi users"
+    "d /mnt/Nessy/media 0755 aszegedi users"
+    "d /mnt/Nessy/downloads 0755 aszegedi users"
   ];
 
   fileSystems."/home/aszegedi/Games" = { device = "/dev/disk/by-uuid/db2640a7-927d-46b5-b790-9090d5a39c24";

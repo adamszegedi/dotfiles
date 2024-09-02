@@ -1,6 +1,7 @@
 { lib, pkgs, ... }:
 let
     modifier = "Mod4";
+    monitors = import ../../monitors.nix;  
 in
 {
     wayland.windowManager.sway = {
@@ -16,6 +17,19 @@ in
                 window = {
                     border = 3;
                     titlebar = false;
+                    commands = [
+                        { command = "floating enable"; criteria = {app_id="imv";};}
+                        { command = "inhibit_idle fullscreen"; criteria = {app_id="^.*";};}
+                        { command = "inhibit_idle fullscreen"; criteria = {class="^.*";};}
+                        { command = "floating enable, sticky enable, move position cursor, move down 35"; criteria = {app_id="pavucontrol";};}
+                        { command = "move to workspace 5"; criteria = {app_id="WebCord";};}
+                        { command = "move to workspace 5"; criteria = {app_id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default";};}
+                        { command = "move to workspace 7"; criteria = {class="steam";};}
+                        { command = "move to workspace 8"; criteria = {app_id="firefox"; title="YouTube";};}
+                        { command = "move to workspace 8, focus"; criteria = {app_id="org.jellyfin.jellyfinmediaplayer";};}
+                        { command = "move to workspace 8, focus"; criteria = {app_id="mpv";};}
+                        { command = "move to workspace 9, focus"; criteria = {app_id="org.remmina.Remmina";};}
+                    ];
                 };
 
                 floating = {
@@ -46,14 +60,16 @@ in
                 right = "l";
 
                 output = {  
-                    HDMI-A-1 = {
+                    "${monitors.side}" = {
                         pos = "0,0";
                         mode = "2560x1440@59.951Hz";
+                        bg = "/home/aszegedi/Pictures/wallpaper/sand_tree_night.jpeg fill";
                     };
 
-                    DP-3 = {
+                    "${monitors.main}" = {
                         pos = "2560,0";
                         mode = "2560x1440@59.951Hz";
+                        bg = "/home/aszegedi/Pictures/wallpaper/sand_tree_night.jpeg fill";
                     };
                 };
 
@@ -64,19 +80,37 @@ in
                   "${modifier}+Shift+d" = "exec ${pkgs.tofi}/bin/tofi-run | xargs swaymsg exec --";
                   "Alt+Print" = "exec grim -g \"$(slurp)\" -t png - | wl-copy -t image/png";
                   "Control+Print" = "exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy";
-                  "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
-                  "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
-                  "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
+                  "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 5%+";
+                  "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 5%-";
+                  "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_SINK@ toggle";
                   "XF86AudioPlay" = "exec playerctl play-pause";
                   "XF86AudioNext" = "exec playerctl next";
                   "XF86AudioPrev" = "exec playerctl previous";
                 };
+
+                startup = [
+                    { command = "swayidle -w timeout 300 'swaylock -f' timeout 330 'swaymsg \"output * dpms off\"' resume 'swaymsg \"output * dpms on\"'";}
+                    { command = "swaymsg \"workspace 1; exec foot;\"";}
+                    { command = "swaymsg \"workspace 2; exec flatpak run org.mozilla.firefox\"";}
+                ];
+
+                seat = {
+                    "*" = {
+                        xcursor_theme = "Bibata-Modern-Ice 36";
+                    };
+                };
+
+                workspaceOutputAssign = [
+                    { workspace = "1"; output = "${monitors.main}";}
+                    { workspace = "2"; output = "${monitors.main}";}
+                    { workspace = "3"; output = "${monitors.main}";}
+                    { workspace = "4"; output = "${monitors.main}";}
+                    { workspace = "5"; output = "${monitors.side}";}
+                    { workspace = "6"; output = "${monitors.side}";}
+                    { workspace = "7"; output = "${monitors.main}";}
+                    { workspace = "8"; output = "${monitors.side}";}
+                    { workspace = "9"; output = "${monitors.main}";}
+                ];
             };
-            
-            extraConfig = ''
-            include autostart
-            include rules
-            output * background /home/aszegedi/Pictures/wallpaper/sand_tree_night.jpeg fill
-            '';
    };
 }
