@@ -10,10 +10,11 @@
   home-manager.users.aszegedi = { pkgs, ... }: {
     imports = [
         ./programs/sway.nix
+        ./programs/neovim.nix
     ];
     home.stateVersion = "24.05";
     home.packages = with pkgs; [
-      eza fastfetch fd gh git htop jq mc neovim nvtopPackages.amd
+      eza fastfetch fd gh git htop jq mc nvtopPackages.amd
       unzip ripgrep wget xfce.thunar yadm
     ];
 

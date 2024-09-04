@@ -12,7 +12,6 @@
         '';
 
         sessionVariables = {
-            EDITOR="/home/aszegedi/.nix-profile/bin/nvim";
             GPG_TTY="$(tty)";
             MOZ_ENABLE_WAYLAND=1;
         };
