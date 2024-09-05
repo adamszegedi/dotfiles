@@ -9,14 +9,17 @@
 
   home-manager.users.aszegedi = { pkgs, ... }: {
     imports = [
-        ./programs/sway.nix
         ./programs/neovim.nix
+        ./programs/sway.nix
+        ./programs/swaylock.nix
+        ./services/mako.nix
         ./xdg.nix
     ];
+
     home.stateVersion = "24.05";
     home.packages = with pkgs; [
       eza fastfetch fd gh git htop jq mc nvtopPackages.amd
-      unzip ripgrep wget xfce.thunar yadm
+      unzip ripgrep wget xfce.thunar yadm 
     ];
 
     dconf.settings = {
