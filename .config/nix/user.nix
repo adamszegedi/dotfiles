@@ -2,15 +2,16 @@
 
 {
 
-  imports = [ 
-        ./aszegedi/homemanager.nix 
-  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.aszegedi = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
+
+  imports = [ 
+      ./aszegedi/homemanager.nix 
+  ];
 
   systemd.tmpfiles.rules = [
     "d /mnt/Nessy 0755 aszegedi users"

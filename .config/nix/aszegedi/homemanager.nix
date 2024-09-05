@@ -11,6 +11,7 @@
     imports = [
         ./programs/sway.nix
         ./programs/neovim.nix
+        ./xdg.nix
     ];
     home.stateVersion = "24.05";
     home.packages = with pkgs; [
@@ -75,7 +76,6 @@
         style = (import ./programs/waybar).style;
         settings = (import ./programs/waybar).settings;
     };
-
-
+    
   };
 }
