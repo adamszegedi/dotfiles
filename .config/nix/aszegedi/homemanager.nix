@@ -9,6 +9,7 @@
 
   home-manager.users.aszegedi = { pkgs, ... }: {
     imports = [
+        ./programs/mpv.nix
         ./programs/neovim.nix
         ./programs/sway.nix
         ./programs/swaylock.nix

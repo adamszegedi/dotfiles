@@ -40,7 +40,13 @@
       QT_QPA_PLATFORMTHEME = "qt6ct";
   };
 
-  fonts.packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" "SourceCodePro" "DroidSansMono" "FiraCode" ]; }) ];
+  fonts.packages = with pkgs; [ 
+        (nerdfonts.override { 
+            fonts = [ "JetBrainsMono" "SourceCodePro" "DroidSansMono" "FiraCode" ]; 
+            }
+        ) 
+        noto-fonts
+    ];
 
   programs.gnupg.agent.enable = true;
   programs.sway = {
