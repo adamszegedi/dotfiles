@@ -33,6 +33,7 @@
 
   environment.systemPackages = with pkgs; [
      vim 
+     smartmontools
   ];
 
   environment.sessionVariables = {
@@ -68,7 +69,12 @@
       ];
   };
   programs.dconf.enable = true;
-
+    
+  systemd.services.hddStandby = {
+    enable = true;
+    wantedBy = [ "multi-user.target" ]; 
+    script = "${pkgs.smartmontools}/bin/smartctl /dev/sda -s standby,65";
+  };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
