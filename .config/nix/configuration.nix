@@ -15,25 +15,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "archie"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  # Set your time zone.
-  time.timeZone = "Europe/Budapest";
-  
-  # Flatpak
-  services.flatpak.enable = true;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
   environment.systemPackages = with pkgs; [
-     vim 
-     smartmontools
+      vim 
+          smartmontools
   ];
 
   environment.sessionVariables = {
@@ -42,34 +26,73 @@
   };
 
   fonts.packages = with pkgs; [ 
-        (nerdfonts.override { 
-            fonts = [ "JetBrainsMono" "SourceCodePro" "DroidSansMono" "FiraCode" ]; 
-            }
-        ) 
-        noto-fonts
-    ];
+      (nerdfonts.override { 
+       fonts = [ "JetBrainsMono" "SourceCodePro" "DroidSansMono" "FiraCode" ]; 
+       }
+      ) 
+      noto-fonts
+  ];
+
+  networking.hostName = "archie"; # Define your hostname.
+  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   programs.gnupg.agent.enable = true;
   programs.sway = {
       enable = true;
       extraPackages = with pkgs; [
-         foot
-         grim
-         mako
-         playerctl
-         slurp
-         swaylock
-         swayidle
-         tofi
-         waybar
-         wl-clipboard
-         xdg-desktop-portal
-         xdg-desktop-portal-gtk
-         xdg-utils
+          foot
+              grim
+              mako
+              playerctl
+              slurp
+              swaylock
+              swayidle
+              tofi
+              waybar
+              wl-clipboard
+              xdg-desktop-portal
+              xdg-desktop-portal-gtk
+              xdg-utils
       ];
   };
+
   programs.dconf.enable = true;
-    
+
+  # Set your time zone.
+  time.timeZone = "Europe/Budapest";
+  
+  # Flatpak
+  services.flatpak.enable = true;
+  
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+  services.pipewire.wireplumber.enable = true;
+  services.pipewire.wireplumber.extraConfig = {
+    "ifi-zendac-v2" = {
+        "monitor.alsa.rules" = [
+          {
+            matches = [
+              {
+                "device.name" = "alsa_card.usb-iFi__by_AMR__iFi__by_AMR__HD_USB_Audio_0003-00";
+              }
+            ];
+            actions = {
+              update-props = {
+                "device.nick" = "Zendac V2";
+                "device.description" = "Zendac Wired";
+              };
+            };
+          }
+        ];
+    };
+  };
+
   systemd.services.hddStandby = {
     enable = true;
     wantedBy = [ "multi-user.target" ]; 
