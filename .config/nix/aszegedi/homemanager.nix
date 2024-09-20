@@ -13,6 +13,7 @@
         ./programs/neovim.nix
         ./programs/sway.nix
         ./programs/swaylock.nix
+        ./programs/swayidle.nix
         ./services/mako.nix
         ./xdg.nix
     ];

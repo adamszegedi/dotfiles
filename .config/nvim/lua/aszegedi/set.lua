@@ -1,5 +1,6 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 vim.g.have_nerd_font = true
 
 vim.opt.number = true
@@ -39,4 +40,3 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "120"
 --colorscheme
 vim.opt.termguicolors = true
-vim.cmd([[colorscheme onedark]])

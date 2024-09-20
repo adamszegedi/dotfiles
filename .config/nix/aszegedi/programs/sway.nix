@@ -89,8 +89,8 @@ in
                 };
 
                 startup = [
-                    { command = "swayidle -w timeout 300 'swaylock -f' timeout 330 'swaymsg \"output * dpms off\"' resume 'swaymsg \"output * dpms on\"'";}
                     { command = "swaymsg \"workspace 1; exec foot;\"";}
+                    { command = "swaymsg \"workspace 8;\"";}
                     { command = "swaymsg \"workspace 2; exec flatpak run org.mozilla.firefox\"";}
                 ];
 

@@ -10,7 +10,6 @@ return {
     { 'L3MON4D3/LuaSnip' },
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'lukas-reineke/indent-blankline.nvim', main = 'ibl',   opts = {} },
-    { 'numToStr/Comment.nvim',               opts = {} },
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.5',
