@@ -2,12 +2,51 @@
 let
     modifier = "Mod4";
     monitors = import ../../monitors.nix;  
+    bg = "#d65d0e";
+    bg-inactive =  "#323232";
+    bg-urgent = "#000000";
+    text = "#eeeeec";
+    text-inactive = "#babdb6";
+    bar = "#323232";
 in
 {
     wayland.windowManager.sway = {
             enable = true;
             checkConfig = false;
             config = {
+                colors = {
+                    focused = {
+                      background = bg;
+                      border = bg;
+                      childBorder = bg;
+                      indicator = bg;
+                      text = text;
+                    };        
+
+                    unfocused = {
+                      background = bg-inactive;
+                      border = bg-inactive;
+                      childBorder = bar;
+                      indicator = bar;
+                      text = text-inactive;
+                    };        
+
+                    focusedInactive = {
+                      background = bg-inactive;
+                      border = bg-inactive;
+                      childBorder = bar;
+                      indicator = bar;
+                      text = text-inactive;
+                    };        
+
+                    urgent = {
+                      background = bg-urgent;
+                      border = bg-urgent;
+                      childBorder = bar;
+                      indicator = bar;
+                      text = text;
+                    };        
+                };
                 gaps = {
                     inner = 6;
                     smartGaps = true;

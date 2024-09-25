@@ -15,6 +15,7 @@
         withPython3 = true;
 
         extraPackages = with pkgs; [
+          lua-language-server
           gnumake
           cargo
           gcc13
