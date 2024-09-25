@@ -14,6 +14,12 @@ in
                     smartBorders = "on";
                 };
 
+                fonts = {
+                    names = [ "DroidSansMono" ];
+                    style = "Bold Semi-Condensed";
+                    size = 14.0;
+                };
+
                 window = {
                     border = 3;
                     titlebar = false;
@@ -80,6 +86,7 @@ in
                   "${modifier}+Shift+d" = "exec ${pkgs.tofi}/bin/tofi-run | xargs swaymsg exec --";
                   "Alt+Print" = "exec grim -g \"$(slurp)\" -t png - | wl-copy -t image/png";
                   "Control+Print" = "exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy";
+                  "Alt+Control+Print" = "exec grim -g \"$(slurp -p)\" -t ppm - | magick - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy";
                   "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 5%+";
                   "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 5%-";
                   "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_SINK@ toggle";

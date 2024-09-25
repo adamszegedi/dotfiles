@@ -20,7 +20,7 @@
 
     home.stateVersion = "24.05";
     home.packages = with pkgs; [
-      eza fastfetch fd gh git htop jq mc nvtopPackages.amd
+      eza fastfetch fd gh git htop imagemagick jq mc nvtopPackages.amd
       pavucontrol unzip ripgrep wget xfce.thunar yadm 
     ];
 

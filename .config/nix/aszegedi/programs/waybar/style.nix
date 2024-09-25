@@ -1,9 +1,9 @@
 let custom = {
     font = "JetBrainsMono Nerd Font";
     fontSize = "20px";
-    bg = "rgba(28, 28, 28, 1)";
-    fg = "#d0d0d0";
-    focused = "#d0d0d0";
+    bg = "#282828";
+    fg = "#ebdbb2";
+    focusedBackground = "#504945";
 };
 in {
 style = ''
@@ -13,9 +13,8 @@ style = ''
 
 window#waybar {
     background-color: ${custom.bg};
-
     font-size: ${custom.fontSize};
-    color: #d0d0d0;
+    color: ${custom.fg};
 }
 
 #workspaces {
@@ -24,15 +23,15 @@ window#waybar {
 }
 
 #workspaces button {
+    color: ${custom.fg};
     padding: 0px;
     margin: 0.25em 0em 0.25em 0em;
-    color: #d0d0d0;
     min-width: 2em;
 }
 
 #workspaces button.focused {
-    color: #d0d0d0; 
-    box-shadow: rgb(86, 93, 97) 0px 0px 10px 5px inset;
+    font-weight: bold;
+    background-color: ${custom.focusedBackground};
 }
 
 #clock {
@@ -49,7 +48,7 @@ window#waybar {
 }
 
 #tray menu {
-   background-color: rgba(28, 28, 28, 1);
+   background-color: ${custom.bg};
 }
 
 #pulseaudio.muted {}
