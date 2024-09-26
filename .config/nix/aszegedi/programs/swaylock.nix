@@ -1,38 +1,53 @@
 { programs, ... }:
+let
+  bg = "#282828ff";
+  fg = "#ebdbb2ff";
+  purple = "#d3869bff";
+  red = "#fb4934ff";
+  blue = "#83a598ff";
+  orange = "#d65d0eff";
+  green = "#98971aff";
+  fg3 = "#bdae93ff";
+  bg1 = "#3c3836ff";
+in
 {
     programs.swaylock.enable = true;
     programs.swaylock.settings = {
         ignore-empty-password = true;
-        indicator-radius=160;
-        indicator-thickness=30;
-        color="282C34";
-        bs-hl-color="abb2bf";
-        caps-lock-bs-hl-color="abb2bf";
-        caps-lock-key-hl-color="98c379";
-        inside-color = "00000000";
-        inside-clear-color= "00000000";
-        inside-caps-lock-color= "00000000";
-        inside-ver-color= "00000000";
-        inside-wrong-color= "00000000";
-        key-hl-color="98c379";
-        layout-bg-color= "00000000";
-        layout-border-color= "00000000";
-        layout-text-color="56b6c2";
-        line-color= "00000000";
-        line-clear-color= "00000000";
-        line-caps-lock-color= "00000000";
-        line-ver-color= "00000000";
-        line-wrong-color= "00000000";
-        ring-color="c678dd";
-        ring-clear-color="abb2bf";
-        ring-caps-lock-color="61afef";
-        ring-ver-color="e5c07b";
-        ring-wrong-color="e06c75";
-        separator-color= "00000000";
-        text-color="56b6c2";
-        text-clear-color="abb2bf";
-        text-caps-lock-color="61afef";
-        text-ver-color="e5c07b";
-        text-wrong-color="e06c75";
+        indicator-caps-lock = true;
+        show-keyboard-layout = true;
+        indicator-radius = 200;
+        indicator-thickness = 45;
+
+        #backspace highlight color
+        bs-hl-color = blue;
+        caps-lock-bs-hl-color = blue;
+        #key highlight color
+        key-hl-color = fg3;
+        caps-lock-key-hl-color = purple;
+
+        layout-bg-color = bg;
+        layout-text-color = fg;
+
+        color = bg;
+        inside-color  =  bg;
+        ring-color = bg1;
+        text-color = fg;
+        
+        inside-clear-color = bg;
+        ring-clear-color = green;
+        text-clear-color = fg;
+
+        inside-caps-lock-color = bg;
+        ring-caps-lock-color = orange;
+        text-caps-lock-color = fg;
+        
+        inside-ver-color = fg3;
+        ring-ver-color = fg3;
+        text-ver-color = bg;
+
+        inside-wrong-color = red;
+        ring-wrong-color = red;
+        text-wrong-color = bg;
     };
 }

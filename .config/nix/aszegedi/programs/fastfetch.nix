@@ -1,118 +1,158 @@
 {
+  logo = {
+    padding = {
+      right = 2;
+      left = 2;
+      top = 2;
+    };
+  };
   display = {
         separator = " ➜  ";
   };
   modules = [
       "break"
       "break"
-      "break"
-       {
+      {
+          type = "custom";
+          format = "┌ Os ────────────────────────────────────────────────────────┐";
+      }
+      {
           type = "os";
-          key = "OS   ";
+          key = "    ";
           keyColor = "cyan";
           outputColor = "default";
       }
       {
           type = "kernel";
-          key = " ├  ";
+          key = "    ";
           keyColor = "cyan";
           outputColor = "default";
       }
       {
           type = "packages";
-          format = "{} (pacman)";
-          key = " ├ 󰏖 ";
+          key = "   󰏖 ";
           keyColor = "cyan";
           outputColor = "default";
       }
       {
-          type = "shell";
-          key = " └  ";
+          type = "command";
+          key = "   OS Age ";
           keyColor = "cyan";
-          outputColor = "default";
+          text = "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days";
+      }
+      {
+          type = "uptime";
+          key = "   Uptime ";
+          keyColor = "cyan";
+      }
+      {
+          type = "custom";
+          format = "└────────────────────────────────────────────────────────────┘";
       }
       "break"
       {
+          type = "custom";
+          format = "┌ Desktop ───────────────────────────────────────────────────┐";
+      }
+      {
+          type = "shell";
+          key = "    ";
+          keyColor = "cyan";
+          outputColor = "default";
+      }
+      {
           type = "wm";
-          key = "WM   ";
+          key = "    ";
           keyColor = "cyan";
           outputColor = "default";
       }
       {
           type = "wmtheme";
-          key = " ├ 󰉼 ";
+          key = "   󰉼 ";
           keyColor = "cyan";
           outputColor = "default";
       }
       {
          type = "icons";
-         key = " ├ 󰀻 ";
+         key = "    󰀻 ";
          keyColor = "cyan";
          outputColor = "default";
       }
       {
           type = "cursor";
-          key = " ├  ";
+          key = "    ";
           keyColor = "cyan";
           outputColor = "default";
       }
       {
           type = "terminal";
-          key = " ├  ";
+          key = "    ";
           keyColor = "cyan";
           outputColor = "default";
       }
       {
           type = "terminalfont";
-          key = " └  ";
+          key = "    ";
           keyColor = "cyan";
           outputColor = "default";
       }
+      {
+          type = "custom";
+          format = "└────────────────────────────────────────────────────────────┘";
+      }
       "break"
+      {
+          type = "custom";
+          format = "┌ Hardware ──────────────────────────────────────────────────┐";
+      }
       {
           type = "board";
           format = "{2} {1}";
-          key = "PC   ";
+          key = "    ";
           keyColor = "cyan";
           outputColor = "default";
       }
       {
           type = "cpu";
           format = "{1} ({3}) @ {7} GHz";
-          key = " ├  ";
+          key = "    ";
           keyColor = "cyan";
           outputColor = "default";
       }
       {
           type = "gpu";
           format = "{1} {2} @ {12} GHz";            
-          key = " ├ 󰢮 ";
+          key = "   󰢮 ";
           keyColor = "cyan";
           outputColor = "default";
       }
       {
           type = "memory";
-          key = " ├  ";
+          key = "    ";
           keyColor = "cyan";
           outputColor = "default";
       }
       {
           type = "disk";
-          key = " ├ 󰋊 ";
+          key = "   󰋊 ";
           keyColor = "cyan";
           outputColor = "default";
       }
       {
           type = "monitor";
-          key = " ├  ";
+          key = "    ";
           keyColor = "cyan";
           outputColor = "default";
       }
       {
           type = "swap";
-          key = " └ 󰓡 ";
+          key = "   󰓡 ";
           keyColor = "cyan";
           outputColor = "default";
+      }
+      {
+          type = "custom";
+          format = "└────────────────────────────────────────────────────────────┘";
       }
       "break"
       "break"
