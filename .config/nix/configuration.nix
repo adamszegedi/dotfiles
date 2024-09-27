@@ -36,6 +36,8 @@
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   programs.gnupg.agent.enable = true;
+  programs.gnupg.agent.pinentryPackage = pkgs.pinentry-tty;
+
   programs.sway = {
       enable = true;
       extraPackages = with pkgs; [
