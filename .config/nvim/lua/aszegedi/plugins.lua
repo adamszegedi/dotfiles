@@ -22,6 +22,6 @@ require("lazy").setup(
     { "nvim-tree/nvim-web-devicons",            enabled = vim.g.have_nerd_font },
     { "folke/which-key.nvim",                   opts = {} },
     { 'navarasu/onedark.nvim' },
-    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...}
+    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
   }
 );

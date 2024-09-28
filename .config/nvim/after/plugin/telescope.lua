@@ -7,6 +7,13 @@ telescope.setup {
         path_display = { shorten = { len = 5, exclude = { 1, -1 }, truncate = true } },
         dynamic_preview_title = true
     },
+    pickers = {
+      buffers = {
+        theme = "dropdown",
+        previewer = false,
+        initial_mode = "normal",
+      },
+    },
     extensions = {
         ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -21,7 +28,6 @@ wk.add({
     { "<leader>n", desc = "[N]eovim" },
     { "<leader>g", desc = "[G]it" },
 })
- 
 
 wk.add({
     { "<leader>gf",       builtin.git_files,        desc = "Telescope Project [F]ile" },
