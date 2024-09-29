@@ -41,7 +41,7 @@
   programs.sway = {
       enable = true;
       extraPackages = with pkgs; [
-          foot
+              alacritty
               grim
               mako
               playerctl

@@ -15,7 +15,7 @@
             name = "Midnight Commander";
             genericName = "File Manager";
             comment = "Visual file manager";
-            exec = "foot --title=mc -e mc";
+            exec = "alacritty --title=mc --command mc";
             icon = "folder";
             terminal = false;
             categories = [ "Utility" ];

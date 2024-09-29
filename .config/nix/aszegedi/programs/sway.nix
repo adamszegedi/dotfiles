@@ -67,6 +67,7 @@ in
                         { command = "inhibit_idle fullscreen"; criteria = {app_id="^.*";};}
                         { command = "inhibit_idle fullscreen"; criteria = {class="^.*";};}
                         { command = "floating enable, sticky enable, move position cursor, move down 35"; criteria = {app_id="pavucontrol";};}
+                        { command = "move to workspace 3, focus"; criteria = {title="mc";};}
                         { command = "move to workspace 5"; criteria = {app_id="WebCord";};}
                         { command = "move to workspace 5"; criteria = {app_id="chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default";};}
                         { command = "move to workspace 7"; criteria = {class="steam";};}
@@ -108,18 +109,18 @@ in
                     "${monitors.side}" = {
                         pos = "0,0";
                         mode = "2560x1440@59.951Hz";
-                        bg = "/home/aszegedi/Pictures/wallpaper/sand_tree_night.jpeg fill";
+                        bg = "/home/aszegedi/Pictures/wallpaper/space-jelly.jpg fill";
                     };
 
                     "${monitors.main}" = {
                         pos = "2560,0";
                         mode = "2560x1440@59.951Hz";
-                        bg = "/home/aszegedi/Pictures/wallpaper/sand_tree_night.jpeg fill";
+                        bg = "/home/aszegedi/Pictures/wallpaper/space-jelly.jpg fill";
                     };
                 };
 
                 keybindings = lib.mkOptionDefault {
-                  "${modifier}+Return" = "exec ${pkgs.foot}/bin/foot";
+                  "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
                   "${modifier}+Shift+q" = "kill";
                   "${modifier}+d" = "exec ${pkgs.tofi}/bin/tofi-drun | xargs swaymsg exec --";
                   "${modifier}+Shift+d" = "exec ${pkgs.tofi}/bin/tofi-run | xargs swaymsg exec --";
@@ -135,7 +136,7 @@ in
                 };
 
                 startup = [
-                    { command = "swaymsg \"workspace 1; exec foot;\"";}
+                    { command = "swaymsg \"workspace 1; exec alacritty;\"";}
                     { command = "swaymsg \"workspace 8;\"";}
                     { command = "swaymsg \"workspace 2; exec flatpak run org.mozilla.firefox\"";}
                 ];

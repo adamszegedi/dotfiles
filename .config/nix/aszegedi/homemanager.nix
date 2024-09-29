@@ -13,13 +13,14 @@
         ./programs/sway.nix
         ./programs/swaylock.nix
         ./programs/swayidle.nix
+        ./programs/alacritty.nix
         ./services/mako.nix
         ./xdg.nix
     ];
 
     home.stateVersion = "24.05";
     home.packages = with pkgs; [
-      eza fastfetch fd gh git htop imagemagick jq mc nvtopPackages.amd
+      alacritty-theme eza fastfetch fd gh git htop imagemagick jq mc nvtopPackages.amd
       pavucontrol unzip ripgrep wget xfce.thunar yadm 
     ];
 
@@ -28,7 +29,7 @@
         color-scheme = "prefer-dark";
         text-scaling-factor = 1.4;
         cursor-theme = "Bibata-Modern-Ice";
-        cursor-size = 36;
+        cursor-size = 32;
       };
     };
 
@@ -49,11 +50,6 @@
       style = {
           name = "adwaita-dark";
       };
-    };
-    
-    programs.foot = {
-        enable = true;
-        settings = import ./programs/foot.nix;
     };
     
     programs.bat = {
