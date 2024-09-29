@@ -18,7 +18,6 @@ require("lazy").setup(
     },
     { 'nvim-telescope/telescope-ui-select.nvim' },
     { 'nvim-lualine/lualine.nvim', },
-    { "akinsho/bufferline.nvim" },
     { "nvim-tree/nvim-web-devicons",            enabled = vim.g.have_nerd_font },
     { "folke/which-key.nvim",                   opts = {} },
     { 'navarasu/onedark.nvim' },
