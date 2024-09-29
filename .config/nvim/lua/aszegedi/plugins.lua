@@ -22,5 +22,6 @@ require("lazy").setup(
     { "folke/which-key.nvim",                   opts = {} },
     { 'navarasu/onedark.nvim' },
     { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
+    { "shaunsingh/nord.nvim", priority = 1000,}
   }
 );

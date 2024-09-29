@@ -43,6 +43,8 @@ vim.opt.laststatus = 3
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "120"
 vim.opt.termguicolors = true
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
 
 vim.api.nvim_create_autocmd('TextYankPost', {
     desc = 'Highlight when yanking (copying) text',

@@ -5,8 +5,7 @@ let
   purple = "#d3869bff";
   red = "#fb4934ff";
   blue = "#83a598ff";
-  orange = "#d65d0eff";
-  green = "#98971aff";
+  green = "#b8bb26";
   fg3 = "#bdae93ff";
   bg1 = "#3c3836ff";
 in
@@ -20,10 +19,10 @@ in
         indicator-thickness = 45;
 
         #backspace highlight color
-        bs-hl-color = blue;
-        caps-lock-bs-hl-color = blue;
+        bs-hl-color = green;
+        caps-lock-bs-hl-color = green;
         #key highlight color
-        key-hl-color = fg3;
+        key-hl-color = fg;
         caps-lock-key-hl-color = purple;
 
         layout-bg-color = bg;
@@ -32,22 +31,25 @@ in
         color = bg;
         inside-color  =  bg;
         ring-color = bg1;
+        line-color = fg;
+        line-caps-lock-color = fg;
+        separator-color = bg1;
         text-color = fg;
         
         inside-clear-color = bg;
-        ring-clear-color = green;
+        ring-clear-color = fg;
         text-clear-color = fg;
 
         inside-caps-lock-color = bg;
-        ring-caps-lock-color = orange;
+        ring-caps-lock-color = bg1;
         text-caps-lock-color = fg;
         
-        inside-ver-color = fg3;
+        inside-ver-color = bg;
         ring-ver-color = fg3;
-        text-ver-color = bg;
+        text-ver-color = fg;
 
-        inside-wrong-color = red;
+        inside-wrong-color = bg;
         ring-wrong-color = red;
-        text-wrong-color = bg;
+        text-wrong-color = fg;
     };
 }
