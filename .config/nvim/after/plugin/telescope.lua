@@ -13,6 +13,14 @@ telescope.setup {
         previewer = false,
         initial_mode = "normal",
       },
+      resume = {
+        theme = "dropdown",
+        previewer = "false",
+        initial_mode = "normal"
+      },
+      lsp_references = {
+        initial_mode = "normal",
+      }
     },
     extensions = {
         ['ui-select'] = {
