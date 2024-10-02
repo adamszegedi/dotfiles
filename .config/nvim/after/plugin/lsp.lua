@@ -18,43 +18,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-local on_attach = function(client)
-    require'completion'.on_attach(client)
-end
-
 local lsp_config = require('lspconfig')
 
-lsp_config.ts_ls.setup({
-  capabilities = lsp_capabilities,
-  on_attach = on_attach
-})
+lsp_config.ts_ls.setup({})
 
-lsp_config.lua_ls.setup({
-  capabilities = lsp_capabilities,
-  on_attach = on_attach
-})
+lsp_config.lua_ls.setup({})
 
-lsp_config.rust_analyzer.setup({
-    on_attach = on_attach,
-    capabilities = lsp_capabilities,
-    settings = {
-        ["rust-analyzer"] = {
-            imports = {
-                granularity = {
-                    group = "module",
-                },
-                prefix = "self",
-            },
-            cargo = {
-                buildScripts = {
-                    enable = true,
-                },
-            },
-            procMacro = {
-                enable = true
-            },
-        }
-    }
-})
+lsp_config.rust_analyzer.setup({})

@@ -3,6 +3,9 @@ local cmp = require('cmp')
 
 cmp.setup({
   -- Enable LSP snippets
+  view = {
+    entries = "native",
+  },
   snippet = {
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body)
@@ -11,7 +14,7 @@ cmp.setup({
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['S-Tab'] = cmp.mapping.select_prev_item(),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
     ['<Tab>'] = cmp.mapping.select_next_item(),
     -- Add tab support
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -31,22 +34,5 @@ cmp.setup({
     { name = 'nvim_lua',               keyword_length = 2 },     -- complete neovim's Lua runtime API such vim.lsp.*
     { name = 'buffer',                 keyword_length = 2 },     -- source current buffer
     { name = 'vsnip',                  keyword_length = 2 },     -- nvim-cmp source for vim-vsnip
-  },
-  window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-  },
-  formatting = {
-    fields = { 'menu', 'abbr', 'kind' },
-    format = function(entry, item)
-      local menu_icon = {
-        nvim_lsp = 'λ',
-        vsnip = '⋗',
-        buffer = 'Ω',
-        path = '🖫',
-      }
-      item.menu = menu_icon[entry.source.name]
-      return item
-    end,
   },
 })
