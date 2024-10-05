@@ -5,7 +5,7 @@
         timeouts = [
             { 
                 timeout = 300;
-                command = "${pkgs.swaylock}/bin/swaylock -fF";
+                command = "~/.config/swaylock/lock.sh";
             }
             { 
                 timeout = 330;

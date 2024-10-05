@@ -10,6 +10,12 @@ let
     bar = "#323232";
 in
 {
+    home.file = {
+      "wallpaper" = {
+      source = ../images/wallpaper.jpg;
+      target = ".config/sway/wallpaper.jpg";
+      };
+    };
     wayland.windowManager.sway = {
             enable = true;
             checkConfig = false;
@@ -109,13 +115,13 @@ in
                     "${monitors.side}" = {
                         pos = "0,0";
                         mode = "2560x1440@59.951Hz";
-                        bg = "/home/aszegedi/Pictures/wallpaper/space-jelly.jpg fill";
+                        bg = "~/.config/sway/wallpaper.jpg fill";
                     };
 
                     "${monitors.main}" = {
                         pos = "2560,0";
                         mode = "2560x1440@59.951Hz";
-                        bg = "/home/aszegedi/Pictures/wallpaper/space-jelly.jpg fill";
+                        bg = "~/.config/sway/wallpaper.jpg fill";
                     };
                 };
 
@@ -125,6 +131,7 @@ in
                   "${modifier}+d" = "exec ${pkgs.tofi}/bin/tofi-drun | xargs swaymsg exec --";
                   "${modifier}+Shift+d" = "exec ${pkgs.tofi}/bin/tofi-run | xargs swaymsg exec --";
                   "Alt+Print" = "exec grim -g \"$(slurp)\" -t png - | wl-copy -t image/png";
+                  "Alt+Control+l" = "exec ~/.config/swaylock/lock.sh";
                   "Control+Print" = "exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy";
                   "Alt+Control+Print" = "exec grim -g \"$(slurp -p)\" -t ppm - | magick - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy";
                   "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 5%+";
