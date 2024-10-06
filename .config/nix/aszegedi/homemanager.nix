@@ -14,6 +14,7 @@
         ./programs/swaylock.nix
         ./programs/swayidle.nix
         ./programs/alacritty.nix
+        ./programs/tofi.nix
         ./services/mako.nix
         ./xdg.nix
     ];
@@ -64,11 +65,6 @@
     programs.fastfetch = {
         enable = true;
         settings = import ./programs/fastfetch.nix;
-    };
-
-    programs.tofi = {
-        enable = true;
-        settings = import ./programs/tofi.nix;
     };
 
     programs.waybar = {

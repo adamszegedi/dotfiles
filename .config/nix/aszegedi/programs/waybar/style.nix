@@ -1,9 +1,9 @@
 let custom = {
     font = "JetBrainsMono Nerd Font";
     fontSize = "20px";
-    bg = "#282828";
-    fg = "#ebdbb2";
-    focusedBackground = "#504945";
+    bg = "#1A1B26";
+    fg = "#C0CAF5";
+    blue = "#7AA2F7";
 };
 in {
 style = ''
@@ -31,7 +31,8 @@ window#waybar {
 
 #workspaces button.focused {
     font-weight: bold;
-    background-color: ${custom.focusedBackground};
+    background-color: ${custom.blue};
+    color: ${custom.bg};
 }
 
 #clock {

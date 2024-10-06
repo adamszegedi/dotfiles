@@ -2,12 +2,13 @@
 let
     modifier = "Mod4";
     monitors = import ../../monitors.nix;  
-    bg = "#d65d0e";
-    bg-inactive =  "#323232";
-    bg-urgent = "#000000";
-    text = "#eeeeec";
-    text-inactive = "#babdb6";
-    bar = "#323232";
+    blue = "#7aa2f7";
+    fg = "#C0CAF5";
+    fg_dark = "#a9b1d6";
+    bg = "#1A1B26";
+    cyan = "#7dcfff";
+    terminal_black = "#414868";
+    yellow = "#e0af68";
 in
 {
     home.file = {
@@ -22,35 +23,35 @@ in
             config = {
                 colors = {
                     focused = {
-                      background = bg;
-                      border = bg;
-                      childBorder = bg;
-                      indicator = bg;
-                      text = text;
+                      background = terminal_black;
+                      border = blue;
+                      childBorder = blue;
+                      indicator = cyan;
+                      text = fg;
                     };        
 
                     unfocused = {
-                      background = bg-inactive;
-                      border = bg-inactive;
-                      childBorder = bar;
-                      indicator = bar;
-                      text = text-inactive;
+                      background = bg;
+                      border = terminal_black;
+                      childBorder = terminal_black;
+                      indicator = cyan;
+                      text = fg_dark;
                     };        
 
                     focusedInactive = {
-                      background = bg-inactive;
-                      border = bg-inactive;
-                      childBorder = bar;
-                      indicator = bar;
-                      text = text-inactive;
+                      background = terminal_black;
+                      border = blue;
+                      childBorder = blue;
+                      indicator = cyan;
+                      text = fg;
                     };        
 
                     urgent = {
-                      background = bg-urgent;
-                      border = bg-urgent;
-                      childBorder = bar;
-                      indicator = bar;
-                      text = text;
+                      background = yellow;
+                      border = yellow;
+                      childBorder = yellow;
+                      indicator = cyan;
+                      text = bg;
                     };        
                 };
                 gaps = {

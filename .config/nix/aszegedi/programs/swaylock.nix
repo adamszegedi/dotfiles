@@ -1,13 +1,8 @@
 { programs, home, pkgs, ... }:
 let
-  bg = "#282828ff";
-  fg = "#ebdbb2ff";
-  purple = "#d3869bff";
-  red = "#fb4934ff";
-  blue = "#83a598ff";
-  green = "#b8bb26";
-  fg3 = "#bdae93ff";
-  bg1 = "#3c3836ff";
+  bg = "#1A1B26";
+  fg = "#C0CAF5";
+  blue = "#7AA2F7";
   transparent = "00000000";
 
   main-lock-file = "/tmp/lock-main.png";
@@ -48,37 +43,37 @@ in
         indicator-thickness = 30;
 
         #backspace highlight color
-        bs-hl-color = green;
-        caps-lock-bs-hl-color = green;
+        bs-hl-color = blue;
+        caps-lock-bs-hl-color = blue;
         #key highlight color
-        key-hl-color = fg;
-        caps-lock-key-hl-color = purple;
+        key-hl-color = blue;
+        caps-lock-key-hl-color = blue;
 
         layout-bg-color = bg;
         layout-text-color = fg;
 
         color = bg;
         inside-color  =  transparent;
-        ring-color = bg1;
+        ring-color = bg;
         line-color = fg;
         line-caps-lock-color = fg;
-        separator-color = bg1;
+        separator-color = bg;
         text-color = fg;
         
-        inside-clear-color = bg;
+        inside-clear-color = transparent;
         ring-clear-color = fg;
         text-clear-color = fg;
 
-        inside-caps-lock-color = bg;
-        ring-caps-lock-color = bg1;
+        inside-caps-lock-color = transparent;
+        ring-caps-lock-color = bg;
         text-caps-lock-color = fg;
         
-        inside-ver-color = bg;
-        ring-ver-color = fg3;
+        inside-ver-color = transparent;
+        ring-ver-color = fg;
         text-ver-color = fg;
 
-        inside-wrong-color = bg;
-        ring-wrong-color = red;
+        inside-wrong-color = transparent;
+        ring-wrong-color = bg;
         text-wrong-color = fg;
     };
 }

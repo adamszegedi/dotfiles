@@ -4,11 +4,11 @@
     services.mako = {
         sort = "-priority";
         font = "DroidSansM Nerd Font 16";
-        backgroundColor = "#282828";
-        textColor = "#ebdbb2";
-        borderColor = "#a89984";
+        backgroundColor = "#1A1B26";
+        textColor = "#C0CAF5";
+        borderColor = "#7AA2F7";
 
-        progressColor = "over #665c5480";
+        progressColor = "over #7AA2F780";
         borderRadius = 8;
         borderSize = 2;
         anchor = "top-right";
