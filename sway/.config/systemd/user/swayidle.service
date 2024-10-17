@@ -1,0 +1,14 @@
+[Unit]
+Description=Idle manager for Wayland
+Documentation=man:swayidle(1)
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/swayidle -w \
+            timeout 300   '~/.config/swaylock/lock.sh' \
+            timeout 330   'swaymsg "output * dpms off"' \
+                 resume   'swaymsg "output * dpms on"'  \
+
+[Install]
+WantedBy=sway-session.target

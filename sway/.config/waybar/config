@@ -1,0 +1,118 @@
+[
+  {
+    "clock#time": {
+      "format": "{:%a, %d %b, %I:%M %p}",
+      "interval": 60,
+      "tooltip": false
+    },
+    "custom/tray": {
+      "format": "󱊖 ",
+      "tooltip": false
+    },
+    "group/tray": {
+      "drawer": {
+        "children-class": "not-memory",
+        "transition-duration": 300,
+        "transition-left-to-right": true
+      },
+      "modules": [
+        "custom/tray",
+        "tray"
+      ],
+      "orientation": "inherit"
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": " ",
+        "deactivated": " "
+      },
+      "timeout": 30
+    },
+    "layer": "top",
+    "margin": "0 0 0 0",
+    "memory": {
+      "format": " {used:0.1f}G",
+      "interval": 30,
+      "max-length": 20
+    },
+    "modules-center": [
+      "clock#time"
+    ],
+    "modules-left": [
+      "sway/workspaces",
+      "group/tray"
+    ],
+    "modules-right": [
+      "idle_inhibitor",
+      "privacy",
+      "pulseaudio",
+      "network",
+      "memory"
+    ],
+    "network": {
+      "family": "ipv6",
+      "format-disconnected": "󰈂 disconnected",
+      "format-ethernet": "  {ifname}",
+      "format-linked": "{iename} (no ip)",
+      "on-click": "ip -6 addr show dev enp5s0 | grep inet6 -m1 | cut -d ' ' -f6 | wl-copy",
+      "tooltip": true,
+      "tooltip-format": "{ipaddr}"
+    },
+    "output": "DP-3",
+    "position": "top",
+    "privacy": {
+      "icon-size": 24,
+      "icon-spacing": 12,
+      "modules": [
+        {
+          "tooltip": true,
+          "tooltip-icon-size": 24,
+          "type": "screenshare"
+        },
+        {
+          "tooltip": true,
+          "tooltip-icon-size": 24,
+          "type": "audio-out"
+        },
+        {
+          "tooltip": true,
+          "tooltip-icon-size": 24,
+          "type": "audio-in"
+        }
+      ],
+      "transition-duration": 250
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-icons": {
+        "car": "    ",
+        "default": [
+          "",
+          " ",
+          "󰕾 ",
+          " "
+        ],
+        "hands-free": "   ",
+        "headphone": "   ",
+        "headset": "   ",
+        "phone": "   ",
+        "portable": "   "
+      },
+      "format-muted": " muted",
+      "on-click": "pactl set-sink-mute 0 toggle",
+      "on-click-middle": "pavucontrol",
+      "scroll-step": 5
+    },
+    "sway/workspaces": {
+      "all-outputs": true,
+      "format": "{name}",
+      "on-click": "activate"
+    },
+    "tray": {
+      "all-outputs": true,
+      "icon-size": 22,
+      "spacing": 10
+    }
+  }
+]
