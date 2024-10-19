@@ -1,7 +1,14 @@
 #################################################################
+# -------------------------- VARIABLES -------------------------# 
+#################################################################
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+set $terminal alacritty
+
+#################################################################
 # ------------------------  BEHAVIOUR  ------------------------ #
 #################################################################
-floating_modifier Mod4
+floating_modifier $mod
 focus_wrapping no
 focus_follows_mouse yes
 focus_on_window_activation smart
@@ -41,73 +48,77 @@ bindsym Control+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | selec
 #
 # Moving around:
 #
-bindsym Mod4+0 workspace number 10
-bindsym Mod4+1 workspace number 1
-bindsym Mod4+2 workspace number 2
-bindsym Mod4+3 workspace number 3
-bindsym Mod4+4 workspace number 4
-bindsym Mod4+5 workspace number 5
-bindsym Mod4+6 workspace number 6
-bindsym Mod4+7 workspace number 7
-bindsym Mod4+8 workspace number 8
-bindsym Mod4+9 workspace number 9
-bindsym Mod4+Down focus down
-bindsym Mod4+Up focus up
-bindsym Mod4+Left focus left
-bindsym Mod4+Right focus right
-bindsym Mod4+j focus down
-bindsym Mod4+k focus up
-bindsym Mod4+h focus left
-bindsym Mod4+l focus right
+bindsym $mod+0 workspace number 10
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+h focus left
+bindsym $mod+l focus right
 #
 # Move around windows:
 #
-bindsym Mod4+Shift+0 move container to workspace number 10
-bindsym Mod4+Shift+1 move container to workspace number 1
-bindsym Mod4+Shift+2 move container to workspace number 2
-bindsym Mod4+Shift+3 move container to workspace number 3
-bindsym Mod4+Shift+4 move container to workspace number 4
-bindsym Mod4+Shift+5 move container to workspace number 5
-bindsym Mod4+Shift+6 move container to workspace number 6
-bindsym Mod4+Shift+7 move container to workspace number 7
-bindsym Mod4+Shift+8 move container to workspace number 8
-bindsym Mod4+Shift+9 move container to workspace number 9
-bindsym Mod4+Shift+Down move down
-bindsym Mod4+Shift+Up move up
-bindsym Mod4+Shift+Left move left
-bindsym Mod4+Shift+Right move right
-bindsym Mod4+Shift+j move down
-bindsym Mod4+Shift+k move up
-bindsym Mod4+Shift+h move left
-bindsym Mod4+Shift+l move right
+bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+l move right
+
+#Move workspace between monitors
+bindsym $mod+Control+Shift+Right move workspace to output right
+bindsym $mod+Control+Shift+Left move workspace to output left
 #
 # Scratchpad:
 #
-bindsym Mod4+Shift+minus move scratchpad
-bindsym Mod4+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 #
 # Default apps:
 #
-bindsym Mod4+Shift+d exec tofi-run | xargs swaymsg exec --
-bindsym Mod4+d exec tofi-drun | xargs swaymsg exec --
-bindsym Mod4+Return exec alacritty
-bindsym Mod4+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+d exec tofi-run | xargs swaymsg exec --
+bindsym $mod+d exec tofi-drun | xargs swaymsg exec --
+bindsym $mod+Return exec $terminal 
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
-bindsym Mod4+Shift+q kill
-bindsym Mod4+Shift+c reload
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+c reload
 #
 # Layout:
 #
-bindsym Mod4+f fullscreen toggle
-bindsym Mod4+Shift+space floating toggle
-bindsym Mod4+a focus parent
-bindsym Mod4+e layout toggle split
-bindsym Mod4+s layout stacking
-bindsym Mod4+w layout tabbed
-bindsym Mod4+r mode resize
-bindsym Mod4+space focus mode_toggle
-bindsym Mod4+v splitv
-bindsym Mod4+b splith
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+a focus parent
+bindsym $mod+e layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+r mode resize
+bindsym $mod+space focus mode_toggle
+bindsym $mod+v splitv
+bindsym $mod+b splith
 #
 # Functional keys:
 #

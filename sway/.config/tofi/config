@@ -22,3 +22,4 @@ selection-background-padding=10
 selection-color=#1A1B26
 text-color=#C0CAF5
 width=100%
+terminal=alacritty
