@@ -204,6 +204,6 @@ include /etc/sway/config.d/*
 # ------------------------ AUTOSTART ------------------------ #
 #################################################################
 exec_always systemctl --user start sway-session.target
-exec swaymsg "workspace 1; exec alacritty;"
+exec swaymsg "workspace 1; exec alacritty -e tmux new -s Default;"
 exec swaymsg "workspace 8;"
 exec swaymsg "workspace 2; exec flatpak run org.mozilla.firefox"

@@ -4,7 +4,7 @@ sort=-priority
 layer=top
 anchor=top-right
 
-font=DroidSansM Nerd Font 16
+font=MonolisaWithFallback 14
 background-color=#1A1B26
 text-color=#C0CAF5
 width=450

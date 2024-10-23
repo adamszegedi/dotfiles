@@ -11,6 +11,7 @@ alias c='clear'
 # Sync to Drive
 alias sync-to-drive='rclone sync -P ~/Documents proton:arch/Documents && rclone sync -P ~/Pictures proton:arch/Pictures'
 alias sync-from-drive='rclone sync -P proton:arch/Documents ~/Documents && rclone sync -P proton:arch/Pictures ~/Pictures'
+alias sync-check-drive='rclone check proton:arch/Documents ~/Documents && rclone check proton:arch/Pictures ~/Pictures'
 
 #Cat
 alias cat='bat'
