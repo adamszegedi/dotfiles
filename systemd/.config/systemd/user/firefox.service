@@ -1,0 +1,11 @@
+[Unit]
+Description=Start Firefox automatically
+Documentation=
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=flatpak run org.mozilla.firefox
+
+[Install]
+WantedBy=sway-session.target

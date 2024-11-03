@@ -1,0 +1,10 @@
+[Unit]
+Description=Toggle FN keys for loffree keyboard
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/sh -c 'echo 2 > /sys/module/hid_apple/parameters/fnmode'
+
+[Install]
+WantedBy=multi-user.target

@@ -209,4 +209,3 @@ exec swaymsg workspace 1;
 exec alacritty -T tmux -e tmux new -A -s Default;
 exec swaymsg workspace 8;
 exec swaymsg workspace 2;
-exec flatpak run org.mozilla.firefox;
