@@ -16,6 +16,8 @@ vim.opt.encoding = "utf-8"
 -- Sets the character encoding for the file buffer
 vim.opt.fileencoding = "utf-8"
 
+vim.opt.fileformats = "unix,dos,mac"
+
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2

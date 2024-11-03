@@ -4,7 +4,7 @@ Version=1.0
 Name=Midnight Commander
 GenericName=File Manager
 Comment=Visual file manager
-Exec=foot --title=mc -e mc
+Exec=alacritty -T=mc -e mc
 Icon=folder
 MimeType=inode/directory
 Terminal=false
