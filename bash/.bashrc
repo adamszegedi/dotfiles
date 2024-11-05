@@ -27,3 +27,6 @@ fi
 if [ -d "$HOME/.cargo/bin" ]; then
 	PATH="$HOME/.cargo/bin:$PATH"
 fi
+
+# nvm init
+source /usr/share/nvm/init-nvm.sh

@@ -9,3 +9,4 @@ image/avif=org.gnome.Loupe.desktop
 image/png=org.gnome.Loupe.desktop
 image/heif=org.gnome.Loupe.desktop
 image/webp=org.gnome.Loupe.desktop
+devpod=dev-pod-handler.desktop
