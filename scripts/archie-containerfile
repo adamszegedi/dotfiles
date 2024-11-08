@@ -1,0 +1,3 @@
+FROM quay.io/toolbx/arch-toolbox:latest
+
+RUN sudo pacman -Syu --noconfirm bat eza git github-cli mc neovim starship stow unzip

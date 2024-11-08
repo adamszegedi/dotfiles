@@ -1,9 +1,9 @@
 #File Management
 alias space='sudo btrfs fi show'
-alias ls='eza --icons -ahlg --color=always --group-directories-first' # my preferred listing
-alias la='eza --icons -ahg --color=always --group-directories-first'  # all files and dirs
-alias ll='eza --icons -lhg --color=always --group-directories-first'  # long format
-alias lt='eza --icons -ahTg --color=always --group-directories-first' # tree listing
+alias ls='eza -ahlg --color=always --group-directories-first --octal-permissions' # my preferred listing
+alias la='eza -ahg --color=always --group-directories-first --octal-permissions'  # all files and dirs
+alias ll='eza -lhg --color=always --group-directories-first --octal-permissions'  # long format
+alias lt='eza -ahTg --color=always --group-directories-first --octal-permissions' # tree listing
 
 #Terminal
 alias c='clear' 

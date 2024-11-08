@@ -1,32 +1,32 @@
-#
-# ~/.bashrc
-#
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+export EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#Environment variables
-GPG_TTY=$(tty)
-export GPG_TTY
-export MOZ_ENABLE_WAYLAND=1
-
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-    exec sway
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
 fi
+unset rc
 
-set -o vi
-export EDITOR=/usr/bin/nvim
+ 
 
-#import aliases
-. ~/.aliases
-
-if [ -d "$HOME/.local/bin" ]; then
-	PATH="$HOME/.local/bin:$PATH"
-fi
-
-if [ -d "$HOME/.cargo/bin" ]; then
-	PATH="$HOME/.cargo/bin:$PATH"
-fi
-
-# nvm init
-source /usr/share/nvm/init-nvm.sh
