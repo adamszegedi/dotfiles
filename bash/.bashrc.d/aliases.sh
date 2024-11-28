@@ -9,9 +9,9 @@ alias lt='eza -ahTg --color=always --group-directories-first --octal-permissions
 alias c='clear' 
 
 # Sync to Drive
-alias sync-to-drive='rclone sync -P ~/Documents proton:arch/Documents && rclone sync -P ~/Pictures proton:arch/Pictures'
-alias sync-from-drive='rclone sync -P proton:arch/Documents ~/Documents && rclone sync -P proton:arch/Pictures ~/Pictures'
-alias sync-check-drive='rclone check proton:arch/Documents ~/Documents && rclone check proton:arch/Pictures ~/Pictures'
+alias sync-to-drive='rclone sync -P ~/Documents proton:archie/Documents && rclone sync -P ~/Pictures proton:archie/Pictures'
+alias sync-from-drive='rclone sync -P proton:archie/Documents ~/Documents && rclone sync -P proton:archie/Pictures ~/Pictures'
+alias sync-check-drive='rclone check proton:archie/Documents ~/Documents && rclone check proton:archie/Pictures ~/Pictures'
 
 #Cat
 alias cat='bat'

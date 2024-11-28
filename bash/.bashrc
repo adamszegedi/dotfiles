@@ -10,7 +10,6 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
-export EDITOR=/home/linuxbrew/.linuxbrew/bin/nvim
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
@@ -27,6 +26,3 @@ if [ -d ~/.bashrc.d ]; then
     done
 fi
 unset rc
-
- 
-
