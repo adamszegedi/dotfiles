@@ -14,7 +14,7 @@ sudo pacman -Syu --noconfirm
 ###
 # Install packages
 ###
-sudo pacman -S --noconfirm bat eza git github-cli mc neovim starship stow wl-clipboard unzip
+sudo pacman -S --noconfirm neovim wl-clipboard
 
 ###
 # Install neovim packages
@@ -43,5 +43,3 @@ if ! hash -t rustup >&2; then
     echo "Install rustup"
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain stable
 fi
-
-

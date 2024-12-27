@@ -1,3 +1,5 @@
+[[ -f /run/.toolboxenv ]] && return
+
 #File Management
 alias space='sudo btrfs fi show'
 alias ls='eza -ahlg --color=always --group-directories-first --octal-permissions' # my preferred listing
