@@ -2,7 +2,7 @@
 
 font-size = 18
 font-family = RobotoMono Nerd Font Mono Md
-fullscreen = true
+fullscreen = false
 
 gtk-titlebar = false
 mouse-hide-while-typing = true
