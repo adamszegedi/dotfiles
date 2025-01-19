@@ -1,0 +1,9 @@
+[Unit]
+Description=Start all user related graphical applications.
+PartOf=graphical-session.target
+
+[Service]
+Type=oneshot
+
+[Install]
+WantedBy=sway-session.target
