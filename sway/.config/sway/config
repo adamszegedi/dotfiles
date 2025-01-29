@@ -3,8 +3,10 @@
 #################################################################
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
-set $terminal ghostty
-set $menu wmenu-run -f 'RobotoMono Nerd Font Mono 18 @whgt=MD' -o 'DP-3' -N '#1A1B26'
+set $terminal alacritty
+# set $menu wmenu-run -f 'RobotoMono Nerd Font Mono 18 @whgt=MD' -o 'DP-3' -N '#1A1B26'
+set $menu rofi -show run -monitor 0 -terminal alacritty -theme /home/aszegedi/.config/rofi/oneDark-oneline.rasi
+set $dmenu rofi -show drun -monitor 0 -terminal alacritty -theme /home/aszegedi/.config/rofi/oneDark-oneline.rasi
 #################################################################
 # ------------------------  BEHAVIOUR  ------------------------ #
 #################################################################
@@ -99,7 +101,8 @@ bindsym $mod+minus scratchpad show
 #
 # Default apps:
 #
-bindsym $mod+d exec $menu
+bindsym $mod+d exec $dmenu
+bindsym $mod+Shift+d exec $menu
 bindsym $mod+Return exec $terminal 
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
@@ -201,6 +204,7 @@ include /etc/sway/config.d/*
 # ------------------------ AUTOSTART ------------------------ #
 #################################################################
 exec systemctl --user start sway-session.target
-exec swaymsg "workspace 1; exec ghostty;"
+exec dunst -conf ~/.config/dunst/dunstrc
+exec swaymsg "workspace 1; exec $terminal;"
 exec com.discordapp.Discord
 exec swaymsg "workspace 2; exec flatpak run org.mozilla.firefox;"

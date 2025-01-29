@@ -1,0 +1,11 @@
+[font]
+size = 18
+[font.normal]
+family = "RobotoMono Nerd Font"
+style = "Medium"
+
+[mouse]
+hide_when_typing = true
+
+[general]
+import = [ "~/.config/alacritty/themes/one_dark.toml" ]

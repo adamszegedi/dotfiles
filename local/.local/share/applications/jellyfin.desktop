@@ -1,8 +1,19 @@
 [Desktop Entry]
+Comment[en_US]=
+Comment=
 Encoding=UTF-8
-Version=1.0
-Type=Application
-Terminal=false
-Exec= flatpak run com.github.iwalton3.jellyfin-media-player --scale-factor 2 
+Exec=flatpak run com.github.iwalton3.jellyfin-media-player --scale-factor 2
+GenericName[en_US]=
+GenericName=
+Icon=com.github.iwalton3.jellyfin-media-player
+MimeType=
+Name[en_US]=Nessy
 Name=Nessy
-
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-KDE-SubstituteUID=false
+X-KDE-Username=
