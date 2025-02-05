@@ -1,3 +1,5 @@
+[[ -f /run/.toolboxenv ]] && return
+
 # pnpm
 export PNPM_HOME="/home/aszegedi/.local/share/pnpm"
 case ":$PATH:" in
