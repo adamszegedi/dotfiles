@@ -58,6 +58,7 @@ button:hover {
     text-shadow: none; /* Remove predefined text-shadow */
     background: none; /* Remove predefined background color (white) */
     transition: none; /* Disable predefined animations */
+    border-color: transparent;
 }
 
 #clock {
