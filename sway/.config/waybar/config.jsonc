@@ -1,9 +1,9 @@
 [
   {
     "clock#time": {
-      "format": "{:%a, %d %b, %I:%M %p}",
+      "format": "{:%H:%M}",
       "interval": 60,
-      "tooltip": false
+      "tooltip-format": "{:%A, %B %d, %Y}"
     },
     "custom/tray": {
       "format": "󱊖 ",
@@ -21,34 +21,18 @@
       ],
       "orientation": "inherit"
     },
-    "idle_inhibitor": {
-      "format": "{icon}",
-      "format-icons": {
-        "activated": " ",
-        "deactivated": " "
-      },
-      "timeout": 30
-    },
     "layer": "top",
     "margin": "0 0 0 0",
-    "memory": {
-      "format": " {used:0.1f}G",
-      "interval": 30,
-      "max-length": 20
-    },
-    "modules-center": [
-      "clock#time"
-    ],
+    "modules-center": [],
     "modules-left": [
       "sway/workspaces",
       "group/tray"
     ],
     "modules-right": [
-      "idle_inhibitor",
       "privacy",
       "pulseaudio",
       "network",
-      "memory"
+      "clock#time"
     ],
     "network": {
       "family": "ipv6",
@@ -106,7 +90,7 @@
     },
     "sway/workspaces": {
       "all-outputs": true,
-      "format": "{name}",
+      "format": "{value}",
       "on-click": "activate"
     },
     "tray": {

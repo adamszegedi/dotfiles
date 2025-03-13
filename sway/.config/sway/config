@@ -5,8 +5,8 @@
 set $mod Mod4
 set $terminal ghostty
 # set $menu wmenu-run -f 'RobotoMono Nerd Font Mono 18 @whgt=MD' -o 'DP-3' -N '#1A1B26'
-set $menu rofi -show run -monitor 0 -theme /home/aszegedi/.config/rofi/oneDark-oneline.rasi
-set $dmenu rofi -show drun -monitor 0 -theme /home/aszegedi/.config/rofi/oneDark-oneline.rasi
+set $menu rofi -show run -monitor 0 -theme /home/aszegedi/.config/rofi/kanagawa.rasi
+set $dmenu rofi -show drun -monitor 0 -theme /home/aszegedi/.config/rofi/kanagawa.rasi
 #################################################################
 # ------------------------  BEHAVIOUR  ------------------------ #
 #################################################################
@@ -17,6 +17,7 @@ focus_on_window_activation smart
 mouse_warping output
 workspace_layout default
 workspace_auto_back_and_forth no
+
 
 #################################################################
 # ------------------------ UI SETTINGS ------------------------ #
@@ -171,7 +172,7 @@ for_window [app_id="imv"] floating enable
 for_window [app_id="^.*"] inhibit_idle fullscreen
 for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="pavucontrol"] floating enable, sticky enable, move position cursor, move down 35
-for_window [class="discord"] move to workspace 5
+for_window [app_id="com.discordapp.Discord"] move to workspace 5
 for_window [app_id="brave-cifhbcnohmdccbgoicgdjpfamggdegmo-Default"] move to workspace 5
 for_window [class="steam"] move to workspace 7
 for_window [app_id="org.mozilla.firefox" title="YouTube"] move to workspace 8, focus
