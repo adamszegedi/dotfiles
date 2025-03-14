@@ -32,8 +32,10 @@ spec:
       name: ollama-pvc
     - mountPath: /dev/kfd
       name: kfd-device
+      readonly: true
     - mountPath: /dev/dri
       name: dri-device
+      readonly: true
     env:
       - name: GPU_VISIBLE_DEVICES
         value: "all"  # Expose all GPUs, or specify a GPU index if needed
