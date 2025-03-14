@@ -18,6 +18,10 @@ spec:
     - serve
     image: docker.io/ollama/ollama:rocm
     name: ollama
+    securityContext:
+      privileged: false
+      capabilities:
+        add: ["SYS_ADMIN"]
     ports:
     - containerPort: 8080
       hostPort: 8080
@@ -26,6 +30,13 @@ spec:
     volumeMounts:
     - mountPath: /root/.ollama
       name: ollama-pvc
+    - mountPath: /dev/kfd
+      name: kfd-device
+    - mountPath: /dev/dri
+      name: dri-device
+    env:
+      - name: GPU_VISIBLE_DEVICES
+        value: "all"  # Expose all GPUs, or specify a GPU index if needed
   - image: ghcr.io/open-webui/open-webui:main
     name: openwebui
     securityContext: {}
@@ -39,4 +50,12 @@ spec:
   - name: open-webui-pvc
     persistentVolumeClaim:
       claimName: open-webui
+  - name: kfd-device
+    hostPath:
+      path: /dev/kfd
+      type: CharDevice
+  - name: dri-device
+    hostPath:
+      path: /dev/dri
+      type: Directory
 
