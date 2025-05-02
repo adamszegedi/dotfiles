@@ -1,0 +1,11 @@
+[Unit]
+Description=Serving a local LLM with frontend
+After=local-fs.target
+PartOf=graphical-session.target
+
+[Kube]
+Yaml=/home/aszegedi/.dotfiles/scripts/kube/ollama.yml
+
+[Install]
+# Start by default on boot
+WantedBy=default.target

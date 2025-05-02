@@ -1,5 +1,5 @@
 * {
-    font:   "RobotoMono Nerd Font Mono Md 18";
+    font:   "Roboto Mono Medium 18";
     black:      #181a1f;
     bg0:        #282c34;
     fg:         #dcd7ba;
@@ -20,6 +20,7 @@ window {
     width:              100%;
     background-color:   @bg0;
     children:           [ mainbox,message ];
+    y-offset:   -40px;
 }
 
 mainbox {

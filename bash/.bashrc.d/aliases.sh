@@ -77,3 +77,5 @@ alias wttr='curl wttr.in/47.4143259,19.2005805'
 
 # open lynx
 alias lynx='lynx -cfg=~/.config/lynx/lynx.cfg --display_charset=utf-8'
+
+alias check-webcam='mpv av://v4l2:/dev/video0 --profile=low-latency --untimed'

@@ -1,0 +1,22 @@
+# Wofi config file
+
+# --- Behavior ---
+# Use dmenu mode (reads from stdin, prints to stdout)
+# Allow typing to search immediately
+allow_images=true # Set to true if your mode shows icons
+image_size=60
+allow_markup=false
+
+insensitive=true
+parse_search=true
+no_actions=true
+
+# Style
+style=/home/aszegedi/.config/wofi/style.css
+term=ghostty # Or your preferred terminal
+
+# --- Other ---
+# Number of results to show
+lines=6
+# Define custom modes here if needed (e.g., drun, run)
+# show=drun,run

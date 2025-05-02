@@ -9,3 +9,4 @@ application/pdf=org.gnome.Papers.desktop
 image/png=org.gnome.Loupe.desktop
 image/jpeg=org.gnome.Loupe.desktop
 x-scheme-handler/postman=Postman.desktop
+devpod=dev-pod-desktop-handler.desktop

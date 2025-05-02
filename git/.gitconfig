@@ -15,5 +15,11 @@
 	ff = only
 [push]
     autoSetupRemote = true
+[fetch]
+	prune = true
 [init]
 	defaultBranch = master
+[alias]
+    graph = log --oneline --graph --decorate
+[blame]
+    date = short

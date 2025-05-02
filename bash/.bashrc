@@ -3,9 +3,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Start Sway
+# Start Compositor
 if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
-    exec sway
+    exec Hyprland
 fi
 
 # User specific environment

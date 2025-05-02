@@ -1,0 +1,83 @@
+/* Wofi style based on Kanagawa theme and macOS Spotlight look */
+
+/* Base Window */
+window {
+    background-color: rgba(31, 31, 40, 0.9); /* Kanagawa bg (e.g., sumiInk0) with transparency */
+    border-radius: 12px;                  /* Rounded corners like macOS */
+    border: 1px solid #3b3b4d;           /* Subtle border (Kanagawa fujiGray) */
+    font-family: "SF Pro Display", Cantarell, Sans-serif; /* macOS-like font */
+    font-size: 32px;
+    font-weight: 450;
+    /* Dimensions are often better set via command line args */
+    /* width: 500px; */
+    /* height: 400px; */
+}
+
+/* Remove unnecessary outer padding/margins */
+#outer-box {
+    margin: 0px;
+    padding: 15px; /* Padding inside the window */
+    border: none;
+}
+
+/* Input field */
+#input {
+    background-color: #16161d; /* Kanagawa bg_dark (e.g., sumiInk1) */
+    color: #dcd7ba;            /* Kanagawa fg */
+    padding: 10px 15px;
+    border-radius: 8px;       /* Slightly rounded input */
+    border: none;             /* Cleaner look */
+    margin-bottom: 15px;      /* Space between input and results */
+    outline: none;            /* Remove focus outline */
+    box-shadow: none;         /* Remove default shadows */
+}
+
+ #input > image.left {
+        -gtk-icon-transform:scale(2);
+        padding-top: 3px;
+        padding-right: 15px;
+}
+
+/* Input field when focused (optional styling) */
+#input:focus {
+    /* You could add a subtle border or shadow on focus if desired */
+    /* border: 1px solid #7aa2f7; */ /* Kanagawa waveBlue1 */
+}
+
+/* Container for the results list */
+#scroll {
+    margin-top: 0; /* Already spaced by input margin */
+    border: none;
+}
+
+/* Individual result entries */
+#entry {
+    padding: 8px 15px;
+    color: #c8c093; /* Kanagawa fg_gutter (slightly dimmer) */
+    border-radius: 6px;
+    border: none;
+    background-color: transparent; /* Use window background */
+}
+
+/* Text within an entry */
+#text {
+    color: #c8c093; /* Match entry color */
+    /* If entry icon is shown, add margin */
+     margin-left: 10px; /* Adjust if you have icons */
+}
+
+/* Selected result entry */
+#entry:selected {
+    background-color: #7aa2f7; /* Kanagawa waveBlue1 */
+    color: #1f1f28;            /* Kanagawa bg (dark text for contrast) */
+}
+
+/* Text within the selected entry */
+#entry:selected #text {
+    color: #1f1f28; /* Match selected entry text color */
+}
+
+/* Image styling (if you show icons) */
+#img {
+     margin-right: 10px;
+}
