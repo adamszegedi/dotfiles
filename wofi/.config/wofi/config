@@ -6,12 +6,13 @@
 allow_images=true # Set to true if your mode shows icons
 image_size=60
 allow_markup=false
-
 insensitive=true
 parse_search=true
 no_actions=true
 
 # Style
+monitor=DP-3
+layer=overlay
 style=/home/aszegedi/.config/wofi/style.css
 term=ghostty # Or your preferred terminal
 

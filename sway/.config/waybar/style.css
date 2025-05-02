@@ -25,7 +25,7 @@ window#waybar {
     min-width: 2em;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
     font-weight: bold;
     background-color: @bg_yellow;
     color: @fg;

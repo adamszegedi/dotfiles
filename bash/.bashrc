@@ -5,7 +5,7 @@
 
 # Start Compositor
 if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
-    exec Hyprland
+    exec sway
 fi
 
 # User specific environment
