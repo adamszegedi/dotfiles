@@ -2,10 +2,10 @@
 
 #File Management
 alias space='sudo btrfs fi show'
-alias ls='eza -ahlg --color=always --group-directories-first --octal-permissions' # my preferred listing
-alias la='eza -ahg --color=always --group-directories-first --octal-permissions'  # all files and dirs
-alias ll='eza -lhg --color=always --group-directories-first --octal-permissions'  # long format
-alias lt='eza -ahTg --color=always --group-directories-first --octal-permissions' # tree listing
+alias ls='eza -ahlg --group-directories-first --octal-permissions' # my preferred listing
+alias la='eza -ahg --group-directories-first --octal-permissions'  # all files and dirs
+alias ll='eza -lhg --group-directories-first --octal-permissions'  # long format
+alias lt='eza -ahTg --group-directories-first --octal-permissions' # tree listing
 
 #Terminal
 alias c='clear' 
@@ -78,4 +78,8 @@ alias wttr='curl wttr.in/47.4143259,19.2005805'
 # open lynx
 alias lynx='lynx -cfg=~/.config/lynx/lynx.cfg --display_charset=utf-8'
 
-alias check-webcam='mpv av://v4l2:/dev/video0 --profile=low-latency --untimed'
+alias check-webcam='mpv av://v4l2:/dev/video0 --demuxer-lavf-o=video_size=1920x1080,input_format=mjpeg --profile=low-latency --untimed'
+
+get_sway_windows() {
+  swaymsg -t get_tree | jq '[.nodes[] | . as $monitor | .nodes[] | . as $workspace | .nodes[] | { monitor: $monitor.name, workspace: $workspace.name, name: .name, app_id: .app_id}]'
+}

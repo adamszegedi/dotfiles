@@ -1,8 +1,9 @@
 amd-ucode
-apple-fonts
 base
 base-devel
 bat
+bluez
+bluez-utils
 bottom
 btrfs-progs
 dunst
@@ -18,10 +19,12 @@ fzf
 ghostty
 git
 github-cli
+gnome-themes-extra
 grim
 gst-plugin-pipewire
 htop
 imagemagick
+inter-font
 jq
 ldns
 less
@@ -33,6 +36,7 @@ linux-firmware
 lua-language-server
 lynx
 mc
+mpd
 mpv
 neovim
 networkmanager
@@ -41,6 +45,7 @@ noto-fonts-emoji
 nvtop
 nwg-look
 openssh
+papirus-icon-theme
 paru
 paru-debug
 pavucontrol
@@ -51,6 +56,7 @@ pipewire-pulse
 podman
 rclone
 ripgrep
+rmpc
 rocm-core
 rocminfo
 serie
@@ -62,6 +68,7 @@ sway
 swaybg
 swayidle
 swaylock
+tailscale
 timer-bin
 tmux
 toolbox
@@ -75,5 +82,7 @@ wofi
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xorg-xwayland
+yazi
+yt-dlp
 zellij
 zram-generator

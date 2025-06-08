@@ -1,7 +1,5 @@
 [global]
     ### Display ###
-    frame_color = "#abb2bf"
-    separator_color = "#abb2bf"
 
     # Which monitor should the notifications be displayed on.
     monitor = DP-3
@@ -144,7 +142,7 @@
 
     ### Text ###
 
-    font = SF Pro Display Medium 18
+    font = Inter Variable,Cantarell Normal Regular 18
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -222,7 +220,7 @@
     enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = Adwaita
+    icon_theme = Papirus
     # You can also set multiple icon themes, with the leftmost one being used first.
     # icon_theme = "Adwaita, breeze"
 
@@ -271,7 +269,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+    corner_radius = 5
 
     # Define which corners to round when drawing the window. If the corner radius
     # is set to 0 this option will be ignored.
@@ -337,31 +335,30 @@
     # where there are multiple screens with very different dpi values.
     per_monitor_dpi = false
 
-
+# Low urgency notifications
 [urgency_low]
-    # IMPORTANT: colors have to be defined in quotation marks.
-    # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#282c34"
-    foreground = "#abb2bf"
-    timeout = 10
-    # Icon for notifications with low urgency
+    background = "#1f1f28"  # sumi_ink_bg
+    foreground = "#727169"  # ink_gray_fg_dim
+    frame_color = "#76946a" # spring_green
+    timeout = 8
     default_icon = dialog-information
+    # icon = /path/to/low_urgency_default_icon.png
 
+# Normal urgency notifications
 [urgency_normal]
-    background = "#282c34"
-    foreground = "#abb2bf"
+    background = "#1f1f28"  # sumi_ink_bg
+    foreground = "#dcd7ba"  # fuji_white_fg
+    frame_color = "#7e9cd8" # wave_blue_1
     timeout = 10
-    override_pause_level = 30
-    # Icon for notifications with normal urgency
     default_icon = dialog-information
+    # icon = /path/to/normal_urgency_default_icon.png
 
+# Critical urgency notifications
 [urgency_critical]
-    background = "#282c34"
-    foreground = "#abb2bf"
-    frame_color = "#ff0000"
-    timeout = 0
-    override_pause_level = 60
-    # Icon for notifications with critical urgency
+    background = "#16161d"  # sumi_ink_bg_alt (slightly different for emphasis)
+    foreground = "#dcd7ba"  # fuji_white_fg
+    frame_color = "#c34043" # autumn_red
+    timeout = 0             # Sticky until dismissed
     default_icon = dialog-warning
 
 # Every section that isn't one of the above is interpreted as a rules to

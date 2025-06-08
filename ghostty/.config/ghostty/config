@@ -19,7 +19,7 @@
 # ==========================
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
-font-family = MonoLisa Medium
+font-family = MonoLisa 
 font-style = Regular
 font-size = 13
 gtk-titlebar = false
