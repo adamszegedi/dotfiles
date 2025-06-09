@@ -1,6 +1,6 @@
-@define-color bg0 #1f1f28;
-@define-color bg_yellow #49443C;
-@define-color fg #dcd7ba;
+@define-color bg0 RGBA(31, 31, 40, 1);
+@define-color bg_yellow RGBA(73, 68, 60, 1);
+@define-color fg RGBA(220, 215, 186, 1);
 
 * {
     font-family: "Inter Variable";
