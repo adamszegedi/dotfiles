@@ -1,0 +1,33 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/nvme0n1p2
+UUID=2b2dddb3-dd2c-43c9-88b1-7ff06739f200	/         	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@	0 0
+
+# /dev/nvme0n1p2
+UUID=2b2dddb3-dd2c-43c9-88b1-7ff06739f200	/home     	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@home	0 0
+
+# /dev/nvme0n1p2
+UUID=2b2dddb3-dd2c-43c9-88b1-7ff06739f200	/var/log  	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@log	0 0
+
+# /dev/nvme0n1p2
+UUID=2b2dddb3-dd2c-43c9-88b1-7ff06739f200	/var/cache/pacman/pkg	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@pkg	0 0
+
+# /dev/nvme0n1p2
+UUID=2b2dddb3-dd2c-43c9-88b1-7ff06739f200	/.snapshots	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@.snapshots	0 0
+
+# /dev/nvme0n1p1
+UUID=F1B9-5BC1      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/nvme1n1  db2640a7-927d-46b5-b790-9090d5a39c24
+UUID=db2640a7-927d-46b5-b790-9090d5a39c24   /home/aszegedi/Games    btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@Games	0 0
+UUID=db2640a7-927d-46b5-b790-9090d5a39c24   /home/aszegedi/Pictures    btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@Pictures	0 0
+UUID=db2640a7-927d-46b5-b790-9090d5a39c24   /home/aszegedi/Music    btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@Music	0 0
+
+# /dev/sda 7c63fdac-9a3f-48ee-8b1e-2bc8968f182f 
+UUID=7c63fdac-9a3f-48ee-8b1e-2bc8968f182f   /home/aszegedi/Backup   btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2	0 0
+
+# Nessy nfs
+nessy:/volume2/Download  /mnt/nessy/Download   nfs   _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
+nessy:/volume3/Media  /mnt/nessy/Media   nfs   _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
