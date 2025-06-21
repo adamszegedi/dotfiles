@@ -1,0 +1,17 @@
+app/com.brave.Browser
+app/com.discordapp.Discord
+app/com.github.tchx84.Flatseal
+app/com.valvesoftware.Steam
+app/io.github.flattool.Warehouse
+app/io.github.flattool.Warehouse
+app/io.podman_desktop.PodmanDesktop
+app/me.iepure.devtoolbox
+app/org.gnome.Loupe
+app/org.gnome.Papers
+app/org.mozilla.firefox
+app/org.remmina.Remmina
+app/sh.loft.devpod
+app/org.musicbrainz.Picard
+runtime/org.gtk.Gtk3theme.adw-gtk3
+runtime/org.gtk.Gtk3theme.adw-gtk3-dark
+

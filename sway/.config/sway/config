@@ -175,6 +175,8 @@ for_window [app_id="com.discordapp.Discord"] move to workspace 5
 for_window [app_id="brave-cifhbcnohmdccbgoicgdjpfamggdegmo-Default"] move to workspace 5
 for_window [class="steam"] move to workspace 7
 for_window [app_id="org.mozilla.firefox" title="YouTube"] move to workspace 8, focus
+for_window [app_id="firefox" title="^Picture-in-Picture$"] \
+                    floating enable, resize set width 1200 px height 675 px, sticky enable
 for_window [app_id="org.jellyfin.jellyfinmediaplayer"] move to workspace 8, focus
 for_window [app_id="mpv"] move to workspace 8, focus
 for_window [app_id="org.remmina.Remmina"] move to workspace 9, focus
@@ -205,5 +207,5 @@ include /etc/sway/config.d/*
 exec systemctl --user start sway-session.target
 exec dunst -conf ~/.config/dunst/dunstrc
 exec swaymsg "workspace 1; exec $terminal;"
-exec com.discordapp.Discord
+exec flatpak run com.discordapp.Discord
 exec swaymsg "workspace 2; exec flatpak run org.mozilla.firefox;"
