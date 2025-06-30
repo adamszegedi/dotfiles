@@ -7,8 +7,8 @@ set -o nounset    # Exposes unset variables
 execute(){
     dt=$(date '+%H:%M:%S');
     echo ""
-    pad=$(printf '%0.1s' "-"{1..60})
     padlength=90
+    pad=$(printf '%0.1s' "-"{1..90}})
     string1="${1} - ${dt} "
     string2=' [Update] #'
     string3=' [Done]   #'

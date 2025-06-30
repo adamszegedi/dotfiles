@@ -5,6 +5,7 @@ PartOf=graphical-session.target
 
 [Kube]
 Yaml=/home/aszegedi/.dotfiles/scripts/kube/ollama.yml
+AutoUpdate=registry
 
 [Install]
 # Start by default on boot
