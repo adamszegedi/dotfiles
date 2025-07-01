@@ -1,3 +1,4 @@
+app/app.devsuite.Ptyxis
 app/com.brave.Browser
 app/com.discordapp.Discord
 app/com.github.tchx84.Flatseal

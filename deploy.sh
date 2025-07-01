@@ -59,7 +59,9 @@ echo "############################################"
 echo "#          Install flatpak apps            #"
 echo "############################################"
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-xargs flatpak install -y < flatpaks.txt
+while IFS= read -r app && [ -n "$app" ]; do
+    flatpak install -y "$app"
+done < ./flatpaks.txt
 
 echo ""
 echo "############################################"
