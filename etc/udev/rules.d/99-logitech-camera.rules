@@ -1,0 +1,3 @@
+#usb-046d_Logitech_BRIO_59F4E02A-video-index0
+
+SUBSYSTEM=="video4linux", KERNEL=="video[0-9]*", ATTR{index}=="0", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="085e", RUN+="/usr/bin/v4l2-ctl -d $devnode --set-fmt-video=width=480,height=270 --set-parm=60 --set-ctrl=white_balance_temperature=2400 --set-ctrl=sharpness=154"

@@ -28,6 +28,6 @@ execute 'Pacman' 'sudo pacman -Syu'
 
 execute 'Flatpak' 'flatpak update -y'
 
-execute 'Brew' 'brew update -v && brew upgrade'
+execute 'Neovim - Config update' 'git -C ~/.config/nvim pull origin master'
 
-execute 'Neovim' 'git -C ~/.config/nvim pull origin master'
+execute 'Neovim - Lazy Update' 'nvim --headless "+Lazy! restore" +qa'

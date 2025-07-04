@@ -1,0 +1,12 @@
+FROM docker.io/archlinux:base-devel
+
+ARG UID=1000
+ARG GID=1000
+ARG UNAME="ascii"
+
+RUN pacman -Syu --noconfirm sl cowsay lolcat figlet asciiquarium nyancat fortune-mod
+
+RUN groupadd -g $GID -o $UNAME
+RUN useradd -m -u $UID -g $GID -o -s /bin/bash $UNAME
+
+USER $USER_NAME

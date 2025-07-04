@@ -83,3 +83,7 @@ alias check-webcam='mpv av://v4l2:/dev/video0 --demuxer-lavf-o=video_size=1920x1
 get_sway_windows() {
   swaymsg -t get_tree | jq '[.nodes[] | . as $monitor | .nodes[] | . as $workspace | .nodes[] | { monitor: $monitor.name, workspace: $workspace.name, name: .name, app_id: .app_id}]'
 }
+
+alias update='~/.dotfiles/update.sh'
+alias deploy='~/.dotfiles/deploy.sh'
+alias ascii='podman run -it --user ascii --name ascii --replace localhost/arch-ascii bash'

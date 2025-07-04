@@ -14,10 +14,10 @@ restow() {
 }
 
 if [[ ! -h ~/.bashrc ]]; then
-    # This can only happen on a brand new computer
-    # so we remove these inital files to overwrite
-    # with the stowed ones
     rm ~/.bashrc
+fi
+
+if [[ -h ~/.bash_profile ]]; then
     rm ~/.bash_profile
 fi
 
@@ -62,9 +62,3 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 while IFS= read -r app && [ -n "$app" ]; do
     flatpak install -y "$app"
 done < ./flatpaks.txt
-
-echo ""
-echo "############################################"
-echo "#          Install brew apps            #"
-echo "############################################"
-brew -v bundle --file ./brew/.Brewfile
