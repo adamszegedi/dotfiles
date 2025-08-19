@@ -28,6 +28,8 @@ execute 'Pacman' 'sudo pacman -Syu'
 
 execute 'Flatpak' 'flatpak update -y'
 
+execute 'Rustup Toolchain update' 'rustup update'
+
 execute 'Neovim - Config update' 'git -C ~/.config/nvim pull origin master'
 
 execute 'Neovim - Lazy Update' 'nvim --headless "+Lazy! restore" +qa'

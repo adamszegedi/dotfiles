@@ -1,4 +1,4 @@
-FROM docker.io/archlinux:base-devel
+FROM docker.io/archlinux:latest
 
 ARG UID=1000
 ARG GID=1000
@@ -10,3 +10,23 @@ RUN groupadd -g $GID -o $UNAME
 RUN useradd -m -u $UID -g $GID -o -s /bin/bash $UNAME
 
 USER $USER_NAME
+
+# Create and set up the welcome message
+RUN  echo -e 'function greet() {' >> "/home/$UNAME/.bashrc"  && \
+     echo -e 'echo -e "Welcome to the ASCII Art Party! 🎉"' >> "/home/$UNAME/.bashrc" && \
+     echo -e 'echo -e "Here are your installed ASCII art tools:"' >>  "/home/$UNAME/.bashrc" && \
+     echo -e 'echo -e "  🚆 \`sl\` - A steam locomotive that runs across your terminal."' >> "/home/$UNAME/.bashrc" && \
+     echo -e 'echo -e "  🐮 \`cowsay\` - A cow that says whatever you want."' >> "/home/$UNAME/.bashrc" && \
+     echo -e 'echo -e "  🌈 \`lolcat\` - Makes text look like it is on rainbow-colored LSD."' >> "/home/$UNAME/.bashrc" && \
+     echo -e 'echo -e "  📜 \`figlet\` - Creates large text banners from small input."' >> "/home/$UNAME/.bashrc" && \
+     echo -e 'echo -e "  🐠 \`asciiquarium\` - A colorful aquarium with swimming fish."' >> "/home/$UNAME/.bashrc" && \
+     echo -e 'echo -e "  🐱 \`nyancat\` - The famous pop-tart cat flying across your screen."' >> "/home/$UNAME/.bashrc" && \
+     echo -e 'echo -e "  🍀 \`fortune-mod\` - Displays random fortune cookie messages."' >> "/home/$UNAME/.bashrc" && \
+     echo -e 'echo -e "Try them out with commands like:"' >> "/home/$UNAME/.bashrc" && \
+     echo -e 'echo -e " cowsay '\''Hello, World!'\''"' >> "/home/$UNAME/.bashrc" && \
+     echo -e 'echo -e "  fortune | cowsay | lolcat"' >> "/home/$UNAME/.bashrc" && \
+     echo -e 'echo -e "  asciiquarium"' >> "/home/$UNAME/.bashrc" && \
+     echo -e 'echo -e "  nyancat"' >> "/home/$UNAME/.bashrc" && \
+     echo -e 'echo -e "Have fun with your ASCII art! 🎨"' >> "/home/$UNAME/.bashrc" && \
+     echo -e '}\n' >> "/home/$UNAME/.bashrc" && \
+     echo -e 'greet' >> "/home/$UNAME/.bashrc"  

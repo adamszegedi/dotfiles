@@ -25,6 +25,7 @@ linux
 linux-firmware
 mc
 mpd
+mpd-mpris
 mpv
 neovim
 networkmanager

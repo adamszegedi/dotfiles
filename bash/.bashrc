@@ -22,5 +22,3 @@ if [ -d ~/.bashrc.d ]; then
         fi
     done
 fi
-unset rc
-
