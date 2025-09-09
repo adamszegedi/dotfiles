@@ -148,7 +148,7 @@ mode "resize" {
 # ------------------------  HW CONFIG   ----------------------- #
 #################################################################
 
-output "DP-3" {
+output "DP-2" {
 bg ~/.config/sway/wallpaper.jpg fill
 mode 2560x1440@59.951Hz
 pos 2560,0
@@ -172,7 +172,7 @@ for_window [app_id="^.*"] inhibit_idle fullscreen
 for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="pavucontrol"] floating enable, sticky enable, move position cursor, move down 35
 for_window [app_id="com.discordapp.Discord"] move to workspace 5
-for_window [app_id="brave-cifhbcnohmdccbgoicgdjpfamggdegmo-Default"] move to workspace 5
+for_window [app_id="brave-teams.microsoft.com__-Default"] move to workspace 5
 for_window [class="steam"] move to workspace 7
 for_window [app_id="org.mozilla.firefox" title="YouTube"] move to workspace 8, focus
 for_window [app_id="firefox" title="^Picture-in-Picture$"] \
@@ -186,15 +186,15 @@ for_window [app_id="gamescope-brokey"] move to workspace 7, focus
 #################################################################
 # --------------------- WORKSPACE SETTINGS -------------------- #
 #################################################################
-workspace "1" output "DP-3"
-workspace "2" output "DP-3"
-workspace "3" output "DP-3"
+workspace "1" output "DP-2"
+workspace "2" output "DP-2"
+workspace "3" output "DP-2"
 workspace "4" output "HDMI-A-1"
 workspace "5" output "HDMI-A-1"
 workspace "6" output "HDMI-A-1"
-workspace "7" output "DP-3"
+workspace "7" output "DP-2"
 workspace "8" output "HDMI-A-1"
-workspace "9" output "DP-3"
+workspace "9" output "DP-2"
 
 #################################################################
 # ---------------------   INCLUDE CONFIG   -------------------- #

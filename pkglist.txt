@@ -21,6 +21,7 @@ inter-font
 jq
 less
 libpulse
+libheif
 linux
 linux-firmware
 mc
@@ -41,6 +42,7 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 podman
+rclone
 ripgrep
 rmpc
 rocm-core

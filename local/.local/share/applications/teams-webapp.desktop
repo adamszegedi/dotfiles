@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Microsoft Teams
+Comment=Microsoft Teams Web App
+Exec=flatpak run com.brave.Browser --app=https://teams.microsoft.com --enable-features=WebApps
+Terminal=false
+Type=Application
+Icon=teams
+StartupWMClass=teams.microsoft.com
+Categories=Network;Office;

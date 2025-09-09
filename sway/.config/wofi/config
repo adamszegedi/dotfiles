@@ -11,7 +11,7 @@ parse_search=true
 no_actions=true
 
 # Style
-monitor=DP-3
+monitor=DP-2
 layer=overlay
 style=/home/aszegedi/.config/wofi/style.css
 term=ghostty # Or your preferred terminal

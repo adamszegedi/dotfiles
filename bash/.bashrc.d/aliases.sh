@@ -78,7 +78,7 @@ alias wttr='curl wttr.in/47.4143259,19.2005805'
 # open lynx
 alias lynx='lynx -cfg=~/.config/lynx/lynx.cfg --display_charset=utf-8'
 
-alias check-webcam='mpv av://v4l2:/dev/video0 --demuxer-lavf-o=video_size=1920x1080,input_format=mjpeg --profile=low-latency --untimed'
+alias check-webcam='mpv av://v4l2:/dev/video0'
 
 get_sway_windows() {
   swaymsg -t get_tree | jq '[.nodes[] | . as $monitor | .nodes[] | . as $workspace | .nodes[] | { monitor: $monitor.name, workspace: $workspace.name, name: .name, app_id: .app_id}]'
