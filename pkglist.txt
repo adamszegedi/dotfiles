@@ -3,7 +3,7 @@ archlinux-xdg-menu
 base
 base-devel
 bat
-bottom
+btop
 btrfs-progs
 dunst
 dysk
