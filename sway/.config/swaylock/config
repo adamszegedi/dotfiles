@@ -6,8 +6,8 @@ ignore-empty-password
 indicator-caps-lock
 indicator-radius=100
 indicator-thickness=30
-indicator-x-position=1280
-indicator-y-position=1240
+indicator-x-position=960
+indicator-y-position=930
 inside-caps-lock-color=00000000
 inside-clear-color=00000000
 inside-color=00000000

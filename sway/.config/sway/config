@@ -4,8 +4,8 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 set $terminal ghostty
-set $menu wofi --show run -L 6 -W 860 -H 400 -x 800 -y 450 -I -k /dev/null 
-set $dmenu wofi --show drun -L 6 -W 860 -H 400 -x 800 -y 450 -I -k /dev/null 
+set $menu tofi-run | xargs swaymsg exec --
+set $dmenu tofi-drun | xargs swaymsg exec --
 #################################################################
 # ------------------------  BEHAVIOUR  ------------------------ #
 #################################################################
@@ -35,9 +35,6 @@ default_floating_border normal 3
 gaps inner 6
 smart_gaps on
 smart_borders on
-bar {
-  swaybar_command waybar
-}
 
 #################################################################
 # ------------------------ KEY BINDINGS ----------------------- #
@@ -46,6 +43,12 @@ bindsym Print exec grim - | wl-copy
 bindsym Alt+Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
 bindsym Control+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
 bindsym Alt+Control+l exec ~/.config/swaylock/lock.sh
+bindsym Super+Comma exec makoctl dismiss
+bindsym Super+Shift+Comma exec makoctl dismiss --all
+
+#
+#Gaming
+#
 
 #
 # Moving around:
@@ -150,38 +153,39 @@ mode "resize" {
 
 output "DP-2" {
 bg ~/.config/sway/wallpaper.jpg fill
-mode 2560x1440@59.951Hz
+mode 3840x2160@59.940Hz
 pos 2560,0
+scale 2
 }
 
 output "HDMI-A-1" {
 bg ~/.config/sway/wallpaper.jpg fill
-mode 2560x1440@59.951Hz
+mode --custom 2560x1440@50Hz
 pos 0,0
+scale 1
 }
 
 seat "*" {
-xcursor_theme Bibata-Modern-Ice 36
+xcursor_theme Bibata-Modern-Ice 24
 }
 
 ################################################################
 # ---------------------- WINDOW SETTINGS ---------------------- #
 #################################################################
+for_window [class="steam_app*"] inhibit_idle focus
+for_window [class="steam"] move to workspace 7
 for_window [app_id="imv"] floating enable
-for_window [app_id="^.*"] inhibit_idle fullscreen
-for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="pavucontrol"] floating enable, sticky enable, move position cursor, move down 35
 for_window [app_id="com.discordapp.Discord"] move to workspace 5
 for_window [app_id="brave-teams.microsoft.com__-Default"] move to workspace 5
-for_window [class="steam"] move to workspace 7
 for_window [app_id="org.mozilla.firefox" title="YouTube"] move to workspace 8, focus
-for_window [app_id="firefox" title="^Picture-in-Picture$"] \
-                    floating enable, resize set width 1200 px height 675 px, sticky enable
+for_window [app_id="firefox" title="^Picture-in-Picture$"] floating enable, resize set width 1200 px height 675 px, sticky enable
+for_window [app_id="xdg-desktop-portal-gtk"] floating enable, resize set width 1200 px height 675 px, sticky enable
+for_window [app_id="com.local.wiremix"] floating enable, resize set width 1200 px height 675 px, sticky enable
 for_window [app_id="org.jellyfin.jellyfinmediaplayer"] move to workspace 8, focus
 for_window [app_id="mpv"] move to workspace 8, focus
 for_window [app_id="org.remmina.Remmina"] move to workspace 9, focus
 for_window [app_id="org.gnome.Loupe"] floating enable
-for_window [app_id="gamescope-brokey"] move to workspace 7, focus
 
 #################################################################
 # --------------------- WORKSPACE SETTINGS -------------------- #
@@ -205,7 +209,7 @@ include /etc/sway/config.d/*
 # ------------------------ AUTOSTART ------------------------ #
 #################################################################
 exec systemctl --user start sway-session.target
-exec dunst -conf ~/.config/dunst/dunstrc
 exec swaymsg "workspace 1; exec $terminal;"
-exec flatpak run com.discordapp.Discord
+#Discord
+exec gtk-launch org.chromium.Chromium.flextop.chrome-mfhpbolkhgobaabcbabdlnhidbjpoogc-Default.desktop
 exec swaymsg "workspace 2; exec flatpak run org.mozilla.firefox;"

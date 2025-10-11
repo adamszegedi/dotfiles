@@ -14,21 +14,21 @@
 #
 # Additionally, each config option is also explained in detail
 # on Ghostty's website, at https://ghostty.org/docs/config.
+#
+# Ghostty can reload the configuration while running by using the menu
+# options or the bound key (default: Command + Shift + comma on macOS and
+# Control + Shift + comma on other platforms). Not all config options can be
+# reloaded while running; some only apply to new windows and others may require
+# a full restart to take effect.
+
 
 # Config syntax crash course
 # ==========================
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
-font-family = JetBrains Mono
-font-style = Regular
-font-size = 13
-gtk-titlebar = false
-mouse-hide-while-typing = true
+font-family = MonoLisa
 theme = Kanagawa Wave
-
-window-padding-balance = true
-# window-padding-x = 3,3
-# window-padding-y = 1,0
+# window-padding-x = 2
 #
 # # Spacing around the equals sign does not matter.
 # # All of these are identical:
@@ -39,7 +39,7 @@ window-padding-balance = true
 #
 # # Any line beginning with a # is a comment. It's not possible to put
 # # a comment after a config option, since it would be interpreted as a
-# # part of the value. For IBM Plex Mono example, this will have a value of "#123abc":
+# # part of the value. For example, this will have a value of "#123abc":
 # background = #123abc
 #
 # # Empty values are used to reset config keys to default.

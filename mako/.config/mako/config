@@ -1,0 +1,47 @@
+##########################
+######## Behaviour #######
+##########################
+default-timeout=5000
+group-by=app-name
+on-button-left=dismiss
+on-button-right=dismiss-all
+
+##########################
+######## LooknFeel #######
+##########################
+max-icon-size=32
+outer-margin=20
+border-size=1
+border-radius=20
+padding=10
+font=CaskaydiaMono Nerd Font
+background-color=#1F1F28
+text-color=#DCD7BA
+border-color=#7E9CD8
+
+##########################
+######## Position ########
+##########################
+anchor=top-right
+output=DP-2
+width=420
+height=110
+
+[app-name=Spotify]
+invisible=1
+
+[mode=do-not-disturb]
+invisible=true
+
+[mode=do-not-disturb app-name=notify-send]
+invisible=false
+
+[urgency=high]
+border-color=#7E9CD8
+border-color=#E46876
+
+[urgency=critical]
+default-timeout=0
+text-color=#DCD7BA
+border-color=#E46876
+

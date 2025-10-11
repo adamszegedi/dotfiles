@@ -1,0 +1,152 @@
+[
+  {
+    "layer": "top",
+    "margin": "0 0 0 0",
+    "modules-center": ["clock"],
+    "modules-left": [
+      "hyprland/workspaces",
+      "group/tray"
+    ],
+    "modules-right": [
+      "privacy",
+      "custom/idle",
+      "pulseaudio",
+      "network",
+      "custom/power-management"
+    ],
+    "clock": {
+        "format": "{:L%A %H:%M}",
+        "format-alt": "{:L%d %B W%V %Y}",
+        "tooltip": false,
+    },
+    "custom/idle": {
+        "format": "{icon}",
+        "return-type": "json",
+        "format-icons":{
+            "idle": "󰾪",
+            "no-idle": "󰅶"
+        },
+        "exec-on-event": true,
+        "interval": "once",
+        "exec": "systemctl --user is-active --quiet \"*hypridle*\" && echo '{\"alt\": \"idle\"}' || echo '{\"alt\":\"no-idle\"}'",
+        "exec-if": "sleep 0.1", // Give enough time for `sway output` command changes to propagate so we can read them in the next `exec`
+        "on-click": "$HOME/.local/bin/toggle-idle.sh 2> /dev/null",
+        "tooltip": false
+    },
+    "custom/power-management":{
+        "format": " ",
+        "on-click": "$HOME/.local/bin/power-management.sh 2> /dev/null",
+        "tooltip": false
+    },
+    "custom/tray": {
+      "format": " ",
+      "tooltip": false
+    },
+    "group/tray": {
+      "drawer": {
+        "children-class": "not-memory",
+        "transition-duration": 300,
+        "transition-left-to-right": true
+      },
+      "modules": [
+        "custom/tray",
+        "tray"
+      ],
+      "orientation": "inherit"
+    },
+    "network": {
+      "family": "ipv6",
+      "format-disconnected": "󰈂 disconnected",
+      "format-ethernet": "  {ifname}",
+      "format-linked": "{iename} (no ip)",
+      "on-click": "ip -6 addr show dev enp5s0 | grep inet6 -m1 | cut -d ' ' -f6 | wl-copy",
+      "tooltip": true,
+      "tooltip-format": "{ipaddr}"
+    },
+    "output": "DP-2",
+    "position": "top",
+    "privacy": {
+      "icon-size": 18,
+      "icon-spacing": 18,
+      "modules": [
+        {
+          "tooltip": true,
+          "tooltip-icon-size": 18,
+          "type": "screenshare"
+        },
+        {
+          "tooltip": true,
+          "tooltip-icon-size": 18,
+          "type": "audio-out"
+        },
+        {
+          "tooltip": true,
+          "tooltip-icon-size": 18,
+          "type": "audio-in"
+        }
+      ],
+      "transition-duration": 250
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-icons": {
+        "car": "    ",
+        "default": [
+          "",
+          " ",
+          "󰕾 ",
+          " "
+        ],
+        "hands-free": "   ",
+        "headphone": "   ",
+        "headset": "   ",
+        "phone": "   ",
+        "portable": "   "
+      },
+      "format-muted": " muted",
+      "on-click": "pactl set-sink-mute 0 toggle",
+      "on-click-right": "ghostty --class=com.local.wiremix -e wiremix",
+      "scroll-step": 5
+    },
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "active": "󱓻"
+        },
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+    "tray": {
+      "all-outputs": true,
+      "icon-size": 22,
+      "spacing": 10
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    }
+  }
+]
+

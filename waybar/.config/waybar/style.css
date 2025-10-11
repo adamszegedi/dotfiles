@@ -1,0 +1,58 @@
+@define-color bg0 RGBA(31, 31, 40, 1);
+@define-color bg_focused RGBA(45, 79, 103, 1);
+@define-color fg RGBA(220, 215, 186, 1);
+
+* {
+    font-family: "Inter Variable";
+    font-weight: 500;
+}
+
+window#waybar {
+    background-color: @bg0;
+    font-size: 14px;
+    color: @fg;
+}
+
+#workspaces {
+    margin-left: 0.25em;
+    margin-right: 0.5em;
+}
+
+#workspaces button {
+    color: @fg;
+    padding: 0px;
+    margin: 0.25em 0em 0.25em 0em;
+    min-width: 2em;
+}
+
+#workspaces button.focused {
+    background-color: @bg_focused;
+    color: @fg;
+}
+
+button:hover {
+    box-shadow: none; /* Remove predefined box-shadow */
+    text-shadow: none; /* Remove predefined text-shadow */
+    background: none; /* Remove predefined background color (white) */
+    transition: none; /* Disable predefined animations */
+    border-color: transparent;
+}
+
+#clock {}
+
+#custom-scratchpad_indicator, #pulseaudio, #network,
+#clock, #memory, #tray, #idle_inhibitor, #privacy, 
+#custom-power-management, #custom-idle {
+    margin-right: 1em;
+}
+
+#custom-tray {
+    font-size: 1.25em;
+}
+
+#tray menu {
+   background-color: @bg0;
+}
+
+#pulseaudio.muted {}
+

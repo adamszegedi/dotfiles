@@ -6,9 +6,10 @@ PartOf=graphical-session.target
 [Service]
 Type=simple
 ExecStart=/usr/bin/swayidle -w \
-            timeout 300   '~/.config/swaylock/lock.sh' \
-            timeout 330   'swaymsg "output * dpms off"' \
+            timeout 180   '~/.config/swaylock/lock.sh' \
+            timeout 240   'swaymsg "output * dpms off"' \
                  resume   'swaymsg "output * dpms on"'  \
+            timeout 300 'systemctl suspend' \
 
 [Install]
 WantedBy=sway-session.target

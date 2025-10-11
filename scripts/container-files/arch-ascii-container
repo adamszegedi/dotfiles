@@ -9,8 +9,6 @@ RUN pacman -Syu --noconfirm sl cowsay lolcat figlet asciiquarium nyancat fortune
 RUN groupadd -g $GID -o $UNAME
 RUN useradd -m -u $UID -g $GID -o -s /bin/bash $UNAME
 
-USER $USER_NAME
-
 # Create and set up the welcome message
 RUN  echo -e 'function greet() {' >> "/home/$UNAME/.bashrc"  && \
      echo -e 'echo -e "Welcome to the ASCII Art Party! 🎉"' >> "/home/$UNAME/.bashrc" && \

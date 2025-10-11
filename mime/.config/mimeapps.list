@@ -1,0 +1,12 @@
+[Default Applications]
+application/pdf=org.gnome.Papers.desktop
+application/x-terminal-emulator=com.mitchellh.ghostty.desktop
+image/jpeg=org.gnome.Loupe.desktop
+image/png=org.gnome.Loupe.desktop
+text/html=org.mozilla.firefox.desktop
+x-scheme-handler/about=org.mozilla.firefox.desktop
+x-scheme-handler/http=org.mozilla.firefox.desktop
+x-scheme-handler/https=org.mozilla.firefox.desktop
+x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/terminal=com.mitchellh.ghostty.desktop
+x-scheme-handler/unknown=org.mozilla.firefox.desktop

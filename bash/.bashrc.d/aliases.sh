@@ -7,6 +7,12 @@ alias la='eza -ahg --group-directories-first --octal-permissions'  # all files a
 alias ll='eza -lhg --group-directories-first --octal-permissions'  # long format
 alias lt='eza -ahTg --group-directories-first --octal-permissions' # tree listing
 
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+
+open() {
+  xdg-open "$@" >/dev/null 2>&1 &
+}
+
 #Terminal
 alias c='clear' 
 
@@ -84,6 +90,4 @@ get_sway_windows() {
   swaymsg -t get_tree | jq '[.nodes[] | . as $monitor | .nodes[] | . as $workspace | .nodes[] | { monitor: $monitor.name, workspace: $workspace.name, name: .name, app_id: .app_id}]'
 }
 
-alias update='~/.dotfiles/update.sh'
-alias deploy='~/.dotfiles/deploy.sh'
 alias ascii='podman run -it --user ascii --name ascii --replace localhost/arch-ascii bash'
