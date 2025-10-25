@@ -12,7 +12,6 @@ set -euo pipefail               # fail fast on errors / undefined vars
 # 0️⃣  Configuration
 # -----------------------------
 monitor_name="DP-2"             # <-- change this if you ever need a different monitor
-adaptive_sync="vrr, 3"
 
 # -----------------------------
 # 1️⃣  Pull the monitor data (width, height, refreshRate, currentScale)
@@ -71,20 +70,23 @@ clean_refresh=${refresh%%.*}   # strip everything after the first dot
 case "$clean_refresh" in
     60)
         new_refreshRate="120"
+        adaptive_sync="vrr,2"
         notif_msg="Setting refreshRate to ${new_refreshRate}hz."
         ;;
     120)
         new_refreshRate="60"
+        adaptive_sync="vrr,0"
         notif_msg="Setting refreshRate to ${new_refreshRate}hz."
         ;;
     *)
         # If the current refreshRate is something else, just set to 60
         new_refreshRate="60"
+        adaptive_sync="vrr,0"
         notif_msg="RefreshRate was ${clean_refresh}hz → setting to ${new_refreshRate}hz"
         ;;
 esac
 
-monitor_spec="${monitor_name}, ${width}x${height}@${new_refreshRate}hz, 0x0, ${scale}, ${adaptive_sync}"
+monitor_spec="${monitor_name},${width}x${height}@${new_refreshRate},0x0,${scale},${adaptive_sync}"
 
 # -----------------------------
 # 6️⃣  Apply the new monitor configuration
