@@ -10,6 +10,7 @@
     "modules-right": [
       "privacy",
       "custom/idle",
+      "custom/tailscale",
       "pulseaudio",
       "network",
       "custom/power-management"
@@ -17,20 +18,32 @@
     "clock": {
         "format": "{:L%A %H:%M}",
         "format-alt": "{:L%d %B W%V %Y}",
-        "tooltip": false,
+        "tooltip": false
     },
     "custom/idle": {
-        "format": "{icon}",
+        "format": "󰅶  {icon}",
         "return-type": "json",
         "format-icons":{
-            "idle": "󰾪",
-            "no-idle": "󰅶"
+            "idle": "off",
+            "no-idle": "on"
         },
-        "exec-on-event": true,
         "interval": "once",
+        "signal": 2,
         "exec": "systemctl --user is-active --quiet \"*hypridle*\" && echo '{\"alt\": \"idle\"}' || echo '{\"alt\":\"no-idle\"}'",
-        "exec-if": "sleep 0.1", // Give enough time for `sway output` command changes to propagate so we can read them in the next `exec`
         "on-click": "$HOME/.local/bin/toggle-idle.sh 2> /dev/null",
+        "tooltip": false
+    },
+    "custom/tailscale": {
+        "format": "󰖂  {icon}",
+        "return-type": "json",
+        "format-icons": {
+            "Running": "on",
+            "Stopped": "off"
+        },
+        "interval": "once",
+        "signal": 3,
+        "exec": "tailscale status --json | jq --unbuffered --compact-output -r '{alt: .BackendState}'",
+        "on-click": "$HOME/.local/bin/toggle-tailscale.sh 2> /dev/null",
         "tooltip": false
     },
     "custom/power-management":{
@@ -90,9 +103,9 @@
     "pulseaudio": {
       "format": "{icon} {volume}%",
       "format-icons": {
-        "car": "    ",
+        "car": "   ",
         "default": [
-          "",
+          " ",
           " ",
           "󰕾 ",
           " "
@@ -129,7 +142,7 @@
     },
     "tray": {
       "all-outputs": true,
-      "icon-size": 22,
+      "icon-size": 18,
       "spacing": 10
     },
     "bluetooth": {

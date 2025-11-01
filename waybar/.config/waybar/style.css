@@ -3,7 +3,7 @@
 @define-color fg RGBA(220, 215, 186, 1);
 
 * {
-    font-family: "Inter Variable";
+    font-family: "Inter Display Medium";
     font-weight: 500;
 }
 
@@ -42,7 +42,7 @@ button:hover {
 
 #custom-scratchpad_indicator, #pulseaudio, #network,
 #clock, #memory, #tray, #idle_inhibitor, #privacy, 
-#custom-power-management, #custom-idle {
+#custom-power-management, #custom-idle, #custom-tailscale {
     margin-right: 1em;
 }
 

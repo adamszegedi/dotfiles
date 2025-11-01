@@ -8,3 +8,5 @@ else
   notify-send "Now locking computer when idle"
 fi
 
+sleep 0.1s
+pkill -RTMIN+2 waybar
