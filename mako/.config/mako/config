@@ -14,10 +14,10 @@ outer-margin=20
 border-size=1
 border-radius=20
 padding=10
-font=CaskaydiaMono Nerd Font
-background-color=#1F1F28
-text-color=#DCD7BA
-border-color=#7E9CD8
+font=Inter
+background-color=#282828
+text-color=#ebdbb2
+border-color=#458588
 
 ##########################
 ######## Position ########
@@ -37,11 +37,9 @@ invisible=true
 invisible=false
 
 [urgency=high]
-border-color=#7E9CD8
-border-color=#E46876
+border-color=#cc241d
 
 [urgency=critical]
 default-timeout=0
-text-color=#DCD7BA
-border-color=#E46876
-
+text-color=#ebdbb2
+border-color=#cc241d

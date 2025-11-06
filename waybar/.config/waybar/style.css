@@ -1,6 +1,6 @@
-@define-color bg0 RGBA(31, 31, 40, 1);
-@define-color bg_focused RGBA(45, 79, 103, 1);
-@define-color fg RGBA(220, 215, 186, 1);
+@define-color bg0 RGBA(40, 40, 40, 1);
+@define-color bg_focused RGBA(60, 56, 54, 1);
+@define-color fg RGBA(235, 219, 178, 1);
 
 * {
     font-family: "Inter Display Medium";
