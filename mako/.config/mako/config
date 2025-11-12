@@ -11,19 +11,22 @@ on-button-right=dismiss-all
 ##########################
 max-icon-size=32
 outer-margin=20
-border-size=1
+border-size=2
 border-radius=20
 padding=10
-font=Inter
-background-color=#282828
-text-color=#ebdbb2
-border-color=#458588
+font=IBM Plex Sans,Symbols Nerd Font
+# Colors
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#f9e2af
+progress-color=over #313244
+
 
 ##########################
 ######## Position ########
 ##########################
 anchor=top-right
-output=DP-2
+output=DP-1
 width=420
 height=110
 
@@ -37,9 +40,7 @@ invisible=true
 invisible=false
 
 [urgency=high]
-border-color=#cc241d
+border-color=#fab387
 
 [urgency=critical]
 default-timeout=0
-text-color=#ebdbb2
-border-color=#cc241d

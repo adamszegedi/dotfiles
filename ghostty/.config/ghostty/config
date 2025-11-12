@@ -26,8 +26,8 @@
 # ==========================
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
-font-family = MonoLisa
-theme = Gruvbox Dark
+font-family = Berkeley Mono
+theme = Catppuccin Mocha
 # window-padding-x = 2
 #
 # # Spacing around the equals sign does not matter.

@@ -1,33 +1,26 @@
-@define-color bg0 RGBA(40, 40, 40, 1);
-@define-color bg_focused RGBA(60, 56, 54, 1);
-@define-color fg RGBA(235, 219, 178, 1);
+@import "mocha.css";
 
 * {
-    font-family: "Inter Display Medium";
+    font-family: 'IBM Plex Sans', 'Symbols Nerd Font';
     font-weight: 500;
 }
 
 window#waybar {
-    background-color: @bg0;
+    background-color: shade(@base, 0.9);
     font-size: 14px;
-    color: @fg;
+    color: @text;
 }
 
 #workspaces {
     margin-left: 0.25em;
     margin-right: 0.5em;
+    font-weight: 700;
 }
 
 #workspaces button {
-    color: @fg;
     padding: 0px;
     margin: 0.25em 0em 0.25em 0em;
     min-width: 2em;
-}
-
-#workspaces button.focused {
-    background-color: @bg_focused;
-    color: @fg;
 }
 
 button:hover {
@@ -50,9 +43,7 @@ button:hover {
     font-size: 1.25em;
 }
 
-#tray menu {
-   background-color: @bg0;
-}
+#tray menu {}
 
 #pulseaudio.muted {}
 

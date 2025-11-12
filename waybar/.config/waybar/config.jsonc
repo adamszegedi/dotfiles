@@ -76,7 +76,7 @@
       "tooltip": true,
       "tooltip-format": "{ipaddr}"
     },
-    "output": "DP-2",
+    "output": "DP-1",
     "position": "top",
     "privacy": {
       "icon-size": 18,

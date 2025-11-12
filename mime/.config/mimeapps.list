@@ -4,6 +4,7 @@ application/x-terminal-emulator=com.mitchellh.ghostty.desktop
 image/jpeg=org.gnome.Loupe.desktop
 image/png=org.gnome.Loupe.desktop
 text/html=org.mozilla.firefox.desktop
+text/plain=nvim.desktop
 x-scheme-handler/about=org.mozilla.firefox.desktop
 x-scheme-handler/http=org.mozilla.firefox.desktop
 x-scheme-handler/https=org.mozilla.firefox.desktop
