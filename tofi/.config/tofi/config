@@ -15,8 +15,8 @@ padding-left = 5
 padding-right = 5
 selection-background-padding = 5, 5
 output=DP-1
-# Catppuccin Mocha
-text-color = #cdd6f4
-prompt-color = #f38ba8
-selection-color = #f9e2af
-background-color = #1e1e2e
+#Gruvbox
+text-color = #ebdbb2
+prompt-color = #d3869b
+selection-color = #fabd2f
+background-color = #282828

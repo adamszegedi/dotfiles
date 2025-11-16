@@ -12,14 +12,19 @@ on-button-right=dismiss-all
 max-icon-size=32
 outer-margin=20
 border-size=2
-border-radius=20
+border-radius=10
 padding=10
+
+##########################
+######## Color #######
+##########################
 font=IBM Plex Sans,Symbols Nerd Font
-# Colors
-background-color=#1e1e2e
-text-color=#cdd6f4
-border-color=#f9e2af
-progress-color=over #313244
+# Background: Gruvbox bg0 (#282828)
+background-color=#282828
+# Text Color: Gruvbox fg1 (#ebdbb2) - Standard text
+text-color=#ebdbb2
+# Border Color: Gruvbox blue (#83a598) - Standard accent
+border-color=#83a598
 
 
 ##########################
@@ -30,17 +35,28 @@ output=DP-1
 width=420
 height=110
 
-[app-name=Spotify]
-invisible=1
-
 [mode=do-not-disturb]
 invisible=true
 
 [mode=do-not-disturb app-name=notify-send]
 invisible=false
 
-[urgency=high]
-border-color=#fab387
-
 [urgency=critical]
 default-timeout=0
+
+[urgency=high]
+# Background: Gruvbox bg1 (#3c3836) - Slightly lighter than base background
+background-color=#3c3836
+# Text Color: Gruvbox fg0 (#fbf1c7) - Brightest text
+text-color=#fbf1c7
+# Border Color: Gruvbox red (#fb4934) - High-priority accent
+border-color=#fb4934
+
+
+[urgency=low]
+# Background: Gruvbox bg2 (#504945) - Even lighter background
+background-color=#504945
+# Text Color: Gruvbox fg1 (#ebdbb2)
+text-color=#ebdbb2
+# Border Color: Gruvbox aqua (#8ec07c) - Subdued accent
+border-color=#8ec07c

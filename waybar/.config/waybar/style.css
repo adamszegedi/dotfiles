@@ -1,4 +1,4 @@
-@import "mocha.css";
+@import "./gruvbox.css";
 
 * {
     font-family: 'IBM Plex Sans', 'Symbols Nerd Font';
@@ -6,9 +6,9 @@
 }
 
 window#waybar {
-    background-color: shade(@base, 0.9);
+    background-color: @gruvbox-bg0;
     font-size: 14px;
-    color: @text;
+    color: @gruvbox-fg1;
 }
 
 #workspaces {
@@ -21,6 +21,7 @@ window#waybar {
     padding: 0px;
     margin: 0.25em 0em 0.25em 0em;
     min-width: 2em;
+    color: @gruvbox-fg1;
 }
 
 button:hover {
