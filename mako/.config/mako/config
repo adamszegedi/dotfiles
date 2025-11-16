@@ -18,13 +18,16 @@ padding=10
 ##########################
 ######## Color #######
 ##########################
-font=IBM Plex Sans,Symbols Nerd Font
-# Background: Gruvbox bg0 (#282828)
-background-color=#282828
-# Text Color: Gruvbox fg1 (#ebdbb2) - Standard text
-text-color=#ebdbb2
-# Border Color: Gruvbox blue (#83a598) - Standard accent
-border-color=#83a598
+font=CaskaydiaMono Nerd Font,Symbols Nerd Font
+# -- Nord Colors --
+# Background: Nord0 (Polar Night)
+background-color=#2e3440
+# Text: Nord4 (Snow Storm)
+text-color=#d8dee9
+# Border: Nord8 (Frost Cyan)
+border-color=#88c0d0
+# Progress Bar: Nord8 (Frost Cyan) over Nord1 (Polar Night Lighter)
+progress-color=over #5e81ac
 
 
 ##########################
@@ -41,22 +44,20 @@ invisible=true
 [mode=do-not-disturb app-name=notify-send]
 invisible=false
 
-[urgency=critical]
-default-timeout=0
-
-[urgency=high]
-# Background: Gruvbox bg1 (#3c3836) - Slightly lighter than base background
-background-color=#3c3836
-# Text Color: Gruvbox fg0 (#fbf1c7) - Brightest text
-text-color=#fbf1c7
-# Border Color: Gruvbox red (#fb4934) - High-priority accent
-border-color=#fb4934
-
-
 [urgency=low]
-# Background: Gruvbox bg2 (#504945) - Even lighter background
-background-color=#504945
-# Text Color: Gruvbox fg1 (#ebdbb2)
-text-color=#ebdbb2
-# Border Color: Gruvbox aqua (#8ec07c) - Subdued accent
-border-color=#8ec07c
+background-color=#2e3440
+border-color=#434c5e
+text-color=#81a1c1
+default-timeout=2000
+
+[urgency=normal]
+background-color=#2e3440
+border-color=#88c0d0
+text-color=#d8dee9
+default-timeout=5000
+
+[urgency=critical]
+background-color=#2e3440
+border-color=#bf616a
+text-color=#bf616a
+default-timeout=0

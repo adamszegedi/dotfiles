@@ -10,10 +10,9 @@
     "modules-right": [
       "privacy",
       "custom/idle",
-      "custom/tailscale",
       "pulseaudio",
-      "network",
-      "custom/power-management"
+      "custom/tailscale",
+      "network"
     ],
     "clock": {
         "format": "{:L%A %H:%M}",
@@ -46,11 +45,6 @@
         "on-click": "$HOME/.local/bin/toggle-tailscale.sh 2> /dev/null",
         "tooltip": false
     },
-    "custom/power-management":{
-        "format": " ",
-        "on-click": "$HOME/.local/bin/power-management.sh 2> /dev/null",
-        "tooltip": false
-    },
     "custom/tray": {
       "format": " ",
       "tooltip": false
@@ -79,22 +73,22 @@
     "output": "DP-1",
     "position": "top",
     "privacy": {
-      "icon-size": 18,
-      "icon-spacing": 18,
+      "icon-size": 14,
+      "icon-spacing": 14,
       "modules": [
         {
           "tooltip": true,
-          "tooltip-icon-size": 18,
+          "tooltip-icon-size": 14,
           "type": "screenshare"
         },
         {
           "tooltip": true,
-          "tooltip-icon-size": 18,
+          "tooltip-icon-size": 14,
           "type": "audio-out"
         },
         {
           "tooltip": true,
-          "tooltip-icon-size": 18,
+          "tooltip-icon-size": 14,
           "type": "audio-in"
         }
       ],
@@ -127,8 +121,6 @@
         "show-special": true,
         "format": "{icon}",
         "format-icons": {
-            "active": "󱓻",
-            "default": "",
             "1": "1",
             "2": "2",
             "3": "3",
@@ -142,7 +134,7 @@
     },
     "tray": {
       "all-outputs": true,
-      "icon-size": 18,
+      "icon-size": 14,
       "spacing": 10
     },
     "bluetooth": {

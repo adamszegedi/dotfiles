@@ -1,27 +1,37 @@
-@import "./gruvbox.css";
+@import "./theme/nord.css";
 
 * {
-    font-family: 'IBM Plex Sans', 'Symbols Nerd Font';
-    font-weight: 500;
+    font-family: 'CaskaydiaMono Nerd Font';
+    font-size: 14px;
+    font-weight: 600;
 }
 
+
 window#waybar {
-    background-color: @gruvbox-bg0;
-    font-size: 14px;
-    color: @gruvbox-fg1;
+    background-color: @nord0;
+    color: @nord4;
+    border-bottom: 2px solid @nord1;
+}
+
+.modules-left, .modules-center, .modules-right {
+    margin: 0 1em;
 }
 
 #workspaces {
-    margin-left: 0.25em;
-    margin-right: 0.5em;
     font-weight: 700;
 }
 
 #workspaces button {
-    padding: 0px;
-    margin: 0.25em 0em 0.25em 0em;
-    min-width: 2em;
-    color: @gruvbox-fg1;
+    color: @nord4; 
+    padding: 0 0.3em;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: @nord6; 
+    border-bottom: 2px solid @nord8; /* Minimal underline indicator */
 }
 
 button:hover {
@@ -34,17 +44,54 @@ button:hover {
 
 #clock {}
 
-#custom-scratchpad_indicator, #pulseaudio, #network,
+#custom-scratchpad_indicator, #pulseaudio, 
 #clock, #memory, #tray, #idle_inhibitor, #privacy, 
-#custom-power-management, #custom-idle, #custom-tailscale {
-    margin-right: 1em;
+#custom-idle, #custom-tailscale, #group-tray {
+    padding: 0 0.5em;
+    margin: 0;
 }
 
-#custom-tray {
-    font-size: 1.25em;
+/* -----------------------------------------------------------------------------
+ * Module Specifics (Using your color logic)
+ * -------------------------------------------------------------------------- */
+
+#clock {
+    color: @nord4;
+    font-weight: bold;
 }
 
-#tray menu {}
+#custom-idle, #custom-tailscale {
+    color: @nord9;
+}
 
-#pulseaudio.muted {}
+#network {
+    color: @nord7;
+    padding-left: 0.5em;
+}
+
+#network.disconnected {
+    color: @nord11;
+}
+
+#pulseaudio {
+    color: @nord13;
+}
+
+#pulseaudio.muted {
+    color: @nord3;
+    text-decoration: line-through;
+}
+
+#tray {
+    background-color: transparent; /* Removed background */
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    color: @nord11;
+}
 

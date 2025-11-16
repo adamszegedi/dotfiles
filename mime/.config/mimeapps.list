@@ -2,6 +2,7 @@
 application/pdf=org.gnome.Papers.desktop
 application/x-terminal-emulator=com.mitchellh.ghostty.desktop
 image/jpeg=org.gnome.Loupe.desktop
+image/jpg=org.gnome.Loupe.desktop
 image/png=org.gnome.Loupe.desktop
 text/html=org.mozilla.firefox.desktop
 text/plain=nvim.desktop

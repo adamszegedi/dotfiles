@@ -1,22 +1,23 @@
 anchor = top
 width = 100%
-height = 32
+height = 27
 horizontal = true
 font-size = 13
 prompt-text = " run: > "
 outline-width = 0
 border-width = 0
-font=/usr/share/fonts/TTF/IBMPlexSans-Regular.ttf
+font=/usr/share/fonts/TTF/CaskaydiaMonoNerdFont-Regular.ttf
 min-input-width = 120
 result-spacing = 15
-padding-top = 5
-padding-bottom = 5
+padding-top = 3
+padding-bottom = 3
 padding-left = 5
 padding-right = 5
 selection-background-padding = 5, 5
 output=DP-1
-#Gruvbox
-text-color = #ebdbb2
-prompt-color = #d3869b
-selection-color = #fabd2f
-background-color = #282828
+# Nord
+background-color = #2e3440
+prompt-color = #88c0d0
+input-color = #eceff4
+default-result-color = #88c0d0
+selection-color = #eceff4

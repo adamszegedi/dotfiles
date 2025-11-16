@@ -24,6 +24,9 @@ alias sync-check-drive='rclone check proton:archie/Documents ~/Documents && rclo
 #Cat
 alias cat='bat'
 
+#tmux
+alias atmux='tmux new-session -A -s main'
+
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
 
