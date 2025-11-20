@@ -1,4 +1,14 @@
-@import "./theme/nord.css";
+@define-color bg #1F1F28;
+@define-color fg #DCD7BA;
+
+@define-color crystal_blue     #7E9CD8;
+@define-color spring_green     #98BB6C;
+@define-color ronin_yellow     #FF9E3B;
+@define-color oni_violet       #957FB8;
+@define-color samurai_red      #E82424;
+@define-color sumi_ink_4       #54546D; /* Muted Grey */
+@define-color wave_aqua        #6A9589;
+@define-color fujiGray         #727169;
 
 * {
     font-family: 'CaskaydiaMono Nerd Font';
@@ -8,9 +18,9 @@
 
 
 window#waybar {
-    background-color: @nord0;
-    color: @nord4;
-    border-bottom: 2px solid @nord1;
+    background-color: @bg;
+    color: @fg;
+    border-bottom: 2px solid mix(@bg, grey, 0.7);;
 }
 
 .modules-left, .modules-center, .modules-right {
@@ -22,7 +32,7 @@ window#waybar {
 }
 
 #workspaces button {
-    color: @nord4; 
+    color: @fujiGray;
     padding: 0 0.3em;
     border-bottom: 2px solid transparent;
     border-radius: 0;
@@ -30,8 +40,8 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @nord6; 
-    border-bottom: 2px solid @nord8; /* Minimal underline indicator */
+    color: @fg;
+    border-bottom: 2px solid @fg; /* Minimal underline indicator */
 }
 
 button:hover {
@@ -41,8 +51,6 @@ button:hover {
     transition: none; /* Disable predefined animations */
     border-color: transparent;
 }
-
-#clock {}
 
 #custom-scratchpad_indicator, #pulseaudio, 
 #clock, #memory, #tray, #idle_inhibitor, #privacy, 
@@ -54,31 +62,34 @@ button:hover {
 /* -----------------------------------------------------------------------------
  * Module Specifics (Using your color logic)
  * -------------------------------------------------------------------------- */
-
 #clock {
-    color: @nord4;
+    color: @ronin_yellow;
     font-weight: bold;
 }
 
-#custom-idle, #custom-tailscale {
-    color: @nord9;
+#custom-idle {
+    color: @oni_violet;
+}
+
+#custom-tailscale {
+    color: @wave_aqua;
 }
 
 #network {
-    color: @nord7;
+    color: @spring_green;
     padding-left: 0.5em;
 }
 
 #network.disconnected {
-    color: @nord11;
+    color: @samurai_red;
 }
 
 #pulseaudio {
-    color: @nord13;
+    color: @crystal_blue;
 }
 
 #pulseaudio.muted {
-    color: @nord3;
+    color: @sumi_ink_4;
     text-decoration: line-through;
 }
 
@@ -92,6 +103,5 @@ button:hover {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    color: @nord11;
 }
 

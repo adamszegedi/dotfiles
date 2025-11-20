@@ -19,16 +19,10 @@ padding=10
 ######## Color #######
 ##########################
 font=CaskaydiaMono Nerd Font,Symbols Nerd Font
-# -- Nord Colors --
-# Background: Nord0 (Polar Night)
-background-color=#2e3440
-# Text: Nord4 (Snow Storm)
-text-color=#d8dee9
-# Border: Nord8 (Frost Cyan)
-border-color=#88c0d0
-# Progress Bar: Nord8 (Frost Cyan) over Nord1 (Polar Night Lighter)
-progress-color=over #5e81ac
-
+background-color=#1F1F28
+text-color=#DCD7BA
+border-color=#7E9CD8
+progress-color=over #7E9CD8
 
 ##########################
 ######## Position ########
@@ -45,19 +39,13 @@ invisible=true
 invisible=false
 
 [urgency=low]
-background-color=#2e3440
-border-color=#434c5e
-text-color=#81a1c1
+border-color=#957FB8
 default-timeout=2000
 
 [urgency=normal]
-background-color=#2e3440
-border-color=#88c0d0
-text-color=#d8dee9
+border-color=#7E9CD8
 default-timeout=5000
 
 [urgency=critical]
-background-color=#2e3440
-border-color=#bf616a
-text-color=#bf616a
+border-color=#E82424
 default-timeout=0
