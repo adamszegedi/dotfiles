@@ -8,7 +8,9 @@
 @define-color samurai_red      #E82424;
 @define-color sumi_ink_4       #54546D; /* Muted Grey */
 @define-color wave_aqua        #6A9589;
-@define-color fujiGray         #727169;
+@define-color fuji_gray        #727169;
+@define-color peach_read       #FF5D62;
+@define-color surimi_orange    #FFA066;
 
 * {
     font-family: 'CaskaydiaMono Nerd Font';
@@ -32,7 +34,7 @@ window#waybar {
 }
 
 #workspaces button {
-    color: @fujiGray;
+    color: @fuji_gray;
     padding: 0 0.3em;
     border-bottom: 2px solid transparent;
     border-radius: 0;
@@ -63,8 +65,12 @@ button:hover {
  * Module Specifics (Using your color logic)
  * -------------------------------------------------------------------------- */
 #clock {
-    color: @ronin_yellow;
+    color: @surimi_orange;
     font-weight: bold;
+}
+
+#privacy {
+    color: @peach_read;
 }
 
 #custom-idle {
