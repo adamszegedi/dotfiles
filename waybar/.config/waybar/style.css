@@ -56,7 +56,7 @@ button:hover {
 
 #custom-scratchpad_indicator, #pulseaudio, 
 #clock, #memory, #tray, #idle_inhibitor, #privacy, 
-#custom-idle, #custom-tailscale, #group-tray {
+#custom-idle, #custom-tailscale, #group-tray, #custom-scale {
     padding: 0 0.5em;
     margin: 0;
 }
@@ -71,6 +71,10 @@ button:hover {
 
 #privacy {
     color: @peach_read;
+}
+
+#custom-scale {
+    color: @ronin_yellow;
 }
 
 #custom-idle {

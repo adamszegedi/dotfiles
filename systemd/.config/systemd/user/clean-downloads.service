@@ -1,0 +1,9 @@
+[Unit]
+Description=Clean the downloads folder on boot
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'rm -rf /home/aszegedi/Downloads/*'
+
+[Install]
+WantedBy=default.target

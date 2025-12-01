@@ -19,4 +19,4 @@ case "$state" in
 esac
 
 sleep 0.1s
-pkill -RTMIN+3 waybar
+pkill -RTMIN+4 waybar

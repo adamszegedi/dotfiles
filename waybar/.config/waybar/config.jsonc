@@ -9,6 +9,7 @@
     ],
     "modules-right": [
       "privacy",
+      "custom/scale",
       "custom/idle",
       "pulseaudio",
       "custom/tailscale",
@@ -32,6 +33,14 @@
         "on-click": "$HOME/.local/bin/toggle-idle.sh 2> /dev/null",
         "tooltip": false
     },
+    "custom/scale": {
+        "format": "󰹑  {text}",
+        "interval": "once",
+        "signal": 3,
+        "exec": "hyprctl monitors -j | jq -c '.[] | select(.name == \"DP-1\") | .scale | round '",
+        "on-click": "$HOME/.local/bin/toggle-scale.sh 2> /dev/null",
+        "tooltip": false
+    },
     "custom/tailscale": {
         "format": "󰖂  {icon}",
         "return-type": "json",
@@ -40,7 +49,7 @@
             "Stopped": "off"
         },
         "interval": "once",
-        "signal": 3,
+        "signal": 4,
         "exec": "tailscale status --json | jq --unbuffered --compact-output -r '{alt: .BackendState}'",
         "on-click": "$HOME/.local/bin/toggle-tailscale.sh 2> /dev/null",
         "tooltip": false
