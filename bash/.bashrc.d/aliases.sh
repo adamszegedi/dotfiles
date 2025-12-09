@@ -9,10 +9,6 @@ alias lt='eza -ahTg --group-directories-first --octal-permissions' # tree listin
 
 alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 
-open() {
-  xdg-open "$@" >/dev/null 2>&1 &
-}
-
 #Terminal
 alias c='clear' 
 
@@ -93,4 +89,6 @@ get_sway_windows() {
   swaymsg -t get_tree | jq '[.nodes[] | . as $monitor | .nodes[] | . as $workspace | .nodes[] | { monitor: $monitor.name, workspace: $workspace.name, name: .name, app_id: .app_id}]'
 }
 
-alias ascii='podman run -it --user ascii --name ascii --replace localhost/arch-ascii bash'
+alias ascii='podman run -it --user ascii --name ascii --replace ghcr.io/adamszegedi/ascii-art:release bash'
+
+alias gearlever='flatpak run it.mijorus.gearlever'

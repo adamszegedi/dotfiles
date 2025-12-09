@@ -1,21 +1,20 @@
-# Static information about the filesystems.
-# See fstab(5) for details.
 
-# <file system> <dir> <type> <options> <dump> <pass>
-# /dev/nvme1n1p2
-UUID=b91e2d0b-64d2-46d8-aaae-ac0f843ef104	/         	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@	0 0
-
-# /dev/nvme1n1p2
-UUID=b91e2d0b-64d2-46d8-aaae-ac0f843ef104	/home     	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@home	0 0
-
-# /dev/nvme1n1p2
-UUID=b91e2d0b-64d2-46d8-aaae-ac0f843ef104	/var/cache/pacman/pkg	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@pkg	0 0
-
-# /dev/nvme1n1p2
-UUID=b91e2d0b-64d2-46d8-aaae-ac0f843ef104	/var/log  	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@log	0 0
-
-# /dev/nvme1n1p1
-UUID=6483-7C1E      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+#
+# /etc/fstab
+# Created by anaconda on Sun Dec  7 15:27:52 2025
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+#
+# After editing this file, run 'systemctl daemon-reload' to update systemd
+# units generated from this file.
+#
+# Updated by bootc-fstab-edit.service
+UUID=73488cfd-8752-441f-8bcc-38bed6a580a2 / btrfs subvol=root,compress=zstd:1,ro 0 0
+UUID=e549c8a6-58fa-47bf-a874-e3a3b62cd367 /boot ext4 defaults 1 2
+UUID=BA00-3CDE /boot/efi vfat umask=0077,shortname=winnt 0 2
+UUID=73488cfd-8752-441f-8bcc-38bed6a580a2 /home btrfs subvol=home,compress=zstd:1 0 0
+UUID=73488cfd-8752-441f-8bcc-38bed6a580a2 /var btrfs subvol=var,compress=zstd:1 0 0
 
 # /dev/nvme1n1 e526025c-45f2-4b71-9748-186df77a9012
 UUID=e526025c-45f2-4b71-9748-186df77a9012   /home/aszegedi/Games  	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/@Games	0 0
@@ -28,6 +27,3 @@ UUID=e526025c-45f2-4b71-9748-186df77a9012   /home/aszegedi/Pictures  	btrfs     
 # /dev/sda
 UUID=7c63fdac-9a3f-48ee-8b1e-2bc8968f182f   /home/aszegedi/Backup   btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2	0 0
 
-# Nessy nfs
-192.168.50.144:/volume2/Download  /mnt/nessy/Download   nfs   _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
-192.168.50.144:/volume3/Media  /mnt/nessy/Media   nfs   _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
