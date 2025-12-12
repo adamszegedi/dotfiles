@@ -1,0 +1,29 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[core]
+	excludesfile = /home/aszegedi/.gitignore
+	editor = nvim 
+    eol = native
+	autocrlf = input
+[user]
+	email = mail@adamszegedi.eu
+	name = adamszegedi
+    signingkey = F5B64437C9203CFF4C44ECFA418E38EB5CDF9F0E
+[commit]
+	gpgsign = true
+[pull]
+	ff = only
+[push]
+    autoSetupRemote = true
+[fetch]
+	prune = true
+[init]
+	defaultBranch = master
+[alias]
+    graph = log --oneline --graph --decorate
+[blame]
+    date = short

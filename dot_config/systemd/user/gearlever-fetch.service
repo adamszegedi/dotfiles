@@ -1,0 +1,9 @@
+[Unit]
+Description=Run Gear Lever Update Checker
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'flatpak run it.mijorus.gearlever --fetch-updates'
+
+[Install]
+WantedBy=default.target
