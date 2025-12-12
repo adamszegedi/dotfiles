@@ -1,0 +1,82 @@
+[[ -f /run/.toolboxenv ]] && return
+
+#File Management
+alias space='sudo btrfs fi show'
+alias ls='eza -ahlg --group-directories-first --octal-permissions' # my preferred listing
+alias la='eza -ahg --group-directories-first --octal-permissions'  # all files and dirs
+alias ll='eza -lhg --group-directories-first --octal-permissions'  # long format
+alias lt='eza -ahTg --group-directories-first --octal-permissions' # tree listing
+
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+
+#Terminal
+alias c='clear' 
+
+#Cat
+alias cat='bat'
+
+#tmux
+alias atmux='tmux new-session -A -s main'
+
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+
+# Generate sha1 digest
+alias sha1='openssl sha1'
+
+#5: Create parent directories on demand
+alias mkdir='mkdir -pv'
+
+#Show open ports
+alias ports='sudo ss -tulpn'
+
+# Add safety nets 
+# do not delete / or prompt if deleting more than 3 files at a time #
+alias rm='rm -I --preserve-root'
+
+# confirmation #
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+ 
+# Parenting changing perms on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+#Get system memory, cpu usage, and gpu memory info quickly
+## pass options to free ##
+alias meminfo='free -m -l -t'
+ 
+## get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+ 
+## get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+
+#Get my ipv6-address
+alias get-ipv6="ip -6 addr show dev enp5s0 scope global | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d'"
+
+## Get server cpu info ##
+alias cpuinfo='lscpu'
+ 
+## get GPU ram on desktop / laptop##
+alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
+
+#Resume wget by default
+## this one saved by butt so many times ##
+alias wget='wget -c'
+
+#weather
+alias wttr='curl wttr.in/47.4143259,19.2005805'
+
+# open lynx
+alias lynx='lynx -cfg=~/.config/lynx/lynx.cfg --display_charset=utf-8'
+
+alias check-webcam='mpv av://v4l2:/dev/video0'
+
+alias ascii='podman run -it --user ascii --name ascii --replace ghcr.io/adamszegedi/ascii-art:release bash'
+
+alias gearlever='flatpak run it.mijorus.gearlever'

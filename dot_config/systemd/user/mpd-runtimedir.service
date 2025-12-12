@@ -1,0 +1,17 @@
+[Unit]
+Description=Create MPD runtime directory
+Documentation=https://wiki.archlinux.org/title/Music_Player_Daemon
+# This service should run before mpd-runtime.service
+Before=mpd.service
+
+[Service]
+Type=oneshot
+# Ensure the directory is created if it doesn't exist
+# $XDG_RUNTIME_DIR is automatically resolved by systemd for --user services
+ExecStart=/usr/bin/mkdir -p %t/mpd
+# Indicate that the service considers itself successful if the ExecStart command exits with 0
+RemainAfterExit=yes
+
+[Install]
+# This service should be started when the user session is active
+WantedBy=default.target
