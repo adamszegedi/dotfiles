@@ -1,0 +1,8 @@
+[git]
+    autoCommit = true
+    autoPush = true
+
+[data]
+ {{ if eq .chezmoi.hostname "void-bluefin-01" }}
+     email = "mail@adamszegedi.eu"
+ {{ end }}
