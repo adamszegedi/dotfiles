@@ -1,0 +1,5 @@
+{{- if ne .chezmoi.hostname "void-bluefin-1"  }}
+wireplumber
+pipewire
+monitors.xml
+{{- end }}
