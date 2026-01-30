@@ -11,7 +11,7 @@ AddDevice=/dev/kfd
 AddDevice=/dev/dri
 SecurityLabelDisable=true
 # Auto-update integration
-Label=io.containers.autoupdate=image
+AutoUpdate=registry
 
 [Install]
 WantedBy=default.target
