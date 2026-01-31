@@ -1,0 +1,72 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    annotations:
+    # This enables auto-update for ALL containers in the pod
+    io.containers.autoupdate: "registry"
+  labels:
+    app: ai-stack
+  name: ai-stack
+spec:
+  containers:
+  - env:
+    - name: HOSTNAME
+      value: open-webui
+    image: ghcr.io/open-webui/open-webui:main
+    name: open-webui
+    ports:
+    - containerPort: 8080
+      hostIP: 0.0.0.0
+      hostPort: 3000
+    securityContext: {}
+    volumeMounts:
+    - mountPath: /app/backend/data
+      name: open-webui-pvc
+  - args:
+    - serve
+    env:
+    - name: HOME
+      value: /root
+    - name: HOSTNAME
+      value: ollama
+    image: docker.io/ollama/ollama:rocm
+    name: ollama
+    ports:
+    - containerPort: 11434
+      hostIP: 0.0.0.0
+      hostPort: 11434
+    volumeMounts:
+    - mountPath: /root/.ollama
+      name: ollama-pvc
+  volumes:
+  - name: open-webui-pvc
+    persistentVolumeClaim:
+      claimName: open-webui-data
+  - name: ollama-pvc
+    persistentVolumeClaim:
+      claimName: ollama-data
+---
+apiVersion: v1
+kind: List
+items:
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: open-webui-data
+  spec:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 2Gi
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: ollama-data
+  spec:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 10Gi

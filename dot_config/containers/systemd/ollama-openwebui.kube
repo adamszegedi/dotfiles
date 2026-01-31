@@ -1,0 +1,10 @@
+[Unit]
+Description=AI Stack with Ollama and Open WebUI
+After=network-online.target
+
+[Kube]
+Yaml=ollama-openwebui.yaml
+AutoUpdate=registry
+
+[Install]
+WantedBy=default.target
