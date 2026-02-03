@@ -7,6 +7,7 @@ metadata:
   annotations:
     # Fixed: Removed the double "annotations" key
     io.containers.autoupdate: "registry"
+    io.podman.annotations.device/ollama: "/dev/kfd,/dev/dri"
 spec:
   containers:
   - name: open-webui
@@ -25,6 +26,8 @@ spec:
     image: docker.io/ollama/ollama:rocm
     args:
     - serve
+    securityContext:
+      privileged: true
     env:
     - name: HOME
       value: /root
