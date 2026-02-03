@@ -5,23 +5,29 @@ metadata:
   labels:
     app: ai-stack
   annotations:
-    # Fixed: Removed the double "annotations" key
     io.containers.autoupdate: "registry"
+    # Essential for AMD GPU access in Podman
     io.podman.annotations.device/ollama: "/dev/kfd,/dev/dri"
 spec:
   containers:
   - name: open-webui
     image: ghcr.io/open-webui/open-webui:main
     env:
-    - name: HOSTNAME
-      value: open-webui
+      - name: HOSTNAME
+        value: open-webui
+      - name: OLLAMA_BASE_URL
+        value: "http://127.0.0.1:11434"
     ports:
     - containerPort: 8080
-      hostIP: 0.0.0.0
+      hostIP: 127.0.0.1
       hostPort: 3000
     volumeMounts:
     - mountPath: /app/backend/data
       name: open-webui-pvc
+    resources:
+      limits:
+        memory: 4Gi
+
   - name: ollama
     image: docker.io/ollama/ollama:rocm
     args:
@@ -35,11 +41,16 @@ spec:
       value: ollama
     ports:
     - containerPort: 11434
-      hostIP: 0.0.0.0
+      hostIP: 127.0.0.1
       hostPort: 11434
     volumeMounts:
     - mountPath: /root/.ollama
       name: ollama-pvc
+    - mountPath: /dev/shm
+      name: shm
+    resources:
+      limits:
+        memory: 16Gi # Adjust based on your available System RAM/VRAM
   volumes:
   - name: open-webui-pvc
     persistentVolumeClaim:
@@ -47,6 +58,10 @@ spec:
   - name: ollama-pvc
     persistentVolumeClaim:
       claimName: ollama-data
+  - name: shm
+    hostPath:
+      path: /dev/shm
+      type: Directory
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -57,7 +72,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 2Gi
+      storage: 5Gi
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -68,4 +83,4 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
+      storage: 50Gi # Increased for multiple LLM models
