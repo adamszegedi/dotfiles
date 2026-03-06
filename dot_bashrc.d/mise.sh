@@ -1,3 +1,3 @@
 ! command -v mise &> /dev/null && return
 
-echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
+eval "$(/var/home/linuxbrew/.linuxbrew/bin/mise  activate bash)"
