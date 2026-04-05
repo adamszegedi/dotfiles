@@ -1,0 +1,19 @@
+# Global Settings
+font=monospace 11
+# Narrower and shorter
+width=350
+margin=15
+padding=12
+border-size=2
+border-radius=0
+icons=0
+max-visible=3
+default-timeout=5000
+
+# Kanagawa Dark Mode Colors
+background-color=#1f1f28ff
+text-color=#dcd7baff
+border-color=#957fb8ff
+
+[urgency=high]
+border-color=#c34043ff
