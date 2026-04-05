@@ -17,7 +17,7 @@ pomodoro () {
               -H "Title: Pomodoro" \
               -H "Tags: tomato" \
               -d "'$val' session done" \
-              ntfy.sh/Extradite-Barrier-Elevator-Primer-Slider8-Passion
+              "ntfy.sh/{{ .ntfy_topic }}"
       )
   fi
 }
