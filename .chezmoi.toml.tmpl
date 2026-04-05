@@ -4,7 +4,5 @@
 
 [data]
     ntfy_topic = {{ promptStringOnce . "ntfy_topic" "ntfy.sh topic" | quote }}
-{{- if eq .chezmoi.hostname "void-bluefin-01" }}
-    email = "mail@adamszegedi.eu"
+    email = {{ promptStringOnce . "email" "Email address" | quote }}
     signingkey = "418E38EB5CDF9F0E"
-{{ end -}}
