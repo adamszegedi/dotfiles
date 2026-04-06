@@ -35,6 +35,7 @@ theme = Gruvbox Material
 # override bg to soft variant — warmer, less pupil strain
 background = 282828
 foreground = d4be98
+
 # window-padding-x = 2
 #
 # # Spacing around the equals sign does not matter.
@@ -56,3 +57,5 @@ foreground = d4be98
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
+#
+command=tmux new-session -A -t main
