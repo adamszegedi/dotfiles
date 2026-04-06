@@ -8,9 +8,9 @@ if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] && u
     exec uwsm start hyprland-uwsm.desktop
 fi
 
-if \[ -f /etc/bashrc \];
+if [ -f /etc/bash.bashrc ];
 then
-    . /etc/bashrc
+    . /etc/bash.bashrc
 fi
 
 # User specific environment

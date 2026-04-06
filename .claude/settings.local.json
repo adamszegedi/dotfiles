@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep \\\\$col_:*)",
+      "Bash(grep \\\\$monitor:*)",
+      "Bash(grep '^\\\\$col_' /home/aszegedi/.local/share/chezmoi/dot_config/hypr/colors.conf)",
+      "Read(//home/aszegedi/.local/share/chezmoi/**)",
+      "Bash(grep '\\\\$col_' '/home/aszegedi/.local/share/chezmoi/dot_config/hypr/*.conf')",
+      "Bash(grep -o '\\\\$col_[a-z0-9]*')",
+      "Bash(grep -h \"rgba\" /home/aszegedi/.local/share/chezmoi/dot_config/hypr/*.conf)"
+    ]
+  }
+}
