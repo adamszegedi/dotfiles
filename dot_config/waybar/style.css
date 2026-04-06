@@ -34,11 +34,6 @@ window#waybar {
     transition: all 0.3s ease;
 }
 
-#workspaces button.active {
-    color: @bg;
-    background-color: @accent;
-}
-
 button:hover {
     box-shadow: none;
     text-shadow: none;
