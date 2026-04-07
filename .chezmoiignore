@@ -1,0 +1,13 @@
+{{- if ne .chezmoi.config.data.hosttype "desktop" -}}
+.local/bin
+.config/containers
+.config/fuzzel
+.config/ghostty
+.config/hypr
+.config/mako
+.config/mpv
+.config/pipewire
+.config/systemd
+.config/waybar
+.config/wireplumber
+{{- end  }}
