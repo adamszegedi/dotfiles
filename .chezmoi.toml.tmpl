@@ -1,3 +1,6 @@
+{{- $hosttypeChoices := list "desktop" "work" -}}
+{{- $hosttype := promptChoiceOnce . "hosttype" "What type of host are you on" $hosttypeChoices -}}
+
 [git]
     autoCommit = true
     autoPush = true
@@ -5,4 +8,5 @@
 [data]
     ntfy_topic = {{ promptStringOnce . "ntfy_topic" "ntfy.sh topic" | quote }}
     email = {{ promptStringOnce . "email" "Email address" | quote }}
+    hosttype = {{ $hosttype | quote }}
     signingkey = "418E38EB5CDF9F0E"
