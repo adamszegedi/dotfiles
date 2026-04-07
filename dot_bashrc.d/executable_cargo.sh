@@ -1,3 +1,3 @@
-! [[ -d ~/.cargo/bin ]] && return
+! [[ -d ~/.cargo/env ]] && return
 
-export PATH=$PATH:~/.cargo/bin/
+. "$HOME/.cargo/env"
