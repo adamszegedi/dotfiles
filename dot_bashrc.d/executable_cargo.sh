@@ -1,3 +1,3 @@
-! [[ -d ~/.cargo/env ]] && return
+! [[ -f ~/.cargo/env ]] && return
 
 . "$HOME/.cargo/env"
