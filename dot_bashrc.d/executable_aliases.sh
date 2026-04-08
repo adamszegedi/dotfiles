@@ -93,3 +93,9 @@ alias gearlever='flatpak run it.mijorus.gearlever'
 
 # Lint all shell scripts in the chezmoi source dir (skips .tmpl files)
 alias dotcheck='shellcheck $(find "$(chezmoi source-path)" -type f -name "*.sh" ! -name "*.tmpl")'
+
+# Edit packages.yaml, lint it, then apply (run_onchange script handles install)
+pkgs() {
+    local f="$(chezmoi source-path)/.chezmoidata/packages.yaml"
+    nvim "$f" && yamllint "$f" && chezmoi apply
+}

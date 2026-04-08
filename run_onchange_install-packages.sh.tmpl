@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Managed by chezmoi. Re-runs automatically when .chezmoidata/packages.yaml
+# changes (run_onchange_ hashes the rendered content).
+
+pacman_pkgs=(
+{{ range .packages.arch.base -}}
+    {{ . | quote }}
+{{ end -}}
+{{- if eq .chezmoi.config.data.hosttype "desktop" -}}
+{{ range .packages.arch.desktop -}}
+    {{ . | quote }}
+{{ end -}}
+{{- end -}}
+)
+
+missing=()
+for pkg in "${pacman_pkgs[@]}"; do
+    pacman -Q "$pkg" &>/dev/null || missing+=("$pkg")
+done
+
+if (( ${#missing[@]} )); then
+    echo "Installing pacman packages: ${missing[*]}"
+    sudo pacman -S --needed --noconfirm "${missing[@]}"
+else
+    echo "pacman: all packages already installed."
+fi
+
+{{ if eq .chezmoi.config.data.hosttype "desktop" -}}
+# --- flatpak (desktop only) ---
+flatpak remote-add --if-not-exists --user flathub \
+    https://flathub.org/repo/flathub.flatpakrepo
+
+flatpak_apps=(
+{{ range .packages.flatpak.desktop -}}
+    {{ . | quote }}
+{{ end -}}
+)
+
+installed=$(flatpak list --app --columns=application 2>/dev/null || true)
+to_install=()
+for app in "${flatpak_apps[@]}"; do
+    grep -qxF "$app" <<<"$installed" || to_install+=("$app")
+done
+
+if (( ${#to_install[@]} )); then
+    echo "Installing flatpaks: ${to_install[*]}"
+    flatpak install -y --noninteractive flathub "${to_install[@]}"
+else
+    echo "flatpak: all apps already installed."
+fi
+{{ end -}}

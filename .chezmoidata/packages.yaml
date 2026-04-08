@@ -1,0 +1,86 @@
+---
+packages:
+  arch:
+    base:
+      # All hosts — dotfile deps + post-minimal-install baseline
+      - chezmoi
+      - git
+      - openssh
+      - bash-completion
+      - less
+      - unzip
+      - jq
+      - ripgrep
+      - fzf
+      - bat
+      - eza
+      - fastfetch
+      - btop
+      - nvtop
+      - mc
+      - tealdeer
+      - tmux
+      - neovim
+      - starship
+      - mise
+      - shellcheck
+      - yamllint
+      # Baseline post-install packages (not in minimal Arch)
+      - smartmontools
+      - terminus-font
+      - zram-generator
+    desktop:
+      # hosttype == desktop only — Hyprland stack + tailscale/podman/flatpak
+      - hyprland
+      - uwsm
+      - xdg-desktop-portal-hyprland
+      - xdg-desktop-portal-gtk
+      - xdg-user-dirs
+      - hypridle
+      - hyprlock
+      - hyprpaper
+      - hyprpicker
+      - waybar
+      - fuzzel
+      - mako
+      - libnotify
+      - ghostty
+      - kvantum
+      - kvantum-qt5
+      - qt5ct
+      - qt6ct
+      - qt5-wayland
+      - qt6-wayland
+      - nwg-look
+      - pipewire-pulse
+      - wireplumber
+      - wiremix
+      - grim
+      - slurp
+      - wl-clipboard
+      - polkit-gnome
+      - ttf-jetbrains-mono-nerd
+      - ttf-nerd-fonts-symbols-mono
+      - flatpak
+      - tailscale
+      - podman
+  flatpak:
+    desktop:
+      - app.devsuite.Ptyxis
+      - com.brave.Browser
+      - com.github.johnfactotum.Foliate
+      - com.github.tchx84.Flatseal
+      - com.rustdesk.RustDesk
+      - com.valvesoftware.Steam
+      - io.bassi.Amberol
+      - io.github.benjamimgois.goverlay
+      - io.github.celluloid_player.Celluloid
+      - io.github.flattool.Warehouse
+      - io.missioncenter.MissionCenter
+      - net.mullvad.MullvadBrowser
+      - org.chromium.Chromium
+      - org.gnome.Loupe
+      - org.jellyfin.JellyfinDesktop
+      - org.localsend.localsend_app
+      - org.mozilla.firefox
+      - org.remmina.Remmina

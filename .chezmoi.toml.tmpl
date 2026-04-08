@@ -6,6 +6,5 @@
     autoPush = true
 
 [data]
-    ntfy_topic = {{ promptStringOnce . "ntfy_topic" "ntfy.sh topic" | quote }}
     email = {{ promptStringOnce . "email" "Email address" | quote }}
     hosttype = {{ $hosttype | quote }}
