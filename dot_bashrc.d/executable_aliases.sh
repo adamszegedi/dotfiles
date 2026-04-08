@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 [[ -f /run/.toolboxenv ]] && return
 
 #File Management
@@ -13,7 +14,7 @@ alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias c='clear' 
 
 #Cat
-alias cat='bat'
+command -v bat &>/dev/null && alias cat='bat'
 
 #tmux
 alias atmux='tmux new-session -A -s main'
@@ -56,8 +57,17 @@ alias psmem10='ps auxf | sort -nr -k 4 | head -10'
 alias pscpu='ps auxf | sort -nr -k 3'
 alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 
-#Get my ipv6-address
-alias get-ipv6="ip -6 addr show dev enp5s0 scope global | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d'"
+#Get my ipv4-address (all global-scope addrs across interfaces)
+get-ipv4() {
+    ip -4 -brief addr show scope global |
+        awk '{for (i=2; i<=NF; i++) if ($i ~ /\./) print $1, $i}'
+}
+
+#Get my ipv6-address (all global-scope addrs across interfaces)
+get-ipv6() {
+    ip -6 -brief addr show scope global |
+        awk '{for (i=2; i<=NF; i++) if ($i ~ /:/) print $1, $i}'
+}
 
 ## Get server cpu info ##
 alias cpuinfo='lscpu'
@@ -80,3 +90,6 @@ alias check-webcam='mpv av://v4l2:/dev/video0'
 alias ascii='podman run -it --user ascii --name ascii --replace ghcr.io/adamszegedi/ascii-art:release bash'
 
 alias gearlever='flatpak run it.mijorus.gearlever'
+
+# Lint all shell scripts in the chezmoi source dir (skips .tmpl files)
+alias dotcheck='shellcheck $(find "$(chezmoi source-path)" -type f -name "*.sh" ! -name "*.tmpl")'

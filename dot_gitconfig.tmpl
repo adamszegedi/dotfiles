@@ -5,14 +5,14 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [core]
-	excludesfile = /home/aszegedi/.gitignore
+	excludesfile = ~/.gitignore
 	editor = nvim 
     eol = native
 	autocrlf = input
 [user]
 	email = {{ .email | quote }}
 	name = adamszegedi
-    signingkey = {{ .signingkey }}
+	signingkey = 418E38EB5CDF9F0E
 [commit]
 	gpgsign = true
 [pull]

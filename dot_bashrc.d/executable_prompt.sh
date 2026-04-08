@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 set -o vi
 
 ! command -v starship &> /dev/null && return
