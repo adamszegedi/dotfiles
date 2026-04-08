@@ -8,7 +8,7 @@ execute(){
     dt=$(date '+%H:%M:%S');
     echo ""
     padlength=90
-    pad=$(printf '%0.1s' "-"{1..90}})
+    pad=$(printf '%0.1s' "-"{1..90})
     string1="${1} - ${dt} "
     string2=' [Update] #'
     string3=' [Done]   #'
@@ -30,6 +30,6 @@ execute 'Flatpak' 'flatpak update -y'
 
 execute 'Mise' 'mise upgrade'
 
-execute 'Neovim - Config update' 'git -C ~/.config/nvim pull origin master'
+execute 'Chezmoi - Source + externals' 'chezmoi update'
 
 execute 'Neovim - Lazy Update' 'nvim --headless "+Lazy! restore" +qa'

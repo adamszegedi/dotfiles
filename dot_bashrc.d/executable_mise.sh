@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 ! command -v mise &> /dev/null && return
 
-eval "$(/usr/bin/mise activate bash)"
+eval "$(mise activate bash)"
