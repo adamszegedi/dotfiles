@@ -8,6 +8,7 @@
 * {
     font-family: 'JetBrainsMono Nerd Font';
     font-size: 14px;
+    font-weight: 600;
     min-height: 0;
 }
 
@@ -19,7 +20,7 @@ window#waybar {
 }
 
 .modules-left, .modules-center, .modules-right {
-    margin: 0 1em;
+    margin: 0 0.5em;
 }
 
 #workspaces button {
@@ -37,20 +38,25 @@ button:hover {
     border-color: transparent;
 }
 
-#pulseaudio, #clock, #memory, #tray, #privacy, #network,
-#group-tray, #custom-idle, #custom-tailscale, #custom-scale {
-    padding: 0 0.5em;
-    margin: 0;
-}
-
 #clock {
     color: @accent;
+    font-weight: bold;
 }
 
 #custom-scale,
 #custom-idle,
 #custom-tailscale {
     color: @accent;
+}
+
+#pulseaudio, #clock, #memory, #tray, #privacy, #network,
+#group-tray, #custom-idle, #custom-tailscale, #custom-scale {
+    padding: 0 0.25em;
+    margin: 0;
+}
+
+#privacy {
+    padding: 0.5em;
 }
 
 #privacy,
