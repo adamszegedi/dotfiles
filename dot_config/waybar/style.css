@@ -8,7 +8,6 @@
 * {
     font-family: 'JetBrainsMono Nerd Font';
     font-size: 14px;
-    font-weight: 600;
     min-height: 0;
 }
 
@@ -21,10 +20,6 @@ window#waybar {
 
 .modules-left, .modules-center, .modules-right {
     margin: 0 1em;
-}
-
-#workspaces {
-    font-weight: 700;
 }
 
 #workspaces button {
@@ -42,17 +37,14 @@ button:hover {
     border-color: transparent;
 }
 
-#custom-scratchpad_indicator, #pulseaudio,
-#clock, #memory, #tray, #idle_inhibitor, #privacy,
-#custom-idle, #custom-tailscale, #group-tray, #custom-scale,
-#network {
+#pulseaudio, #clock, #memory, #tray, #privacy, #network,
+#group-tray, #custom-idle, #custom-tailscale, #custom-scale {
     padding: 0 0.5em;
     margin: 0;
 }
 
 #clock {
     color: @accent;
-    font-weight: bold;
 }
 
 #custom-scale,

@@ -96,6 +96,7 @@ alias dotcheck='shellcheck $(find "$(chezmoi source-path)" -type f -name "*.sh" 
 
 # Edit packages.yaml, lint it, then apply (run_onchange script handles install)
 pkgs() {
-    local f="$(chezmoi source-path)/.chezmoidata/packages.yaml"
+    local f
+    f=$(chezmoi source-path)/.chezmoidata/packages.yaml
     nvim "$f" && yamllint "$f" && chezmoi apply
 }
