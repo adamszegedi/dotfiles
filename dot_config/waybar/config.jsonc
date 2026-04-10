@@ -11,9 +11,9 @@
     ],
     "modules-right": [
       "privacy",
-      "custom/scale",
-      "custom/idle",
       "pulseaudio",
+      "custom/idle",
+      "custom/scale",
       "custom/tailscale",
       "network"
     ],
@@ -23,18 +23,18 @@
         "tooltip": false
     },
     "custom/idle": {
-        "format": "[󰅶  {icon}]",
+        "format": "[{icon}]",
         "return-type": "json",
         "format-icons":{
-            "idle": "off",
-            "no-idle": "on"
+            "idle": "󰛊  off",
+            "no-idle": "󰅶  on"
         },
         "interval": "once",
         "signal": 2,
         "exec": "systemctl --user is-active --quiet \"*hypridle*\" && echo '{\"alt\": \"idle\"}' || echo '{\"alt\":\"no-idle\"}'",
         "on-click": "$HOME/.local/bin/toggle-idle.sh 2> /dev/null",
         "tooltip": true,
-        "tooltip-format": "Idle inhibitor: {icon}"
+        "tooltip-format": "Idle inhibitor status"
     },
     "custom/scale": {
         "format": "[󰹑  {text}]",
@@ -76,10 +76,10 @@
       "orientation": "inherit"
     },
     "network": {
-      "family": "ipv6",
+      "family": "ipv4_6",
       "format-disconnected": "[󰈂 disconnected]",
       "format-ethernet": "[  {ifname}]",
-      "format-linked": "{iename} (no ip)",
+      "format-linked": "[ (no ip)]",
       "on-click": "ip -6 addr show dev enp5s0 | grep inet6 -m1 | cut -d ' ' -f6 | wl-copy",
       "tooltip": true,
       "tooltip-format": "{ipaddr}"
