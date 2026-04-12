@@ -64,6 +64,8 @@ packages:
       - flatpak
       - tailscale
       - podman
+      - zed
+      - dysk
   flatpak:
     desktop:
       - app.devsuite.Ptyxis
