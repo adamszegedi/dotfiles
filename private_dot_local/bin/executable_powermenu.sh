@@ -2,7 +2,7 @@
 
 options="Poweroff\nSuspend\nReboot\nLock"
 
-chosen=$(printf "$options" | fuzzel --dmenu --prompt="Power: ")
+chosen=$(printf "$options" | fuzzel --dmenu --prompt="System: ")
 
 case "$chosen" in
     Poweroff) systemctl poweroff ;;
