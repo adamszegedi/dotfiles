@@ -86,3 +86,4 @@ packages:
       - org.localsend.localsend_app
       - org.mozilla.firefox
       - org.remmina.Remmina
+      - me.iepure.devtoolbox
