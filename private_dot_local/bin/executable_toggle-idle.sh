@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 if pgrep -x hypridle >/dev/null; then
   pkill -x hypridle
   notify-send "Stop locking computer when idle"
@@ -8,5 +10,5 @@ else
   notify-send "Now locking computer when idle"
 fi
 
-sleep 0.1s
+sleep 0.1
 pkill -RTMIN+2 waybar
