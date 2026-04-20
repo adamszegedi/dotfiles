@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-options="Poweroff\nSuspend\nReboot\nLock"
+set -euo pipefail
 
-chosen=$(printf "$options" | fuzzel --dmenu --prompt="System: ")
+options=("Poweroff" "Suspend" "Reboot" "Lock")
+
+chosen=$(printf "%s\n" "${options[@]}" | fuzzel --dmenu --prompt="System: ")
 
 case "$chosen" in
     Poweroff) systemctl poweroff ;;

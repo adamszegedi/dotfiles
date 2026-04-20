@@ -18,5 +18,5 @@ case "$state" in
         ;;
 esac
 
-sleep 0.1s
+sleep 0.1
 pkill -RTMIN+4 waybar
