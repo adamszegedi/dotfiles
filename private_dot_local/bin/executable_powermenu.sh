@@ -4,7 +4,7 @@ set -euo pipefail
 
 options=("Poweroff" "Suspend" "Reboot" "Lock")
 
-chosen=$(printf "%s\n" "${options[@]}" | fuzzel --dmenu --prompt="System: ")
+chosen=$(printf "%s\n" "${options[@]}" | fuzzel --dmenu --prompt="System: ") || exit 0
 
 case "$chosen" in
     Poweroff) systemctl poweroff ;;
