@@ -87,3 +87,4 @@ packages:
       - org.mozilla.firefox
       - org.remmina.Remmina
       - me.iepure.devtoolbox
+      - io.github.unknownskl.greenlight
