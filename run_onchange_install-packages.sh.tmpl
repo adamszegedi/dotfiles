@@ -5,14 +5,9 @@ set -euo pipefail
 # changes (run_onchange_ hashes the rendered content).
 
 pacman_pkgs=(
-{{ range .packages.arch.base -}}
+{{ range .packages.arch -}}
     {{ . | quote }}
 {{ end -}}
-{{- if eq .chezmoi.config.data.hosttype "desktop" -}}
-{{ range .packages.arch.desktop -}}
-    {{ . | quote }}
-{{ end -}}
-{{- end -}}
 )
 
 missing=()
@@ -27,13 +22,12 @@ else
     echo "pacman: all packages already installed."
 fi
 
-{{ if eq .chezmoi.config.data.hosttype "desktop" -}}
-# --- flatpak (desktop only) ---
+# --- flatpak ---
 flatpak remote-add --if-not-exists flathub \
     https://flathub.org/repo/flathub.flatpakrepo
 
 flatpak_apps=(
-{{ range .packages.flatpak.desktop -}}
+{{ range .packages.flatpak -}}
     {{ . | quote }}
 {{ end -}}
 )
@@ -50,4 +44,3 @@ if (( ${#to_install[@]} )); then
 else
     echo "flatpak: all apps already installed."
 fi
-{{ end -}}
