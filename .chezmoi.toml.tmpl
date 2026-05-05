@@ -1,10 +1,6 @@
-{{- $hosttypeChoices := list "desktop" "work" -}}
-{{- $hosttype := promptChoiceOnce . "hosttype" "What type of host are you on" $hosttypeChoices -}}
-
 [git]
     autoCommit = true
     autoPush = true
 
 [data]
     email = {{ promptStringOnce . "email" "Email address" | quote }}
-    hosttype = {{ $hosttype | quote }}
