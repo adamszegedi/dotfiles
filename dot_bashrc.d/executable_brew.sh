@@ -1,5 +1,6 @@
 # shellcheck shell=bash
 ! [[ -d /home/linuxbrew ]] && return
+[[ ":$PATH:" == *":/home/linuxbrew/.linuxbrew/bin:"* ]] && return
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
