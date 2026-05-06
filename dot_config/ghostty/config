@@ -55,4 +55,4 @@ foreground = d4be98
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 #
-command=tmux new-session -A -t main
+command = /bin/bash -lc "tmux new-session -A -t main"

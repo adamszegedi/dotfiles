@@ -1,12 +1,28 @@
 # dotfiles
 
-Personal [chezmoi](https://www.chezmoi.io/) source directory for Arch Linux + Hyprland.
+Personal [chezmoi](https://www.chezmoi.io/) source directory.
+
+## Prerequisites
+
+Install these system packages via your distro package manager before running `chezmoi init`:
+
+| Package | Purpose |
+| ------- | ------- |
+| `openssh` | Provides the `ssh-agent.socket` systemd user unit (enabled on first apply) |
+
+Then install these tools:
+
+| Tool | Purpose | Install |
+| ---- | ------- | ------- |
+| [Homebrew](https://brew.sh) | Package manager (CLI tools + flatpaks) | `curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh \| bash` |
+| [rustup](https://rustup.rs) | Rust toolchain manager | `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh` |
+| [mise](https://mise.jdx.dev) | Runtime version manager | `curl https://mise.run \| sh` |
 
 ## Bootstrap on a new machine
 
 ```sh
 # 1. Install chezmoi
-sudo pacman -S chezmoi
+brew install chezmoi
 
 # 2. Initialize from this repo and apply
 chezmoi init --apply git@github.com:adamszegedi/dotfiles.git
@@ -20,30 +36,32 @@ On first apply, chezmoi will prompt once for:
 
 The answer is saved in `~/.config/chezmoi/chezmoi.toml` and reused on every subsequent `chezmoi apply`.
 
-On first apply (and any time `.chezmoidata/packages.yaml` changes), chezmoi runs `run_onchange_install-packages.sh.tmpl`, which installs the pacman packages declared in that file, adds the Flathub remote, and installs the declared flatpak apps. You'll be prompted for `sudo` for the pacman step.
-
 ## Layout
 
 ```
-.chezmoi.toml.tmpl                       # prompt + data setup
-.chezmoidata/packages.yaml               # declarative pacman + flatpak list
-.chezmoiignore                           # static ignore list
-.chezmoiexternal.toml                    # pulls ~/.config/nvim from a separate repo
-run_onchange_install-packages.sh.tmpl    # re-runs whenever packages.yaml changes
-dot_bashrc                               # ~/.bashrc; launches Hyprland via uwsm on tty1
-dot_bashrc.d/                            # per-concern rc fragments (one file per tool)
-dot_config/                              # ~/.config (hypr, waybar, ghostty, btop, tmux, ...)
+.chezmoi.toml.tmpl              # prompt + data setup
+.chezmoiignore              # static ignore list
+.chezmoiexternal.toml       # pulls ~/.config/nvim from a separate repo
+dot_bash_profile
+dot_bashrc
+dot_bashrc.d/               # per-concern rc fragments (one file per tool)
+  executable_hyprland.sh    # launches Hyprland via uwsm on tty1
+  executable_ssh-agent.sh   # exports SSH_AUTH_SOCK for the systemd socket
+dot_config/
+  environment.d/ssh-agent.conf  # sets SSH_AUTH_SOCK for systemd user sessions
+  homebrew/Brewfile         # declarative brew + flatpak package list
+  ghostty/                  # terminal config
+  btop/                     # system monitor config
+  tmux/                     # terminal multiplexer config
+  nvim/                     # pulled via .chezmoiexternal.toml
+  ...
 dot_gitconfig.tmpl
 private_dot_gnupg/
-private_dot_local/bin/                   # toggle-* helpers + update.sh
+run_once_enable-ssh-agent-socket.sh  # enables ssh-agent.socket systemd user unit
 ```
 
 ## Useful aliases (from `dot_bashrc.d/executable_aliases.sh`)
 
-- `dotcheck` — run `shellcheck` over every `.sh` in the chezmoi source tree
 - `get-ipv4` / `get-ipv6` — list all global-scope addresses across interfaces
 - `atmux` — attach to or create a tmux session named `main`
-
-## Updating everything
-
-`~/.local/bin/update.sh` runs pacman, flatpak, mise, `chezmoi update` (which pulls this repo + externals and re-applies), and a headless `:Lazy restore` for Neovim.
+- `wttr` — show weather for LHBP (Budapest Ferenc Liszt International Airport)

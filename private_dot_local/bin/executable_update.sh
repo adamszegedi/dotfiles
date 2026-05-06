@@ -26,6 +26,8 @@ execute(){
 
 execute 'Pacman' 'sudo pacman -Syu'
 
+execute 'Brew' 'brew update && brew upgrade'
+
 execute 'Flatpak' 'flatpak update -y'
 
 execute 'Mise' 'mise upgrade'

@@ -2,7 +2,6 @@
 [[ -f /run/.toolboxenv ]] && return
 
 #File Management
-alias space='sudo btrfs fi show'
 alias ls='eza -ahlg --group-directories-first --octal-permissions' # my preferred listing
 alias la='eza -ahg --group-directories-first --octal-permissions'  # all files and dirs
 alias ll='eza -lhg --group-directories-first --octal-permissions'  # long format
@@ -80,7 +79,7 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 alias wget='wget -c'
 
 #weather
-alias wttr='curl wttr.in/47.4143259,19.2005805'
+alias wttr='curl wttr.in/LHBP'
 
 # open lynx
 alias lynx='lynx -cfg=~/.config/lynx/lynx.cfg --display_charset=utf-8'
@@ -90,13 +89,3 @@ alias check-webcam='mpv av://v4l2:/dev/video0'
 alias ascii='podman run -it --user ascii --name ascii --replace ghcr.io/adamszegedi/ascii-art:release bash'
 
 alias gearlever='flatpak run it.mijorus.gearlever'
-
-# Lint all shell scripts in the chezmoi source dir (skips .tmpl files)
-alias dotcheck='shellcheck $(find "$(chezmoi source-path)" -type f -name "*.sh" ! -name "*.tmpl")'
-
-# Edit packages.yaml, lint it, then apply (run_onchange script handles install)
-pkgs() {
-    local f
-    f=$(chezmoi source-path)/.chezmoidata/packages.yaml
-    nvim "$f" && yamllint "$f" && chezmoi apply
-}
