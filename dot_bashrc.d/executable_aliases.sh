@@ -86,6 +86,6 @@ alias lynx='lynx -cfg=~/.config/lynx/lynx.cfg --display_charset=utf-8'
 
 alias check-webcam='mpv av://v4l2:/dev/video0'
 
-alias ascii='podman run -it --user ascii --name ascii --replace ghcr.io/adamszegedi/ascii-art:release bash'
+alias ascii='podman run -it --user ascii --name ascii --replace ghcr.io/adamszegedi/ascii-art:latest bash'
 
 alias gearlever='flatpak run it.mijorus.gearlever'
