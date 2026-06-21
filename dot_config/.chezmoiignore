@@ -1,0 +1,11 @@
+{{ if eq .chezmoi.os "darwin" }}
+containers
+environment.d
+fuzzel
+hypr
+mako
+pipewire
+systemd
+waybar
+wireplumber
+{{ end }}
