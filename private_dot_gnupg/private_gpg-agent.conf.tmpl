@@ -1,0 +1,7 @@
+{{ if eq .chezmoi.os "darwin" }}
+pinentry-program /Applications/MacPorts/pinentry-mac.app/Contents/MacOS/pinentry-mac
+{{ else if eq .chezmoi.os "linux" }}
+pinentry-program /usr/bin/pinentry-curses
+{{ end -}}
+default-cache-ttl 3600
+scdaemon-program /usr/libexec/scdaemon
