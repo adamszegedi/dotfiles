@@ -12,6 +12,7 @@ brew "tealdeer"
 brew "tmux"
 brew "yamllint"
 cargo "rustlings"
+{{ if eq .chezmoi.os "linux" -}}
 flatpak "app.devsuite.Ptyxis"
 flatpak "com.brave.Browser"
 flatpak "com.github.johnfactotum.Foliate"
@@ -32,3 +33,4 @@ flatpak "org.jellyfin.JellyfinDesktop"
 flatpak "org.localsend.localsend_app"
 flatpak "org.mozilla.firefox"
 flatpak "org.remmina.Remmina"
+{{ end -}}
