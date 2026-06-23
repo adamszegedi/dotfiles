@@ -32,11 +32,11 @@ set-option -g status-position top
 # Set terminal colors (important for themes)
 # Use this if your terminal supports it, otherwise try "screen-256color"
 # 1. Tell tmux to use 256-color internally
-{{ if eq .chezmoi.os "darwin" }}
+{{ if eq .chezmoi.os "darwin" -}}
 set-option -g default-terminal "xterm-256color"
-{{ else if eq .chezmoi.os "linux" }}
+{{ else if eq .chezmoi.os "linux" -}}
 set-option -g default-terminal "tmux-256color"
-{{ end -}}
+{{- end }}
 
 # 2. Enable True Color (RGB) support
 # This uses the modern 'terminal-features' syntax (tmux 3.2+)

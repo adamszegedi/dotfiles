@@ -1,0 +1,10 @@
+[Unit]
+Description=Syncthing service managed by Podman Quadlet
+After=network-online.target
+
+[Kube]
+Yaml=syncthing.yaml
+AutoUpdate=registry
+
+[Install]
+WantedBy=default.target
