@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: syncthing-pod
+  labels:
+    app: syncthing
+  annotations:
+    io.podman.annotations.userns: "keep-id"
+spec:
+  hostNetwork: true
+
+  containers:
+  - name: syncthing
+    image: docker.io/syncthing/syncthing:latest
+    hostname: syncthing
+    env:
+    - name: TZ
+      value: Europe/Budapest
+
+    volumeMounts:
+    - name: syncthing-config
+      mountPath: /var/syncthing/config
+    - name: user-documents
+      mountPath: /var/syncthing/Documents
+    - name: user-pictures
+      mountPath: /var/syncthing/Pictures
+    - name: user-music
+      mountPath: /var/syncthing/Music
+
+    securityContext:
+      annotations:
+        io.podman.annotations.userns: "keep-id"
+        io.podman.annotations.volume.syncthing-config: "Z"
+        io.podman.annotations.volume.user-documents: "z"
+        io.podman.annotations.volume.user-pictures: "z"
+        io.podman.annotations.volume.user-music: "z"
+
+  volumes:
+  - name: syncthing-config
+    hostPath:
+      path: /home/aszegedi/.config/syncthing
+      type: DirectoryOrCreate
+  - name: user-documents
+    hostPath:
+      path: /var/home/aszegedi/Documents
+      type: Directory
+  - name: user-pictures
+    hostPath:
+      path: /var/home/aszegedi/Pictures
+      type: Directory
+  - name: user-music
+    hostPath:
+      path: /var/home/aszegedi/Music
+      type: Directory
