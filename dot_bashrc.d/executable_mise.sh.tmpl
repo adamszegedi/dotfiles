@@ -1,0 +1,8 @@
+# shellcheck shell=bash
+! command -v mise &> /dev/null && return
+
+{{- if eq .chezmoi.os "darwin" }}
+export MISE_CACHE_DIR="/Volumes/Adam-external/Library/Caches/Mise"
+{{- end }}
+
+eval "$(mise activate bash)"

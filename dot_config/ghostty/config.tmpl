@@ -26,7 +26,11 @@
 # ==========================
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
+{{ if eq .chezmoi.os "darwin" -}}
+font-size = 16
+{{ else if eq .chezmoi.os "linux" -}}
 font-size = 12
+{{ end -}}
 font-family = Berkeley Mono
 theme = Gruvbox Material
 # override bg to soft variant — warmer, less pupil strain
@@ -55,4 +59,9 @@ foreground = d4be98
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 #
+{{ if eq .chezmoi.os "darwin" -}}
+env = SHELL=/opt/homebrew/bin/bash
+command = /opt/homebrew/bin/bash -l -c "/opt/homebrew/bin/tmux new-session -A -t main"
+{{ else if eq .chezmoi.os "linux" -}}
 command = /bin/bash -lc "tmux new-session -A -t main"
+{{ end -}}
