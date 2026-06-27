@@ -15,7 +15,7 @@ export HOMEBREW_CACHE="/Volumes/Adam-external/Library/Caches/Homebrew"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{- end }}
 
-export HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/homebrew/Brewfile"
+export HOMEBREW_BUNDLE_FILE="$HOME/.config/homebrew/Brewfile"
 
 HOMEBREW_PREFIX="$(brew --prefix)"
 if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
