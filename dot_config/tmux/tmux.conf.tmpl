@@ -1,5 +1,14 @@
 # ~/.tmux.conf
 
+# Set the prefix to Ctrl-a
+set -g prefix C-a
+
+# Unbind the default Ctrl-b prefix
+unbind C-b
+
+# Send Ctrl-a to applications inside tmux by pressing Ctrl-a twice
+bind C-a send-prefix
+
 # Set vi mode keys
 set -g mode-keys vi
 
@@ -29,12 +38,14 @@ set-option -g mouse on
 # Set Position
 set-option -g status-position top
 
-# Set terminal colors (important for themes)
-# Use this if your terminal supports it, otherwise try "screen-256color"
-# 1. Tell tmux to use 256-color internally
 {{ if eq .chezmoi.os "darwin" -}}
+# Override Macos default-terminal
+set-option -g default-shell /opt/homebrew/bin/bash
+
+# Set terminal colors (important for themes)
 set-option -g default-terminal "xterm-256color"
 {{ else if eq .chezmoi.os "linux" -}}
+# Set terminal colors (important for themes)
 set-option -g default-terminal "tmux-256color"
 {{- end }}
 

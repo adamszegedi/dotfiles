@@ -39,10 +39,12 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
  
+{{- if eq .chezmoi.os "linux" }}
 # Parenting changing perms on / #
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
+{{- end }}
 
 #Get system memory, cpu usage, and gpu memory info quickly
 ## pass options to free ##

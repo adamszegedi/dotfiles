@@ -1,8 +1,21 @@
 # shellcheck shell=bash
+
+{{- if eq .chezmoi.os "darwin" }}
+# macOS (Apple Silicon) Configuration
+! [[ -d /opt/homebrew ]] && return
+[[ ":$PATH:" == *":/opt/homebrew/bin:"* ]] && return
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Offload heavy downloads to external drive on macOS
+export HOMEBREW_CACHE="/Volumes/Adam-external/Library/Caches/Homebrew"
+{{- else if eq .chezmoi.os "linux" }}
+# Linux Configuration
 ! [[ -d /home/linuxbrew ]] && return
 [[ ":$PATH:" == *":/home/linuxbrew/.linuxbrew/bin:"* ]] && return
-
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+{{- end }}
+
+export HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/homebrew/Brewfile"
 
 HOMEBREW_PREFIX="$(brew --prefix)"
 if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
@@ -16,4 +29,3 @@ else
         [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
     done
 fi
-
