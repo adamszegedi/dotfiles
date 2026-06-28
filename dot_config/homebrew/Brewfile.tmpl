@@ -1,5 +1,7 @@
+{{ if eq .chezmoi.os "darwin" -}}
 brew "bash"
 brew "bash-completion@2"
+{{- end }}
 brew "bat"
 brew "btop"
 brew "dysk"
