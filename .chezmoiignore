@@ -2,3 +2,8 @@ README.md
 {{- if eq .chezmoi.os "darwin" }}
 .local
 {{ end -}}
+{{- if and (ne .chezmoi.hostname "bluefin") (ne .chezmoi.os "darwin") }}
+.gnupg
+.gitignore
+.gitconfig
+{{- end }}

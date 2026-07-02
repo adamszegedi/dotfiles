@@ -1,3 +1,6 @@
 {{ if eq .chezmoi.os "linux" }}
 macports.sh
 {{ end }}
+{{- if and (ne .chezmoi.hostname "bluefin") (ne .chezmoi.os "linux") }}
+hyprland.sh
+{{- end }}

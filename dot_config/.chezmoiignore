@@ -1,4 +1,7 @@
-{{ if eq .chezmoi.os "darwin" }}
+{{- if and (ne .chezmoi.hostname "bluefin") (ne .chezmoi.os "darwin") }}
+ghostty
+{{- end }}
+{{- if ne .chezmoi.hostname "bluefin" }}
 containers
 environment.d
 fuzzel
@@ -8,4 +11,5 @@ pipewire
 systemd
 waybar
 wireplumber
+mimeapps.list
 {{ end }}

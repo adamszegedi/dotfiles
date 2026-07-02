@@ -83,11 +83,12 @@ alias wget='wget -c'
 #weather
 alias wttr='curl wttr.in/LHBP'
 
+{{ if eq .chezmoi.os "darwin" -}}
+alias ascii='container run --interactive --tty --cpus 1 --memory 256m --name ascii --user ascii ghcr.io/adamszegedi/ascii-art:latest bash'
+{{ else if eq .chezmoi.os "linux" -}}
 # open lynx
 alias lynx='lynx -cfg=~/.config/lynx/lynx.cfg --display_charset=utf-8'
-
 alias check-webcam='mpv av://v4l2:/dev/video0'
-
 alias ascii='podman run -it --user ascii --name ascii --replace ghcr.io/adamszegedi/ascii-art:latest bash'
-
 alias gearlever='flatpak run it.mijorus.gearlever'
+{{- end }}
