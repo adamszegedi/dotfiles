@@ -1,7 +1,7 @@
-{{- if and (ne .chezmoi.hostname "bluefin") (ne .chezmoi.os "darwin") }}
+{{- if and (not .isHomeDesktop) (ne .chezmoi.os "darwin") }}
 ghostty
 {{- end }}
-{{- if ne .chezmoi.hostname "bluefin" }}
+{{- if not .isHomeDesktop }}
 containers
 environment.d
 fuzzel

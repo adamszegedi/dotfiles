@@ -6,7 +6,7 @@
 [user]
 	email = {{ .email | quote }}
 	name = adamszegedi
-	signingkey = {{ .signkey }}
+	signingkey = {{ .signkey | quote }}
 [commit]
 	gpgsign = true
 [pull]
