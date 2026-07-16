@@ -4,12 +4,8 @@ ghostty
 {{- if not .isHomeDesktop }}
 containers
 environment.d
-fuzzel
-hypr
-mako
 pipewire
 systemd
-waybar
 wireplumber
 mimeapps.list
 {{ end }}
