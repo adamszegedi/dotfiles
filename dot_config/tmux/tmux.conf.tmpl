@@ -23,13 +23,25 @@ bind -r J resize-pane -D 5
 bind -r K resize-pane -U 5
 bind -r L resize-pane -R 5
 
+# Split panes vim-style, inheriting the current pane path
+bind v split-window -h -c "#{pane_current_path}"
+bind s split-window -v -c "#{pane_current_path}"
+
+# New window inherits current path
+bind c new-window -c "#{pane_current_path}"
+
 # Enable focus events
 set-option -g focus-events on
 
+# Reduce escape time so neovim mode changes are instant
+set -sg escape-time 10
+
 # Increase history limit
-set-option -g history-limit 10000
+set-option -g history-limit 50000
 
 # Start window/pane numbering from 1 (instead of 0)
+set -g base-index 1
+set -g pane-base-index 1
 set-option -g renumber-windows on # Renumber windows when one is closed
 
 # Enable mouse mode (tmux > 2.1)
@@ -39,15 +51,12 @@ set-option -g mouse on
 set-option -g status-position top
 
 {{ if eq .chezmoi.os "darwin" -}}
-# Override Macos default-terminal
+# Override macOS default shell
 set-option -g default-shell /opt/homebrew/bin/bash
+{{- end }}
 
 # Set terminal colors (important for themes)
-set-option -g default-terminal "xterm-256color"
-{{ else if eq .chezmoi.os "linux" -}}
-# Set terminal colors (important for themes)
 set-option -g default-terminal "tmux-256color"
-{{- end }}
 
 # 2. Enable True Color (RGB) support
 # This uses the modern 'terminal-features' syntax (tmux 3.2+)
@@ -84,14 +93,16 @@ set-option -g status-left "#[fg=#7daea3,bold]  #S #[fg=#665c54] | "
 # -----------------------------------------------------------------------------
 # RIGHT SIDE (User @ Host)
 # -----------------------------------------------------------------------------
-set-option -g status-right-length 60
+set-option -g status-right-length 80
 
 # Logic:
 # 1. Prefix Indicator (Wait)
-# 2. User (Green)
-# 3. @ symbol (Muted)
-# 4. Hostname (Blue)
-set-option -g status-right "#{?client_prefix,#[fg=#e78a4e] [WAIT] , }#[fg=#a9b665] #(whoami)#[fg=#928374] @ #[fg=#7daea3]#H "
+# 2. Date (Muted)
+# 3. Time (Foreground)
+# 4. User (Green)
+# 5. @ symbol (Muted)
+# 6. Hostname (Blue)
+set-option -g status-right "#{?client_prefix,#[fg=#e78a4e] [WAIT] , }#[fg=#928374] %a %d %b #[fg=#d4be98] %H:%M #[fg=#665c54]| #[fg=#a9b665] #{user}#[fg=#928374] @ #[fg=#7daea3]#H "
 
 # -----------------------------------------------------------------------------
 # WINDOW STATUS (The List on the Left)
@@ -115,3 +126,13 @@ set-option -g pane-active-border-style fg='#e78a4e'
 # --- Keybindings ---
 # Reload config file easily (fixed path to match file name)
 bind r source-file ~/.config/tmux/tmux.conf \; display-message "Tmux config reloaded!"
+
+# -----------------------------------------------------------------------------
+# CLIPBOARD
+# -----------------------------------------------------------------------------
+# Yank selection to system clipboard in vi copy mode
+{{ if eq .chezmoi.os "darwin" -}}
+bind -T copy-mode-vi y send -X copy-pipe-and-cancel "pbcopy"
+{{ else if eq .chezmoi.os "linux" -}}
+bind -T copy-mode-vi y send -X copy-pipe-and-cancel "wl-copy"
+{{- end }}

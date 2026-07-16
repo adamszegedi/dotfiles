@@ -3,4 +3,6 @@
     autoPush = true
 
 [data]
-    email = {{ promptStringOnce . "email" "Email address" | quote }}
+    email        = {{ promptStringOnce . "email"        "Email address"                | quote }}
+    signkey      = {{ promptStringOnce . "signkey"      "GPG signing key"              | quote }}
+    isHomeDesktop = {{ promptBoolOnce  . "isHomeDesktop" "Is this the home Linux desktop?" }}
