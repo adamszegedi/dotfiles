@@ -96,13 +96,10 @@ set-option -g status-left "#[fg=#7daea3,bold]  #S #[fg=#665c54] | "
 set-option -g status-right-length 80
 
 # Logic:
-# 1. Prefix Indicator (Wait)
-# 2. Date (Muted)
-# 3. Time (Foreground)
-# 4. User (Green)
-# 5. @ symbol (Muted)
-# 6. Hostname (Blue)
-set-option -g status-right "#{?client_prefix,#[fg=#e78a4e] [WAIT] , }#[fg=#928374] %a %d %b #[fg=#d4be98]%H:%M #[fg=#665c54]| #[fg=#a9b665]#{user}#[fg=#928374] @ #[fg=#7daea3]#H "
+# 1. User (Green)
+# 2. @ symbol (Muted)
+# 3. Hostname (Blue)
+set-option -g status-right "#[fg=#a9b665]#{user}#[fg=#928374] @ #[fg=#7daea3]#H "
 
 # -----------------------------------------------------------------------------
 # WINDOW STATUS (The List on the Left)
