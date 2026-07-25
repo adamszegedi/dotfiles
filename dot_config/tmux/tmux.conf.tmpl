@@ -130,6 +130,8 @@ bind r source-file ~/.config/tmux/tmux.conf \; display-message "Tmux config relo
 # Yank selection to system clipboard in vi copy mode
 {{ if eq .chezmoi.os "darwin" -}}
 bind -T copy-mode-vi y send -X copy-pipe-and-cancel "pbcopy"
+{{ else if .isWSL -}}
+bind -T copy-mode-vi y send -X copy-pipe-and-cancel "clip.exe"
 {{ else if eq .chezmoi.os "linux" -}}
 bind -T copy-mode-vi y send -X copy-pipe-and-cancel "wl-copy"
 {{- end }}

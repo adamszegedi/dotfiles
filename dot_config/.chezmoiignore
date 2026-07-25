@@ -1,11 +1,17 @@
-{{- if and (not .isHomeDesktop) (ne .chezmoi.os "darwin") }}
+{{- if .isWSL }}
 ghostty
 {{- end }}
-{{- if not .isHomeDesktop }}
+{{- if or (eq .chezmoi.os "darwin") .isWSL }}
 containers
-environment.d
 pipewire
 systemd
 wireplumber
 mimeapps.list
-{{ end }}
+{{- end }}
+{{- if eq .chezmoi.os "darwin" }}
+# macOS has no systemd user environment at all
+environment.d
+{{- else if .isWSL }}
+# WSL keeps ssh-agent/editor env, but not Wayland/GUI env
+environment.d/wayland-apps.conf
+{{- end }}
