@@ -1,7 +1,4 @@
 README.md
-{{- if eq .chezmoi.os "darwin" }}
-.local
-{{ end -}}
 {{- if and (not .isHomeDesktop) (ne .chezmoi.os "darwin") }}
 .gnupg
 .gitignore
