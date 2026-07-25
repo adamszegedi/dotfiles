@@ -1,5 +1,5 @@
 README.md
-{{- if and (not .isHomeDesktop) (ne .chezmoi.os "darwin") }}
+{{- if .isWSL }}
 .gnupg
 .gitignore
 .gitconfig

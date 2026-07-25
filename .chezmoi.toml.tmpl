@@ -3,6 +3,7 @@
     autoPush = true
 
 [data]
-    email        = {{ promptStringOnce . "email"        "Email address"                | quote }}
-    signkey      = {{ promptStringOnce . "signkey"      "GPG signing key"              | quote }}
-    isHomeDesktop = {{ promptBoolOnce  . "isHomeDesktop" "Is this the home Linux desktop?" }}
+    email   = {{ promptStringOnce . "email"   "Email address"   | quote }}
+    signkey = {{ promptStringOnce . "signkey" "GPG signing key" | quote }}
+    # Auto-detected: true only on Windows Subsystem for Linux
+    isWSL   = {{ and (eq .chezmoi.os "linux") (contains "microsoft" (.chezmoi.kernel.osrelease | lower)) }}

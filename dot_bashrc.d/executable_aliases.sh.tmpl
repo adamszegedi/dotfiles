@@ -73,9 +73,6 @@ get-ipv6() {
 
 ## Get server cpu info ##
 alias cpuinfo='lscpu'
-
-## get GPU ram on desktop / laptop##
-alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 {{- end }}
 
 #Resume wget by default
@@ -90,7 +87,9 @@ alias ascii='container run --interactive --tty --cpus 1 --memory 256m --name asc
 {{ else if eq .chezmoi.os "linux" -}}
 # open lynx
 alias lynx='lynx -cfg=~/.config/lynx/lynx.cfg --display_charset=utf-8'
-alias check-webcam='mpv av://v4l2:/dev/video0'
 alias ascii='podman run -it --user ascii --name ascii --replace ghcr.io/adamszegedi/ascii-art:latest bash'
+{{- if not .isWSL }}
+alias check-webcam='mpv av://v4l2:/dev/video0'
 alias gearlever='flatpak run it.mijorus.gearlever'
+{{- end }}
 {{- end }}

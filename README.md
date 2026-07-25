@@ -27,7 +27,6 @@ On first apply, chezmoi will prompt once for:
 | ------ | ------- |
 | `Email address` | Git commit author email |
 | `GPG signing key` | Key ID used for signed commits |
-| `Is this the home Linux desktop?` | Enter `false` for macOS |
 
 ### Linux
 
@@ -58,12 +57,26 @@ On first apply, chezmoi will prompt once for:
 | ------ | ------- |
 | `Email address` | Git commit author email |
 | `GPG signing key` | Key ID used for signed commits |
-| `Is this the home Linux desktop?` | Enter `true` for the home desktop (`bluefin`) |
+
+## Environments
+
+These configs target three machines. Which machine is which is detected
+automatically — no prompts beyond email/signing key:
+
+| Environment | `.chezmoi.os` | `isWSL` | Notes |
+| ----------- | ------------- | ------- | ----- |
+| macOS | `darwin` | `false` | Homebrew (Apple Silicon), no systemd/Wayland/desktop units |
+| Bluefin desktop | `linux` | `false` | Full GNOME/Wayland desktop: PipeWire, WirePlumber, Podman quadlets, systemd user units, ghostty |
+| WSL workspace | `linux` | `true` | Shell-only Linux: uses `clip.exe` for tmux clipboard, software-only GPG (no scdaemon), skips desktop/GUI-only config |
+
+`isWSL` is auto-derived in `.chezmoi.toml.tmpl` by checking for `microsoft` in
+`/proc/sys/kernel/osrelease`. Desktop/GUI-only files are gated with
+`eq .chezmoi.os "darwin"` / `.isWSL` in the `.chezmoiignore` files.
 
 ## Layout
 
 ```
-.chezmoi.toml.tmpl              # prompts for email, signkey, isHomeDesktop
+.chezmoi.toml.tmpl              # prompts for email, signkey; auto-detects isWSL
 .chezmoiignore                  # OS/desktop-conditional ignore rules
 .chezmoiexternal.toml           # pulls ~/.config/nvim from a separate repo
 dot_bash_profile
@@ -74,6 +87,7 @@ dot_bashrc.d/                   # per-concern rc fragments (one file per tool)
   executable_cargo.sh
   executable_environment_variables.sh
   executable_gpg.sh
+  executable_macports.sh          # MacPorts PATH (macOS only)
   executable_mise.sh.tmpl
   executable_prompt.sh
   executable_toolbox.sh
