@@ -1,6 +1,3 @@
 {{ if eq .chezmoi.os "linux" }}
 macports.sh
 {{ end }}
-{{- if and (not .isHomeDesktop) (ne .chezmoi.os "linux") }}
-hyprland.sh
-{{- end }}

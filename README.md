@@ -74,7 +74,6 @@ dot_bashrc.d/                   # per-concern rc fragments (one file per tool)
   executable_cargo.sh
   executable_environment_variables.sh
   executable_gpg.sh
-  executable_hyprland.sh
   executable_mise.sh.tmpl
   executable_prompt.sh
   executable_toolbox.sh
@@ -83,12 +82,11 @@ dot_config/
   homebrew/Brewfile.tmpl        # declarative brew + flatpak package list
   ghostty/                      # terminal config
   btop/                         # system monitor config
+  bat/                          # syntax-highlighting cat config
   tmux/                         # terminal multiplexer config
+  mpv/                          # media player config
   nvim/                         # pulled via .chezmoiexternal.toml
-  hypr/                         # Hyprland compositor config (Linux desktop only)
-  waybar/                       # status bar config (Linux desktop only)
-  mako/                         # notification daemon config (Linux desktop only)
-  fuzzel/                       # app launcher config (Linux desktop only)
+  tealdeer/                     # tldr client config
   pipewire/                     # audio config (Linux desktop only)
   wireplumber/                  # audio routing config (Linux desktop only)
   systemd/                      # user units (Linux desktop only)
@@ -96,13 +94,7 @@ dot_config/
   ...
 dot_gitconfig.tmpl
 private_dot_gnupg/              # GPG agent config
-private_dot_local/bin/          # custom shell scripts
-  executable_menu.sh
-  executable_powermenu.sh
-  executable_toggle-gamemode.sh
-  executable_toggle-idle.sh
-  executable_toggle-scale.sh
-  executable_toggle-tailscale.sh
+
 ```
 
 ## Useful aliases
