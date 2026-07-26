@@ -107,6 +107,7 @@ dot_config/
   containers/                   # Podman Quadlets (Linux desktop only)
   ...
 dot_gitconfig.tmpl
+dot_npmrc                       # disables npm lifecycle scripts (ignore-scripts)
 private_dot_gnupg/              # GPG agent config
 
 ```
