@@ -38,7 +38,7 @@ spec:
   volumes:
   - name: syncthing-config
     hostPath:
-      path: /home/aszegedi/.config/syncthing
+      path: /var/home/aszegedi/.config/syncthing
       type: DirectoryOrCreate
   - name: user-documents
     hostPath:
