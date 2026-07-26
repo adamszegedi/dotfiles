@@ -1,22 +1,22 @@
 [core]
-	excludesfile = ~/.gitignore
-	editor = nvim 
+    excludesfile = ~/.gitignore
+    editor = nvim
     eol = native
-	autocrlf = input
+    autocrlf = input
 [user]
-	email = {{ .email | quote }}
-	name = adamszegedi
-	signingkey = {{ .signkey | quote }}
+    email = {{ .email | quote }}
+    name = adamszegedi
+    signingkey = {{ .signkey | quote }}
 [commit]
-	gpgsign = true
+    gpgsign = true
 [pull]
-	ff = only
+    ff = only
 [push]
     autoSetupRemote = true
 [fetch]
-	prune = true
+    prune = true
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [alias]
     graph = log --oneline --graph --decorate
 [blame]
