@@ -1,6 +1,1 @@
 README.md
-{{- if .isWSL }}
-.gnupg
-.gitignore
-.gitconfig
-{{- end }}
