@@ -1,0 +1,108 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.11.3",
+  "schemes" : [
+    {
+      "buttons" : {
+        "gesture" : {
+          "actions" : {
+            "down" : "appExpose",
+            "left" : "missionControl.spaceLeft",
+            "right" : "missionControl.spaceRight",
+            "up" : "missionControl"
+          },
+          "enabled" : true,
+          "threshold" : 50,
+          "trigger" : {
+            "button" : {
+              "controlID" : 416,
+              "kind" : "logitechControl",
+              "productID" : 45122,
+              "serialNumber" : "A0BB2148"
+            },
+            "command" : false,
+            "control" : false,
+            "option" : false,
+            "shift" : false
+          }
+        },
+        "universalBackForward" : true
+      },
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xb042",
+          "productName" : "MX Master 4 M",
+          "serialNumber" : "A0BB2148",
+          "vendorID" : "0x46d"
+        }
+      },
+      "logitech" : {
+        "highResolutionWheel" : true
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        }
+      }
+    },
+    {
+      "buttons" : {
+        "gesture" : {
+          "actions" : {
+            "down" : "appExpose",
+            "left" : "missionControl.spaceLeft",
+            "right" : "missionControl.spaceRight",
+            "up" : "missionControl"
+          },
+          "enabled" : true,
+          "threshold" : 50,
+          "trigger" : {
+            "button" : {
+              "controlID" : 416,
+              "kind" : "logitechControl",
+              "productID" : 45122,
+              "serialNumber" : "A0BB2148"
+            },
+            "command" : false,
+            "control" : false,
+            "option" : false,
+            "shift" : false
+          }
+        },
+        "mappings" : [
+          {
+            "action" : "media.playPause",
+            "button" : {
+              "controlID" : 195,
+              "kind" : "logitechControl",
+              "productID" : 45122,
+              "serialNumber" : "A0BB2148"
+            },
+            "command" : false,
+            "control" : false,
+            "option" : false,
+            "shift" : false
+          }
+        ],
+        "universalBackForward" : true
+      },
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xb042",
+          "productName" : "Adam's MX Master 4",
+          "serialNumber" : "A0BB2148",
+          "vendorID" : "0x46d"
+        }
+      },
+      "logitech" : {
+        "highResolutionWheel" : true
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        }
+      }
+    }
+  ]
+}

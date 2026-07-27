@@ -11,7 +11,6 @@ Install the prerequisite tools:
 | Tool | Purpose | Install |
 | ---- | ------- | ------- |
 | [Homebrew](https://brew.sh) | Package manager | `curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh \| bash` |
-| [rustup](https://rustup.rs) | Rust toolchain manager | `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh` |
 | [mise](https://mise.jdx.dev) | Runtime version manager | `curl https://mise.run \| sh` |
 
 Then initialise chezmoi:
@@ -41,7 +40,6 @@ Then install the prerequisite tools:
 | Tool | Purpose | Install |
 | ---- | ------- | ------- |
 | [Homebrew](https://brew.sh) | Package manager | `curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh \| bash` |
-| [rustup](https://rustup.rs) | Rust toolchain manager | `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh` |
 | [mise](https://mise.jdx.dev) | Runtime version manager | `curl https://mise.run \| sh` |
 
 Then initialise chezmoi:
@@ -93,12 +91,13 @@ dot_bashrc.d/                   # per-concern rc fragments (one file per tool)
   executable_toolbox.sh
 dot_config/
   environment.d/                # systemd user environment (Linux desktop only)
-  homebrew/Brewfile.tmpl        # declarative brew + flatpak package list
+  homebrew/Brewfile.tmpl        # declarative brew + cask + flatpak package list
   ghostty/                      # terminal config
   btop/                         # system monitor config
   bat/                          # syntax-highlighting cat config
   tmux/                         # terminal multiplexer config
   mpv/                          # media player config
+  linearmouse/                  # mouse button/gesture/scroll config (macOS only)
   nvim/                         # pulled via .chezmoiexternal.toml
   tealdeer/                     # tldr client config
   pipewire/                     # audio config (Linux desktop only)
