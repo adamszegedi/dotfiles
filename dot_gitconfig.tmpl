@@ -7,6 +7,10 @@
     email = {{ .email | quote }}
     name = adamszegedi
     signingkey = {{ .signkey | quote }}
+{{ if .isWSL -}}
+[includeIf "hasconfig:remote.*.url:https://github.com/smartcomms/**"]
+    path = ~/.gitconfig-work
+{{ end -}}
 [commit]
     gpgsign = true
 [pull]
