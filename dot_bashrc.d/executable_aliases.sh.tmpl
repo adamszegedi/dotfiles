@@ -83,7 +83,7 @@ alias wget='wget -c'
 alias wttr='curl wttr.in/LHBP'
 
 {{ if eq .chezmoi.os "darwin" -}}
-alias ascii='container run --interactive --tty --cpus 1 --memory 256m --name ascii --user ascii ghcr.io/adamszegedi/ascii-art:latest bash'
+alias ascii='container run --interactive --tty --cpus 1 --memory 256m --rm --name ascii --user ascii ghcr.io/adamszegedi/ascii-art:latest bash'
 {{ else if eq .chezmoi.os "linux" -}}
 alias ascii='podman run -it --user ascii --name ascii --replace ghcr.io/adamszegedi/ascii-art:latest bash'
 {{- if not .isWSL }}
