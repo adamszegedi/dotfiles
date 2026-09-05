@@ -15,7 +15,6 @@ theme = Kanagawa Wave
 mouse-hide-while-typing = true
 
 {{ if eq .chezmoi.os "darwin" -}}
-env = SHELL=/opt/homebrew/bin/bash
 command = /opt/homebrew/bin/bash -l
 {{ else if eq .chezmoi.os "linux" -}}
 command = /bin/bash -lc "tmux new-session -A -t main"
