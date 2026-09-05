@@ -75,7 +75,9 @@ automatically — no prompts beyond email/signing key:
 
 ```
 .chezmoi.toml.tmpl              # prompts for email, signkey; auto-detects isWSL
-.chezmoiignore                  # OS/desktop-conditional ignore rules
+.chezmoiignore                  # ignores README.md/AGENTS.md only; OS/desktop rules live in
+                                # nested .chezmoiignore files (dot_config/, dot_bashrc.d/,
+                                # dot_config/systemd/user/)
 .chezmoiexternal.toml           # pulls ~/.config/nvim from a separate repo
 dot_bash_profile
 dot_bashrc
@@ -83,7 +85,7 @@ dot_bashrc.d/                   # per-concern rc fragments (one file per tool)
   executable_aliases.sh.tmpl
   executable_brew.sh.tmpl
   executable_cargo.sh
-  executable_environment_variables.sh
+  executable_environment_variables.sh.tmpl
   executable_gpg.sh
   executable_macports.sh          # MacPorts PATH (macOS only)
   executable_mise.sh.tmpl
@@ -105,7 +107,9 @@ dot_config/
   systemd/                      # user units (Linux desktop only)
   containers/                   # Podman Quadlets (Linux desktop only)
   ...
-dot_gitconfig.tmpl
+dot_gitconfig.tmpl              # includes ~/.gitconfig-work for work repos (WSL only)
+dot_gitconfig-work.tmpl         # work git overrides, rendered empty outside WSL
+dot_gitignore                   # global git excludesfile
 dot_npmrc                       # disables npm lifecycle scripts (ignore-scripts)
 private_dot_gnupg/              # GPG agent config
 

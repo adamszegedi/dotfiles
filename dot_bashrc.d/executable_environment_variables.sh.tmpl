@@ -1,0 +1,6 @@
+# shellcheck shell=bash
+export XDG_CONFIG_HOME="$HOME/.config"
+{{- if eq .chezmoi.os "darwin" }}
+export SHELL="/opt/homebrew/bin/bash"
+export OLLAMA_MODELS="/Volumes/Adam-external/ollama"
+{{- end }}
