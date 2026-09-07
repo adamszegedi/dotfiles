@@ -66,6 +66,9 @@ set-option -a terminal-features 'xterm-ghostty:RGB'
 # 3. Fallback for standard xterm (just in case)
 set-option -a terminal-features 'xterm-256color:RGB'
 
+# 4. Allow escape-sequence passthrough (shell integration, hyperlinks, images)
+set-option -g allow-passthrough on
+
 # Auto-rename window to current folder name when only one pane is open
 set -g automatic-rename on
 set -g automatic-rename-format '#{?#{==:#{window_panes},1},#{b:pane_current_path},#{window_name}}'
@@ -79,16 +82,16 @@ set-option -g status-interval 1
 set-option -g status-justify left
 
 # -----------------------------------------------------------------------------
-# GRUVBOX MATERIAL COLORS
+# KANAGAWA WAVE COLORS
 # -----------------------------------------------------------------------------
-set-option -g status-style bg='#282828',fg='#d4be98'
+set-option -g status-style bg='#1f1f28',fg='#dcd7ba'
 
 # -----------------------------------------------------------------------------
 # LEFT SIDE (Session Name)
 # -----------------------------------------------------------------------------
 set-option -g status-left-length 40
-# Session name in Blue (#7daea3) with a divider
-set-option -g status-left "#[fg=#7daea3,bold]  #S #[fg=#665c54] | "
+# Session name in Blue (#7e9cd8) with a divider
+set-option -g status-left "#[fg=#7e9cd8,bold]  #S #[fg=#727169] | "
 
 # -----------------------------------------------------------------------------
 # RIGHT SIDE (User @ Host)
@@ -99,26 +102,26 @@ set-option -g status-right-length 80
 # 1. User (Green)
 # 2. @ symbol (Muted)
 # 3. Hostname (Blue)
-set-option -g status-right "#[fg=#a9b665]#{user}#[fg=#928374] @ #[fg=#7daea3]#H "
+set-option -g status-right "#[fg=#98bb6c]#{user}#[fg=#727169] @ #[fg=#7e9cd8]#H "
 
 # -----------------------------------------------------------------------------
 # WINDOW STATUS (The List on the Left)
 # -----------------------------------------------------------------------------
 
 # Inactive windows: "2 vim" (dimmed, no brackets)
-set-window-option -g window-status-format "#[fg=#928374] #I #W "
+set-window-option -g window-status-format "#[fg=#727169] #I #W "
 
 # Active window: "[1 zsh]" (Foreground, bold, wrapped in brackets)
-set-window-option -g window-status-current-format "#[fg=#d4be98,bold] [#I #W] "
+set-window-option -g window-status-current-format "#[fg=#dcd7ba,bold] [#I #W] "
 
 # -----------------------------------------------------------------------------
 # PANE BORDERS (Highlighting the actual split panes)
 # -----------------------------------------------------------------------------
 # Inactive pane borders (Dark Grey)
-set-option -g pane-border-style fg='#504945'
+set-option -g pane-border-style fg='#54546d'
 
 # Active pane border (Orange - matches the Wait indicator)
-set-option -g pane-active-border-style fg='#e78a4e'
+set-option -g pane-active-border-style fg='#ffa066'
 
 # --- Keybindings ---
 # Reload config file easily (fixed path to match file name)
@@ -127,6 +130,9 @@ bind r source-file ~/.config/tmux/tmux.conf \; display-message "Tmux config relo
 # -----------------------------------------------------------------------------
 # CLIPBOARD
 # -----------------------------------------------------------------------------
+# Enable OSC 52 clipboard sync with the terminal
+set-option -s set-clipboard on
+
 # Yank selection to system clipboard in vi copy mode
 {{ if eq .chezmoi.os "darwin" -}}
 bind -T copy-mode-vi y send -X copy-pipe-and-cancel "pbcopy"

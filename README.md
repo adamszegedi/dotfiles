@@ -75,9 +75,9 @@ automatically — no prompts beyond email/signing key:
 
 ```
 .chezmoi.toml.tmpl              # prompts for email, signkey; auto-detects isWSL
-.chezmoiignore                  # ignores README.md/AGENTS.md only; OS/desktop rules live in
-                                # nested .chezmoiignore files (dot_config/, dot_bashrc.d/,
-                                # dot_config/systemd/user/)
+.chezmoiignore                  # ignores README.md/AGENTS.md and non-macOS Library;
+                                # other OS/desktop rules live in nested .chezmoiignore files
+                                # (dot_config/, dot_bashrc.d/, dot_config/systemd/user/)
 .chezmoiexternal.toml           # pulls ~/.config/nvim from a separate repo
 dot_bash_profile
 dot_bashrc
@@ -99,7 +99,6 @@ dot_config/
   bat/                          # syntax-highlighting cat config
   tmux/                         # terminal multiplexer config
   mpv/                          # media player config
-  linearmouse/                  # mouse button/gesture/scroll config (macOS only)
   nvim/                         # pulled via .chezmoiexternal.toml
   tealdeer/                     # tldr client config
   pipewire/                     # audio config (Linux desktop only)
@@ -114,6 +113,9 @@ dot_npmrc                       # disables npm lifecycle scripts (ignore-scripts
 private_dot_gnupg/              # GPG agent config
 
 ```
+
+Linearmouse remains in use on macOS, but its configuration is intentionally
+maintained locally rather than by chezmoi.
 
 ## Useful aliases
 
