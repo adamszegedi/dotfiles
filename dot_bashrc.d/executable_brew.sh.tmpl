@@ -7,10 +7,6 @@
 [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{- end }}
 
-{{- if eq .chezmoi.os "darwin" }}
-export HOMEBREW_CACHE="/Volumes/Adam-external/Library/Caches/Homebrew"
-{{- end }}
-
 export HOMEBREW_BUNDLE_FILE="$HOME/.config/homebrew/Brewfile"
 
 if [[ -r $HOMEBREW_PREFIX/etc/profile.d/bash_completion.sh ]]; then
