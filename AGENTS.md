@@ -10,16 +10,11 @@ Personal [chezmoi](https://www.chezmoi.io/) dotfiles source directory targeting 
 
 ## Environment detection
 
-Three targets are auto-detected (no prompts beyond email/signing key on first apply):
-
-| Environment | `.chezmoi.os` | `.isWSL` |
-| ----------- | ------------- | -------- |
-| macOS (Apple Silicon) | `darwin` | `false` |
-| Bluefin desktop (GNOME/Wayland) | `linux` | `false` |
-| WSL (shell-only) | `linux` | `true` |
+See README.md's "Environments" table for the three auto-detected targets
+(`.chezmoi.os`/`.isWSL` per machine).
 
 OS/desktop-conditional files are gated through **nested** `.chezmoiignore` files, not just the root one:
-- `dot_config/.chezmoiignore` — gates GUI-only dirs (`ghostty`, `linearmouse`, `containers`, `pipewire`, `wireplumber`, `systemd`, `mimeapps.list`, `environment.d/*`)
+- `dot_config/.chezmoiignore` — gates GUI-only dirs (`ghostty`, `containers`, `pipewire`, `wireplumber`, `systemd`, `mimeapps.list`, `environment.d/*`)
 - `dot_bashrc.d/.chezmoiignore` — drops `macports.sh` on linux
 - `dot_config/systemd/user/.chezmoiignore` — ignores `*.target.wants/`
 
