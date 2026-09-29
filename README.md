@@ -4,14 +4,17 @@ Personal [chezmoi](https://www.chezmoi.io/) source directory.
 
 ## Bootstrap
 
-### macOS
+On Linux, install the prerequisite system package before running chezmoi:
 
-Install the prerequisite tools:
+| Package | Purpose |
+| ------- | ------- |
+| `openssh` | Provides the `ssh-agent.socket` systemd user unit |
+
+Then install the prerequisite tool:
 
 | Tool | Purpose | Install |
 | ---- | ------- | ------- |
 | [Homebrew](https://brew.sh) | Package manager | `curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh \| bash` |
-| [mise](https://mise.jdx.dev) | Runtime version manager | `curl https://mise.run \| sh` |
 
 Then initialise chezmoi:
 
@@ -20,33 +23,19 @@ brew install chezmoi
 chezmoi init --apply git@github.com:adamszegedi/dotfiles.git
 ```
 
-On first apply, chezmoi will prompt once for:
-
-| Prompt | Purpose |
-| ------ | ------- |
-| `Email address` | Git commit author email |
-| `GPG signing key` | Key ID used for signed commits |
-
-### Linux
-
-Install the prerequisite system package before running chezmoi:
-
-| Package | Purpose |
-| ------- | ------- |
-| `openssh` | Provides the `ssh-agent.socket` systemd user unit |
-
-Then install the prerequisite tools:
-
-| Tool | Purpose | Install |
-| ---- | ------- | ------- |
-| [Homebrew](https://brew.sh) | Package manager | `curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh \| bash` |
-| [mise](https://mise.jdx.dev) | Runtime version manager | `curl https://mise.run \| sh` |
-
-Then initialise chezmoi:
+Then install the rest of the packages declared in the Brewfile (including [mise](https://mise.jdx.dev)):
 
 ```sh
-brew install chezmoi
-chezmoi init --apply git@github.com:adamszegedi/dotfiles.git
+brew bundle --file ~/.config/homebrew/Brewfile
+```
+
+Rust is intentionally **not** managed via Homebrew or mise — both give
+inconsistent toolchain/component behaviour. Install it with the official
+rustup script instead, which `dot_bashrc.d/executable_cargo.sh` already
+expects (it sources `~/.cargo/env` when present):
+
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 On first apply, chezmoi will prompt once for:
@@ -84,7 +73,7 @@ dot_bashrc
 dot_bashrc.d/                   # per-concern rc fragments (one file per tool)
   executable_aliases.sh.tmpl
   executable_brew.sh.tmpl
-  executable_cargo.sh
+  executable_cargo.sh             # sources ~/.cargo/env; rust installed via rustup, not brew/mise
   executable_environment_variables.sh.tmpl
   executable_gpg.sh
   executable_macports.sh          # MacPorts PATH (macOS only)
@@ -113,9 +102,6 @@ dot_npmrc                       # disables npm lifecycle scripts (ignore-scripts
 private_dot_gnupg/              # GPG agent config
 
 ```
-
-Linearmouse remains in use on macOS, but its configuration is intentionally
-maintained locally rather than by chezmoi.
 
 ## Useful aliases
 

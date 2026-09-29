@@ -17,13 +17,10 @@ theme = Kanagawa Wave
 mouse-hide-while-typing = true
 
 {{ if eq .chezmoi.os "darwin" -}}
-command = /opt/homebrew/bin/bash -l -c "tmux new-session -A -t main"
+command = /opt/homebrew/bin/bash -l
 {{ else if eq .chezmoi.os "linux" -}}
-command = /bin/bash -lc "tmux new-session -A -t main"
+command = /bin/bash -lc "tmux new-session -A -s main"
 {{ end -}}
 
-copy-on-select = clipboard
 notify-on-command-finish = unfocused
 
-clipboard-write = allow
-clipboard-read = ask
