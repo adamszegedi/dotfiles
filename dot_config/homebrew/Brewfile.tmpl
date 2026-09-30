@@ -55,3 +55,8 @@ flatpak "org.mozilla.firefox"
 flatpak "org.remmina.Remmina"
 flatpak "io.podman_desktop.PodmanDesktop"
 {{ end -}}
+{{ if .isWSL -}}
+brew "aws-sso-cli"
+brew "awscli"
+brew "gh"
+{{ end -}}
