@@ -86,7 +86,9 @@ alias wttr='curl wttr.in/LHBP'
 alias ascii='container run --interactive --tty --cpus 1 --memory 256m --rm --name ascii --user ascii ghcr.io/adamszegedi/ascii-art:latest bash'
 {{ else if eq .chezmoi.os "linux" -}}
 alias ascii='podman run -it --user ascii --name ascii --replace ghcr.io/adamszegedi/ascii-art:latest bash'
-{{- if not .isWSL }}
+{{- if .isWSL }}
+alias sun="cat reports/tenancies/*.json | jq '.[0].users[0].username' | clip.exe"
+{{- else }}
 alias check-webcam='mpv av://v4l2:/dev/video0'
 alias gearlever='flatpak run it.mijorus.gearlever'
 {{- end }}
