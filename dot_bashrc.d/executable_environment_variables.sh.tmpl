@@ -1,5 +1,7 @@
 # shellcheck shell=bash
 export XDG_CONFIG_HOME="$HOME/.config"
+export EDITOR="{{ template "editor" }}"
+export VISUAL="{{ template "editor" }}"
 {{- if eq .chezmoi.os "darwin" }}
 export SHELL="/opt/homebrew/bin/bash"
 export OLLAMA_MODELS="/Volumes/Adam-external/ollama"
