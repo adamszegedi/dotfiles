@@ -114,6 +114,9 @@ set-window-option -g window-status-format "#[fg=#727169] #I #W "
 # Active window: "[1 zsh]" (Foreground, bold, wrapped in brackets)
 set-window-option -g window-status-current-format "#[fg=#dcd7ba,bold] [#I #W] "
 
+# tmux 3.8 defaults the current window to underscore; restore plain style
+set-window-option -g window-status-current-style default
+
 # -----------------------------------------------------------------------------
 # PANE BORDERS (Highlighting the actual split panes)
 # -----------------------------------------------------------------------------
