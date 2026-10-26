@@ -10,6 +10,8 @@
 {{ if .isWSL -}}
 [includeIf "hasconfig:remote.*.url:https://github.com/work-org/**"]
     path = ~/.gitconfig-work
+[includeIf "hasconfig:remote.*.url:https://github.com/work-org-poc/**"]
+    path = ~/.gitconfig-work
 {{ end -}}
 [commit]
     gpgsign = true
